@@ -1462,7 +1462,7 @@
                         </div>
                     </div>
                     <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; flex-grow: 1;">
-                        <img src="Logo.png" alt="FleetChofer Logo" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 0 25px var(--rojo-principal)); opacity: 0.95; transition: all 0.3s ease;">
+                      <img src="./chofer_logo.png" alt="FleetChofer Logo" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover;">
                         <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; color: var(--rojo-principal); text-align: center; text-transform: uppercase; max-width: 280px; line-height: 1.5;">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
                     </div>
                 </div>
