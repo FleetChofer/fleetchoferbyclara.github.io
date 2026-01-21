@@ -101,20 +101,21 @@
 
         .nav-links {
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
             list-style: none;
             align-items: center;
+            margin-left: auto;
         }
 
         .nav-links a {
             color: var(--blanco);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.72rem;
             position: relative;
             transition: all 0.3s ease;
             letter-spacing: 0.02em;
-            padding: 0.6rem 0.9rem;
+            padding: 0.5rem 0.65rem;
             border-radius: 6px;
             border: 1px solid rgba(255, 0, 0, 0.3);
             background: rgba(255, 0, 0, 0.05);
@@ -1021,11 +1022,12 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
-                <li><a href="#plataforma">Cómo funciona</a></li>
+                <li><a href="#quienes-somos">¿Quiénes somos?</a></li>
+                <li><a href="#plataforma">¿Cómo funciona?</a></li>
                 <li><a href="#features">Características principales</a></li>
                 <li><a href="#roles">Soluciones</a></li>
                 <li><a href="#security">Seguridad y confianza</a></li>
-                <li><a href="#doc-management">Documental</a></li>
+                <li><a href="#doc-management">Gestión Documental</a></li>
                 <li><a href="#cta">Contactos</a></li>
             </ul>
         </nav>
@@ -1067,17 +1069,79 @@
                 <div class="stat-symbol">∞</div>
                 <div class="stat-label">Oportunidades</div>
             </div>
+         </div>
+    </section>
+
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
+
+    <!-- Quénes Somos -->
+    <section id="quienes-somos" class="plataforma-descripcion">
+        <div class="descripcion-contenido">
+            <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: var(--rojo-principal); font-weight: 700; letter-spacing: -0.02em;">¿Quiénes somos?</h3>
+            
+            <!-- Team Photos -->
+            <div style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; flex-wrap: wrap;">
+                <!-- Clara -->
+                <div style="text-align: center; flex: 0 1 auto;">
+                    <img src="./FotoClara.png" alt="Clara Melero" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem;">
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--blanco); margin: 0.5rem 0 0.3rem 0;">Clara Melero</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0;">Fundadora&CEO</p>
+                </div>
+                
+                <!-- Esther -->
+                <div style="text-align: center; flex: 0 1 auto;">
+                    <img src="./FotoEsther.png" alt="Esther Molins" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem;">
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--blanco); margin: 0.5rem 0 0.3rem 0;">Esther Molins</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0;">Directora de Desarrollo&CTO</p>
+                </div>
+                
+                <!-- Sarah -->
+                <div style="text-align: center; flex: 0 1 auto;">
+                    <img src="./FotoSarah.png" alt="Sarah Duato" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem;">
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--blanco); margin: 0.5rem 0 0.3rem 0;">Sarah Duato</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0;">Directora de Operaciones&COO</p>
+                </div>
+            </div>
+            
+            <p style="font-size: 0.95rem;"><strong>FleetChofer by Clara nace desde dentro del sector</strong>, no desde un despacho ni desde una idea teórica. Nace después de muchos años trabajando de la mano de la logística, acompañando operativas reales desde el lado comercial, viendo de cerca cómo se toman decisiones, cómo se apagan fuegos y cómo, casi siempre, la presión acaba cayendo en las mismas personas.</p>
+            <p style="font-size: 0.95rem;">He pasado gran parte de mi trayectoria profesional vinculada a la logística a través de la <strong>venta de soluciones tecnológicas</strong>, trabajando con empresas del sector, escuchando sus problemas diarios y entendiendo qué es lo que de verdad complica el día a día: <strong>urgencias constantes, información dispersa, falta de visibilidad, improvisación y un estrés que acaba pareciendo normal</strong>… cuando no debería serlo.</p>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem;"><strong>FleetChofer nace por una motivación muy sencilla:</strong></p>
+            <p style="font-size: 0.95rem;"><strong>quería crear algo que ayudara de verdad</strong>, algo que hiciera el trabajo más fácil, más ordenado y más llevadero. No para hacernos ricos, sino para hacerlo mejor cada día, aprender, mejorar y aportar valor real a un sector que se mueve sin parar y del que dependemos todos.</p>
+            <p style="font-size: 0.95rem;"><strong>Desde el inicio no he estado sola</strong>. En este camino me han acompañado dos grandes amigas que se han convertido en pilares fundamentales del proyecto y en parte de lo que hoy llamamos la familia FleetChofer by Clara.</p>
+            <p style="font-size: 0.95rem;">- <strong>Sarah Duato</strong>, directora de operaciones, quien me ayuda a aportar <strong style="color: var(--rojo-principal);">visión, estructura y control</strong> para que todo funcione y tenga sentido operativo.</p>
+            <p style="font-size: 0.95rem;">- <strong>Esther Molins</strong> es quien me acompaña en el desarrollo de FleetChofer, ayudándome a <strong style="color: var(--rojo-principal);">evolucionar la plataforma con sentido práctico</strong> e incorporar nuevos desarrollos tecnológicos para hacerla cada vez más eficaz.</p>
+            <p style="font-size: 0.95rem;"><strong>Juntas compartimos una misma idea</strong>: hacer que FleetChofer se convierta en un <strong style="color: var(--rojo-principal);">ecosistema logístico</strong>, un lugar donde trabajar sea <strong style="color: var(--rojo-principal);">más fácil, más claro y más agradable</strong>. Porque creemos que cuando las herramientas ayudan de verdad, <strong style="color: var(--rojo-principal);">el estrés baja, la cabeza descansa</strong> y hasta apetece ponerse a trabajar.</p>
+            <p style="font-size: 0.95rem;">FleetChofer <strong style="color: var(--rojo-principal);">no quiere ser perfecto ni imponer una manera de hacer las cosas</strong>. Quiere <strong style="color: var(--rojo-principal);">acompañar, ordenar y facilitar</strong>. Quiere crecer poco a poco, aprendiendo del uso real, escuchando a quienes están dentro y mejorando cada día.</p>
+            <p style="font-size: 0.95rem;">Soñamos con que <strong style="color: var(--rojo-principal);">esta familia siga creciendo</strong> y que, con el tiempo, podamos <strong style="color: var(--rojo-principal);">ayudar a cada vez más empresas, equipos y profesionales</strong> a trabajar mejor, con menos dolores de cabeza y con la tranquilidad de saber que todo está bajo control.</p>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem;"><strong>Porque al final, de eso va FleetChofer:</strong></p>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--rojo-principal); font-weight: 500; font-size: 0.95rem;"><strong>de personas, de operativa real y de hacer el camino un poco más fácil para todos.</strong></p>
         </div>
     </section>
+
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
     <!-- Plataforma Descripción -->
         <section id="plataforma" class="plataforma-descripcion">
         <div class="descripcion-contenido">
             <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: var(--rojo-principal); font-weight: 700; letter-spacing: -0.02em;">¿Cómo funciona?</h3>
-            <p><strong>FleetChofer by Clara</strong> tiene un enfoque al de una <strong>red social</strong>, pero profesional y exclusiva del sector logístico: te conectas con chóferes y perfiles del sector, no como una "amistad", sino como una <strong>vinculación operativa</strong>. Al aceptar esos contactos, pasan a formar parte de tu <strong>CRM de FleetChofer</strong>, donde puedes mantener el contacto y ver las rutas que publican, tanto servicios recurrentes como de última hora, a nivel nacional e internacional.</p>
-            <p>Cada interacción suma <strong>experiencia real</strong> y deja rastro, creando una <strong>reputación basada en hechos</strong> —cumplimiento, fiabilidad y operativa— que te permite decidir rápido, con datos y con confianza, incluso aunque nunca hayáis trabajado juntos.</p>
+            <p style="font-size: 0.95rem;"><strong>FleetChofer by Clara</strong> tiene un enfoque al de una <strong>red social</strong>, pero profesional y <strong>100% Exclusiva del sector logístico</strong>: te conectas con chóferes y perfiles del sector, no como una "amistad", sino como una <strong>vinculación operativa</strong>.</p>
+            <p style="font-size: 0.95rem;">Cuando aceptas un contacto, ese perfil pasa automáticamente a formar parte de tu <strong>CRM dentro de FleetChofer</strong>. Desde ahí puedes mantener el contacto, ver las rutas que publica y detectar oportunidades, tanto en servicios recurrentes como en rutas de última hora, a nivel nacional o internacional. Todo en un mismo sitio, sin perseguir a nadie por WhatsApp.</p>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem;"><strong>Cada interacción cuenta. Y cuenta de verdad.</strong></p>
+            <p style="font-size: 0.95rem;">En FleetChofer, cada servicio realizado suma <strong>experiencia real y deja rastro</strong>, creando una <strong>reputación basada en hechos</strong> —cumplimiento, fiabilidad y operativa— que te permite decidir rápido, con datos y con confianza, incluso cuando trabajas con alguien por primera vez. Sin intuiciones a ciegas ni "a ver qué pasa".</p>
+            <p style="font-size: 0.95rem;">Porque FleetChofer no es una app más ni un marketplace caótico donde todos compiten a gritos. Es un <strong>ecosistema logístico digital</strong>, un punto de encuentro operativo donde empresas logísticas, chóferes y clientes trabajan conectados desde un único espacio, con reglas claras y datos reales. Aquí todo tiene contexto, historial y sentido.</p>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem;"><strong>La idea es sencilla:</strong></p>
+            <p style="font-size: 0.95rem;"><strong>Menos improvisación, menos tiempo perdido y menos kilómetros vacíos y grupajes</strong>. Publicas rutas, detectas oportunidades, conectas con los perfiles adecuados y gestionas todo de forma ordenada. Lo que antes se repartía entre llamadas, correos, Whatsapp, notas sueltas y prisas, ahora está centralizado, claro y listo para trabajar.</p>
+            <p style="font-size: 0.95rem;">FleetChofer nace desde dentro del sector y pensando en el día a día real. En las urgencias, en los cambios de última hora y en la necesidad de tenerlo todo bajo control sin complicarte más la vida. No viene a decirte cómo tienes que trabajar, sino a <strong>facilitarte que trabajes mejor</strong>.</p>
+            <p style="font-size: 0.95rem; margin-top: 1.5rem;"><strong>En resumen:</strong></p>
+            <p style="font-size: 0.95rem;">FleetChofer no es solo una herramienta. Es ese sitio donde entras y sabes que todo encaja. Donde vas un paso por delante y dejas de apagar fuegos para centrarte en hacer que la operativa funcione.</p>
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--rojo-principal); font-weight: 500; font-size: 0.95rem;"><strong>La llama que conecta empresas y conductores.</strong></p>
         </div>
     </section>
+
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
     <!-- Features Section -->
     <section id="features" class="features">
@@ -1130,6 +1194,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
     <!-- Roles Section -->
     <section id="roles" class="roles-pricing">
@@ -1211,7 +1278,7 @@
                 </div>
                 <div class="pricing-card recommended">
                     <div class="plan-name">Plan Pro Chófer</div>
-                    <div class="plan-price">19€<span>/mes</span></div>
+                    <div class="plan-price">49€<span>/mes</span></div>
                     <div class="plan-users">👤 1 Usuario incluido</div>
                     <div class="features-title">INCLUYE</div>
                     <ul class="plan-features">
@@ -1355,6 +1422,9 @@
         </div>
     </section>
 
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
+
     <!-- Security Section -->
     <section id="security" class="security">
         <div class="security-content">
@@ -1396,6 +1466,9 @@
         </div>
     </section>
 
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
+
     <!-- Doc Management -->
     <section id="doc-management" class="doc-management">
         <div class="doc-management-card">
@@ -1422,7 +1495,7 @@
                     <h4 style="color: var(--blanco); margin-bottom: 1rem; font-weight: 600;">Este servicio incluye:</h4>
                     <ul style="list-style: none; margin-bottom: 2rem;">
                         <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Creación del perfil del chófer/vehículo</li>
-                        <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Subida y organización de la documentación del camión</li>
+                        <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Subida y organización de la documentación del chófer/vehículo</li>
                         <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Vinculación del vehículo con el chofer o la empresa correspondiente</li>
                     </ul>
                     <div class="price-tier">
@@ -1470,6 +1543,9 @@
         </div>
     </section>
 
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
+
     <!-- CTA Section -->
     <section id="cta" class="cta-section">
         <div class="cta-content">
@@ -1477,6 +1553,9 @@
             <p>Únete a la comunidad de profesionales del transporte que ya están optimizando sus operaciones con FleetChofer. Comienza hoy mismo y descubre el futuro de la logística profesional.</p>
         </div>
     </section>
+
+    <!-- Divisor -->
+    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
