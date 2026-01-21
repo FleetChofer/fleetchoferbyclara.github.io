@@ -994,6 +994,33 @@
             cursor: pointer;
         }
     </style>
+
+    <style>
+        .epic-glow-text {
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            animation: epic-glow 2s ease-in-out infinite alternate, epic-blink 1s step-end infinite;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        @keyframes epic-blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        @keyframes epic-glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+                transform: scale(1);
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
+                transform: scale(1.05);
+            }
+        }
+    </style>
 </head>
 <body style="overflow: auto;">
     <div class="dev-overlay hidden" id="devOverlay">
@@ -1201,7 +1228,7 @@
     <!-- Roles Section -->
     <section id="roles" class="roles-pricing">
         <h2 class="section-title">Soluciones para <span class="highlight">Cada Perfil</span></h2>
-        <p style="text-align: center; font-size: 1.05rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 3.5rem; font-weight: 300; letter-spacing: 0.02em;">Haz clic en tu perfil para conocer tu plan</p>
+        <p style="text-align: center; font-size: 1.05rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 3.5rem; font-weight: 300; letter-spacing: 0.02em;"><span class="epic-glow-text">¡¡Haz clic en tu perfil para conocer tu plan!!</span></p>
         <div class="roles-grid">
             <!-- Tarjeta Chófer -->
             <div class="role-card chofer" onclick="openPlans('chofer')">
