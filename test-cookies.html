@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Cookies</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #000; color: #fff; font-family: Arial; }
+        #cookiesModal { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background-color: #1a1a1a; border: 3px solid #ff0000; border-radius: 15px; padding: 50px; max-width: 600px; text-align: center; box-shadow: 0 0 50px rgba(255,0,0,0.7); z-index: 99999; display: none; font-family: Arial; }
+        #cookiesModal h2 { color: #ff0000; margin: 0 0 30px 0; font-size: 28px; }
+        #cookiesModal p { color: #cccccc; margin: 0 0 30px 0; font-size: 16px; line-height: 1.8; }
+        .button-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        button { padding: 15px 40px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 16px; transition: all 0.3s ease; }
+        #acceptCookiesBtn { background-color: #ff0000; color: white; }
+        #acceptCookiesBtn:hover { background-color: #cc0000; }
+        #rejectCookiesBtn { background-color: transparent; color: #ff0000; border: 3px solid #ff0000; }
+        #rejectCookiesBtn:hover { background-color: #ff0000; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Test de Cookies Modal</h1>
+    <p>Haz clic en el botón para mostrar el modal de cookies:</p>
+    <button onclick="document.getElementById('cookiesModal').style.display='block'">Mostrar Cookies</button>
+
+    <div id="cookiesModal">
+        <h2>Política de Cookies</h2>
+        <p>Utilizamos cookies para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.</p>
+        <div class="button-group">
+            <button id="acceptCookiesBtn">Aceptar</button>
+            <button id="rejectCookiesBtn">Rechazar</button>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var cookiesModal = document.getElementById('cookiesModal');
+        var acceptBtn = document.getElementById('acceptCookiesBtn');
+        var rejectBtn = document.getElementById('rejectCookiesBtn');
+        
+        function closeCookiesModal(){
+            cookiesModal.style.display = 'none';
+        }
+        
+        if(acceptBtn) acceptBtn.onclick = closeCookiesModal;
+        if(rejectBtn) rejectBtn.onclick = closeCookiesModal;
+    })();
+    </script>
+</body>
+</html>
