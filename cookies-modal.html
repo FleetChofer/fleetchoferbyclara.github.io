@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: transparent; }
+        #cookiesModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: #1a1a1a;
+            border: 3px solid #ff0000;
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255,0,0,0.7);
+            z-index: 99999;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #ff0000;
+            margin: 0 0 30px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p {
+            color: #cccccc;
+            margin: 0 0 30px 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+        #acceptBtn {
+            background-color: #ff0000;
+            color: white;
+        }
+        #acceptBtn:hover {
+            background-color: #cc0000;
+        }
+        #rejectBtn {
+            background-color: transparent;
+            color: #ff0000;
+            border: 3px solid #ff0000;
+        }
+        #rejectBtn:hover {
+            background-color: #ff0000;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="cookiesModal">
+        <h2>Política de Cookies</h2>
+        <p>Utilizamos cookies para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.</p>
+        <div class="button-group">
+            <button id="acceptBtn">Aceptar</button>
+            <button id="rejectBtn">Rechazar</button>
+        </div>
+    </div>
+
+    <script>
+    const acceptBtn = document.getElementById('acceptBtn');
+    const rejectBtn = document.getElementById('rejectBtn');
+    
+    function closeCookies() {
+        parent.postMessage({ action: 'closeCookies' }, '*');
+    }
+    
+    acceptBtn.onclick = closeCookies;
+    rejectBtn.onclick = closeCookies;
+    </script>
+</body>
+</html>

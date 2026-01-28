@@ -1013,25 +1013,6 @@
             font-weight: 600;
             cursor: pointer;
         }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
     
 @keyframes vibrar {
   0% { transform: translate(0); }
@@ -1098,163 +1079,15 @@
 }
 
 </style>
-
-    <style>
-        .dev-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.98);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            backdrop-filter: blur(8px);
-        }
-        .dev-overlay.hidden { display: none; }
-        .dev-overlay-card {
-            max-width: 600px;
-            background: rgba(10, 10, 10, 0.9);
-            border: 2px solid rgba(255, 0, 0, 0.3);
-            border-radius: 16px;
-            padding: 4rem 3rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.2);
-        }
-        .dev-overlay-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 2rem;
-            cursor: pointer;
-            opacity: 0.6;
-        }
-        .dev-overlay-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; }
-        .dev-overlay-title .highlight { color: #ff0000; }
-        .dev-overlay-text { font-size: 1.05rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 1.2rem; line-height: 1.7; }
-        .dev-overlay-btn {
-            background: #ff0000;
-            color: #000000;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
-    
-@keyframes vibrar {
-  0% { transform: translate(0); }
-  10% { transform: translate(-2px, 2px); }
-  20% { transform: translate(-2px, -2px); }
-  30% { transform: translate(2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  60% { transform: translate(2px, 2px); }
-  70% { transform: translate(-2px, -2px); }
-  80% { transform: translate(2px, -2px); }
-  90% { transform: translate(-1px, 1px); }
-  100% { transform: translate(0); }
-}
-
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
-}
-
-</style>
-
-    <style>
-        .epic-glow-text {
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            animation: epic-glow 2s ease-in-out infinite alternate, epic-blink 1s step-end infinite;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-
-        @keyframes epic-blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        @keyframes epic-glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
-                transform: scale(1);
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
-                transform: scale(1.05);
-            }
-        }
-    
-@keyframes vibrar {
-  0% { transform: translate(0); }
-  10% { transform: translate(-2px, 2px); }
-  20% { transform: translate(-2px, -2px); }
-  30% { transform: translate(2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  60% { transform: translate(2px, 2px); }
-  70% { transform: translate(-2px, -2px); }
-  80% { transform: translate(2px, -2px); }
-  90% { transform: translate(-1px, 1px); }
-  100% { transform: translate(0); }
-}
-
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
-}
-
-</style>
-    <title>Inicio - FleetChofer by Clara</title>
+    <title>Features - FleetChofer by Clara</title>
     <!-- Mejoras de scroll snapping y transiciones -->
     <link rel="stylesheet" href="scroll-enhancements.css">
 </head>
 <body style="overflow: auto;">
-    <div class="dev-overlay hidden" id="devOverlay">
-        <div class="dev-overlay-card">
-            <button class="dev-overlay-close" onclick="document.getElementById('devOverlay').classList.add('hidden')">×</button>
-            <h2 class="dev-overlay-title">🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo</h2>
-            <p class="dev-overlay-text">Estamos creando una nueva plataforma logística que conecta <strong>chóferes, empresas y cargadores</strong> en una sola red profesional.</p>
-            <p class="dev-overlay-text">Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos, <strong>sin prospección ni negociaciones interminables</strong>.</p>
-            <p class="dev-overlay-text" style="margin-top: 2rem; font-style: italic; font-size: 0.85rem; opacity: 0.8;">La web que estás viendo es informativa. La plataforma completa se activará en breve.</p>
-            <div class="dev-overlay-actions" style="margin-top: 1.5rem;">
-                <button class="dev-overlay-btn" onclick="document.getElementById('devOverlay').classList.add('hidden')">Seguir viendo la web</button>
-            </div>
-        </div>
-    </div>
-
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <img src="logo_new.png" alt="FleetChofer Logo">
+                <img src="images/1.png" alt="FleetChofer Logo">
                 <div class="logo-text">
                     <div class="logo-subtitle" style="font-size: 0.55rem; font-weight: 600; letter-spacing: 0.05em; color: var(--rojo-principal);">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
                 </div>
@@ -1340,48 +1173,61 @@
         });
     </script>
 
-<section id="hero" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>LA LLAMA QUE CONECTA<br><span class="highlight">EMPRESAS Y CONDUCTORES</span></h1>
-                <p>La red profesional de logística que reúne en un mismo lugar a empresas, chóferes y clientes. Todo lo que necesitas: rutas, documentación, pagos, seguimiento y comunicación. Sin caos, sin papeles sueltos, sin llamadas perdidas.</p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">Comenzar Ahora</a>
-                    <a href="#plataforma" class="btn btn-secondary">Conocer Más</a>
-                </div>
+<section id="features" class="features">
+        <h2 class="section-title">Características <span class="highlight">Principales</span></h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚛</div>
+                <h3>Red Profesional</h3>
+                <p>Trabaja cada día con clientes nuevos sin prospección ni negociaciones interminables. Conecta con empresas y chóferes verificados en segundos.</p>
             </div>
-            <div class="hero-image">
-                <img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
+            <div class="feature-card">
+                <div class="feature-icon">🗺️</div>
+                <h3>Gestión de Rutas</h3>
+                <p>Publica rutas de última hora, grupajes, cargas de retorno o servicios recurrentes. Cubre kilómetros vacíos y optimiza cada trayecto.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>Documentación Centralizada</h3>
+                <p>Toda la documentación verificada en un solo lugar. Sin correos, sin valijas, sin archivos perdidos. Accede a permisos, seguros y certificados al instante.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>Comunicación Interna</h3>
+                <p>Chat seguro, mensajería tipo correo y llamadas integradas. Toda la comunicación con trazabilidad completa sin compartir datos personales.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Centro de Operaciones</h3>
+                <p>Panel en tiempo real para monitorizar servicios activos, gestionar incidencias y tener el control total de tu operativa diaria.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Pagos y Facturación</h3>
+                <p>Sistema económico transparente con pagos garantizados, liberación automática y facturación clara. Todo el historial financiero en un mismo lugar.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Geolocalización</h3>
+                <p>Seguimiento GPS en tiempo real de tus servicios. Visualiza rutas, paradas y ubicaciones durante toda la operación.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <h3>Tacógrafo Digital</h3>
+                <p>Control de jornadas, pausas y descansos con informes de cumplimiento normativo y auditoría exportables en PDF.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Inteligencia Operativa</h3>
+                <p>Analiza errores repetitivos, obtén recomendaciones automáticas y optimiza tu operativa con datos e historiales completos.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-symbol">🕐</div>
-                <div class="stat-label">Disponibilidad 24/7</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">✓</div>
-                <div class="stat-label">Trazabilidad 100%</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">📄</div>
-                <div class="stat-label">Papeles Sueltos 0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">∞</div>
-                <div class="stat-label">Oportunidades</div>
-            </div>
-         </div>
     </section>
 
     <!-- Divisor -->
     <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
-    <!-- Quénes Somos -->
+    <!-- Roles Section -->
     <section 
 <div id="contactFormModal" class="contact-form-modal">
         <div class="contact-form-content">
@@ -1467,167 +1313,45 @@
         });
     </script>
 
-    <div id="cookieBanner" class="cookie-banner">
-        <div class="cookie-text">
-            Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. Si continúa navegando, consideramos que acepta su uso.
-        </div>
-        <div class="cookie-btns">
-            <button onclick="acceptCookies()" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Aceptar</button>
-        </div>
-    </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const esHome =
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("index.html");
 
-    <script>
-        function acceptCookies() {
-            document.getElementById('cookieBanner').classList.remove('active');
-            localStorage.setItem('cookiesAccepted', 'true');
-        }
+  if (!esHome) {
+    const cookies = document.getElementById("cookie-banner");
+    if (cookies) cookies.remove();
+  }
+});
+</script>
 
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) banner.classList.add('active');
-                }, 1000);
-            }
-        });
-    </script>
 
-    <script>
-/* FleetChofer: Mensaje de bienvenida SIEMPRE al entrar/refrescar */
-(function () {
-  function showDevOverlay() {
-    var overlay = document.getElementById('devOverlay');
-    if (!overlay) return;
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".contact-form-modal");
+  const closeBtn = document.querySelector(".form-close");
 
-    // Mostrar (en este archivo el overlay usa .hidden para ocultarse)
-    overlay.classList.remove('hidden');
-
-    // Bloquear scroll mientras está visible
-    document.body.style.overflow = 'hidden';
-
-    // Botones dentro del overlay (sin tocar HTML)
-    var btnClose = overlay.querySelector('.dev-overlay-close');
-    var btnContinue = overlay.querySelector('.dev-overlay-btn');
-
-    function hide() {
-      overlay.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    if (btnClose) btnClose.addEventListener('click', hide);
-    if (btnContinue) btnContinue.addEventListener('click', hide);
-
-    // Cerrar si hacen clic fuera de la tarjeta
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) hide();
+  if (modal) {
+    modal.addEventListener("transitionend", () => {
+      if (modal.classList.contains("active")) {
+        modal.classList.add("vibrar-5s");
+        setTimeout(() => modal.classList.remove("vibrar-5s"), 5000);
+      }
     });
   }
 
-  // Ejecutar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', showDevOverlay);
-  } else {
-    showDevOverlay();
+  if (closeBtn) {
+    closeBtn.addEventListener("mouseenter", () => {
+      closeBtn.classList.add("vibrar-5s");
+      setTimeout(() => closeBtn.classList.remove("vibrar-5s"), 5000);
+    });
   }
-})();
-       </script>
-    <script>
-    (function(){
-        // Crear el modal de cookies dinámicamente
-        function createCookiesModal() {
-            // Crear el contenedor principal
-            const container = document.createElement('div');
-            container.id = 'cookiesContainer';
-            container.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99998;display:none;justify-content:center;align-items:center;';
-            
-            // Crear el modal
-            const modal = document.createElement('div');
-            modal.style.cssText = 'background-color:#1a1a1a;border:3px solid #ff0000;border-radius:15px;padding:50px;max-width:600px;text-align:center;box-shadow:0 0 50px rgba(255,0,0,0.7);font-family:Arial,sans-serif;';
-            
-            // Título
-            const title = document.createElement('h2');
-            title.textContent = 'Política de Cookies';
-            title.style.cssText = 'color:#ff0000;margin:0 0 30px 0;font-size:28px;font-weight:700;';
-            modal.appendChild(title);
-            
-            // Párrafo
-            const text = document.createElement('p');
-            text.textContent = 'Utilizamos cookies para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.';
-            text.style.cssText = 'color:#cccccc;margin:0 0 30px 0;font-size:16px;line-height:1.8;';
-            modal.appendChild(text);
-            
-            // Contenedor de botones
-            const buttonGroup = document.createElement('div');
-            buttonGroup.style.cssText = 'display:flex;gap:20px;justify-content:center;flex-wrap:wrap;';
-            
-            // Botón Aceptar
-            const acceptBtn = document.createElement('button');
-            acceptBtn.textContent = 'Aceptar';
-            acceptBtn.style.cssText = 'padding:15px 40px;background-color:#ff0000;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:background-color 0.3s ease;';
-            acceptBtn.onmouseover = function() { this.style.backgroundColor = '#cc0000'; };
-            acceptBtn.onmouseout = function() { this.style.backgroundColor = '#ff0000'; };
-            acceptBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(acceptBtn);
-            
-            // Botón Rechazar
-            const rejectBtn = document.createElement('button');
-            rejectBtn.textContent = 'Rechazar';
-            rejectBtn.style.cssText = 'padding:15px 40px;background-color:transparent;color:#ff0000;border:3px solid #ff0000;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:all 0.3s ease;';
-            rejectBtn.onmouseover = function() { this.style.backgroundColor = '#ff0000'; this.style.color = 'white'; };
-            rejectBtn.onmouseout = function() { this.style.backgroundColor = 'transparent'; this.style.color = '#ff0000'; };
-            rejectBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(rejectBtn);
-            
-            modal.appendChild(buttonGroup);
-            container.appendChild(modal);
-            
-            return container;
-        }
-        
-        // Esperar a que el DOM esté listo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                const cookiesContainer = createCookiesModal();
-                document.body.appendChild(cookiesContainer);
-                
-                // Mostrar cuando se cierre el devOverlay
-                const devOverlay = document.getElementById('devOverlay');
-                if (devOverlay) {
-                    const checkInterval = setInterval(function() {
-                        const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                        if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                            cookiesContainer.style.display = 'flex';
-                            clearInterval(checkInterval);
-                        }
-                    }, 100);
-                }
-            });
-        } else {
-            const cookiesContainer = createCookiesModal();
-            document.body.appendChild(cookiesContainer);
-            
-            // Mostrar cuando se cierre el devOverlay
-            const devOverlay = document.getElementById('devOverlay');
-            if (devOverlay) {
-                const checkInterval = setInterval(function() {
-                    const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                    if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                        cookiesContainer.style.display = 'flex';
-                        clearInterval(checkInterval);
-                    }
-                }, 100);
-            }
-        }
-    })();
-    </script>
+});
+</script>
 
     <!-- Script de mejoras de scroll snapping y transiciones -->
     <script src="scroll-enhancements.js"></script>
+
 </body>
 </html>

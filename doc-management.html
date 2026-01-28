@@ -719,8 +719,8 @@
         .pilot-banner:hover .pilot-content p { color: rgba(255, 255, 255, 0.9); }
 
         /* Doc Management */
-        .doc-management { position: relative; z-index: 2; padding: 5.5rem 2.5rem; }
-        .doc-management-card { max-width: 1200px; margin: 0 auto; background: rgba(10, 10, 10, 0.7); border-radius: 12px; border: 2px solid var(--rojo-principal); padding: 3.5rem; box-shadow: 0 20px 60px rgba(255, 0, 0, 0.2); }
+        .doc-management { position: relative; z-index: 2; padding: 8rem 2.5rem 5.5rem 2.5rem; }
+        .doc-management-card { max-width: 1200px; margin: 0 auto; background: linear-gradient(135deg, rgba(10,10,10,0.8) 0%, rgba(30,0,0,0.4) 100%); border-radius: 12px; border: 2px solid var(--rojo-principal); padding: 3.5rem; box-shadow: 0 20px 60px rgba(255, 0, 0, 0.2), inset 0 0 40px rgba(255, 0, 0, 0.15); backdrop-filter: blur(15px); }
         .doc-management-card h2 { font-family: 'Inter', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; color: var(--rojo-principal); font-weight: 700; letter-spacing: -0.02em; }
         .doc-management-card p { font-size: 1.02rem; color: rgba(255, 255, 255, 0.75); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
         
@@ -1013,25 +1013,6 @@
             font-weight: 600;
             cursor: pointer;
         }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
     
 @keyframes vibrar {
   0% { transform: translate(0); }
@@ -1098,163 +1079,15 @@
 }
 
 </style>
-
-    <style>
-        .dev-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.98);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            backdrop-filter: blur(8px);
-        }
-        .dev-overlay.hidden { display: none; }
-        .dev-overlay-card {
-            max-width: 600px;
-            background: rgba(10, 10, 10, 0.9);
-            border: 2px solid rgba(255, 0, 0, 0.3);
-            border-radius: 16px;
-            padding: 4rem 3rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.2);
-        }
-        .dev-overlay-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 2rem;
-            cursor: pointer;
-            opacity: 0.6;
-        }
-        .dev-overlay-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; }
-        .dev-overlay-title .highlight { color: #ff0000; }
-        .dev-overlay-text { font-size: 1.05rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 1.2rem; line-height: 1.7; }
-        .dev-overlay-btn {
-            background: #ff0000;
-            color: #000000;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
-    
-@keyframes vibrar {
-  0% { transform: translate(0); }
-  10% { transform: translate(-2px, 2px); }
-  20% { transform: translate(-2px, -2px); }
-  30% { transform: translate(2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  60% { transform: translate(2px, 2px); }
-  70% { transform: translate(-2px, -2px); }
-  80% { transform: translate(2px, -2px); }
-  90% { transform: translate(-1px, 1px); }
-  100% { transform: translate(0); }
-}
-
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
-}
-
-</style>
-
-    <style>
-        .epic-glow-text {
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            animation: epic-glow 2s ease-in-out infinite alternate, epic-blink 1s step-end infinite;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-
-        @keyframes epic-blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        @keyframes epic-glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
-                transform: scale(1);
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
-                transform: scale(1.05);
-            }
-        }
-    
-@keyframes vibrar {
-  0% { transform: translate(0); }
-  10% { transform: translate(-2px, 2px); }
-  20% { transform: translate(-2px, -2px); }
-  30% { transform: translate(2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  60% { transform: translate(2px, 2px); }
-  70% { transform: translate(-2px, -2px); }
-  80% { transform: translate(2px, -2px); }
-  90% { transform: translate(-1px, 1px); }
-  100% { transform: translate(0); }
-}
-
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
-}
-
-</style>
-    <title>Inicio - FleetChofer by Clara</title>
+    <title>Doc-Management - FleetChofer by Clara</title>
     <!-- Mejoras de scroll snapping y transiciones -->
     <link rel="stylesheet" href="scroll-enhancements.css">
 </head>
 <body style="overflow: auto;">
-    <div class="dev-overlay hidden" id="devOverlay">
-        <div class="dev-overlay-card">
-            <button class="dev-overlay-close" onclick="document.getElementById('devOverlay').classList.add('hidden')">×</button>
-            <h2 class="dev-overlay-title">🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo</h2>
-            <p class="dev-overlay-text">Estamos creando una nueva plataforma logística que conecta <strong>chóferes, empresas y cargadores</strong> en una sola red profesional.</p>
-            <p class="dev-overlay-text">Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos, <strong>sin prospección ni negociaciones interminables</strong>.</p>
-            <p class="dev-overlay-text" style="margin-top: 2rem; font-style: italic; font-size: 0.85rem; opacity: 0.8;">La web que estás viendo es informativa. La plataforma completa se activará en breve.</p>
-            <div class="dev-overlay-actions" style="margin-top: 1.5rem;">
-                <button class="dev-overlay-btn" onclick="document.getElementById('devOverlay').classList.add('hidden')">Seguir viendo la web</button>
-            </div>
-        </div>
-    </div>
-
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <img src="logo_new.png" alt="FleetChofer Logo">
+                <img src="images/1.png" alt="FleetChofer Logo">
                 <div class="logo-text">
                     <div class="logo-subtitle" style="font-size: 0.55rem; font-weight: 600; letter-spacing: 0.05em; color: var(--rojo-principal);">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
                 </div>
@@ -1340,48 +1173,83 @@
         });
     </script>
 
-<section id="hero" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>LA LLAMA QUE CONECTA<br><span class="highlight">EMPRESAS Y CONDUCTORES</span></h1>
-                <p>La red profesional de logística que reúne en un mismo lugar a empresas, chóferes y clientes. Todo lo que necesitas: rutas, documentación, pagos, seguimiento y comunicación. Sin caos, sin papeles sueltos, sin llamadas perdidas.</p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">Comenzar Ahora</a>
-                    <a href="#plataforma" class="btn btn-secondary">Conocer Más</a>
+<section id="doc-management" class="doc-management">
+        <div class="doc-management-card">
+            <h2>📂 Gestión documental y creación de perfiles</h2>
+            <p>En FleetChofer creemos que la gestión documental debe ser flexible y adaptarse a cada empresa. Por eso, la creación de perfiles y la gestión de la documentación puede realizarse de dos formas:</p>
+            
+            <div class="options-container">
+                <div class="option">
+                    <h3>👉 Gestión directa por tu parte</h3>
+                    <p>Puedes crear y mantener los perfiles de choferes y vehículos directamente desde la plataforma, gestionando tú mismo la documentación sin coste adicional.</p>
+                </div>
+                <div class="option">
+                    <h3>👉 Gestión acompañada por nuestro equipo</h3>
+                    <p>Si prefieres ahorrar tiempo o delegar este proceso, nuestro equipo puede encargarse de la contratación inicial y mensual de la gestión documental, asegurando que todo esté correctamente creado, organizado y vinculado desde el primer momento.</p>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
+
+
+
+            <div class="pricing-split">
+                <div class="pricing-section">
+                    <h3>💶 Gestión documental inicial</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Servicio de alta inicial de perfiles y documentación para una configuración completa y ordenada desde el inicio, garantizando que toda la información esté correctamente estructurada, ahorrando tiempo y evitando incidencias durante el proceso de alta.</p>
+                    <h4 style="color: var(--blanco); margin-bottom: 1rem; font-weight: 600;">Este servicio incluye:</h4>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Creación del perfil del chófer/vehículo</li>
+                        <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Subida y organización de la documentación del chófer/vehículo</li>
+                        <li style="padding: 0.4rem 0; font-size: 0.95rem; color: rgba(255,255,255,0.7);"><span style="color: var(--rojo-principal); margin-right: 0.8rem; font-weight: bold;">•</span>Vinculación del vehículo con el chofer o la empresa correspondiente</li>
+                    </ul>
+                    <div class="price-tier">
+                        <div class="tier-title">De 1 a 10 perfiles</div>
+                        <div class="tier-prices">• 69 € por chofer<br>• 49 € por vehículo</div>
+                    </div>
+                    <div class="price-tier">
+                        <div class="tier-title">De 11 a 50 perfiles</div>
+                        <div class="tier-prices">• 59 € por chofer<br>• 39 € por vehículo</div>
+                    </div>
+                    <div class="price-tier">
+                        <div class="tier-title">De 51 a 100 perfiles</div>
+                        <div class="tier-prices">• 39 € por chofer<br>• 27 € por vehículo</div>
+                    </div>
+                    <div class="price-tier">
+                        <div class="tier-title">Más de 100 perfiles</div>
+                        <div class="tier-prices">• Precio negociado según volumen y necesidades</div>
+                    </div>
+                </div>
+                <div class="maintenance-section" style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3>🔄 Mantenimiento mensual de documentación</h3>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Para empresas que quieren olvidarse del control documental del día a día, ofrecemos un servicio de mantenimiento mensual por perfil.</p>
+                    <h4>Este servicio incluye:</h4>
+                    <ul>
+                        <li>Renovación de documentos</li>
+                        <li>Sustitución y actualización de archivos</li>
+                        <li>Control de fechas de caducidad</li>
+                        <li>Avisos preventivos y ajustes necesarios</li>
+                    </ul>
+                    <h4>Precios del mantenimiento mensual por perfil</h4>
+                    <div class="price-tier" style="border: none;">
+                        <div class="tier-prices">
+                            • De 1 a 5 perfiles → 49 € / perfil<br>
+                            • De 6 a 20 perfiles → 39 € / perfil<br>
+                            • De 21 a 50 perfiles → 29 € / perfil<br>
+                            • Más de 50 perfiles → precio pactado
+                        </div>
+                    </div>
+                    <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; flex-grow: 1;">
+                      <img src="images/2.png" alt="FleetChofer Logo" style="width: 220px; height: 220px; border-radius: 50%; object-fit: cover;">
+                        <div style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; color: var(--rojo-principal); text-align: center; text-transform: uppercase; max-width: 280px; line-height: 1.5;">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-symbol">🕐</div>
-                <div class="stat-label">Disponibilidad 24/7</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">✓</div>
-                <div class="stat-label">Trazabilidad 100%</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">📄</div>
-                <div class="stat-label">Papeles Sueltos 0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">∞</div>
-                <div class="stat-label">Oportunidades</div>
-            </div>
-         </div>
     </section>
 
     <!-- Divisor -->
     <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
 
-    <!-- Quénes Somos -->
+    <!-- CTA Section -->
     <section 
 <div id="contactFormModal" class="contact-form-modal">
         <div class="contact-form-content">
@@ -1467,167 +1335,21 @@
         });
     </script>
 
-    <div id="cookieBanner" class="cookie-banner">
-        <div class="cookie-text">
-            Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. Si continúa navegando, consideramos que acepta su uso.
-        </div>
-        <div class="cookie-btns">
-            <button onclick="acceptCookies()" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Aceptar</button>
-        </div>
-    </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const esHome =
+    window.location.pathname === "/" ||
+    window.location.pathname.endsWith("index.html");
 
-    <script>
-        function acceptCookies() {
-            document.getElementById('cookieBanner').classList.remove('active');
-            localStorage.setItem('cookiesAccepted', 'true');
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) banner.classList.add('active');
-                }, 1000);
-            }
-        });
-    </script>
-
-    <script>
-/* FleetChofer: Mensaje de bienvenida SIEMPRE al entrar/refrescar */
-(function () {
-  function showDevOverlay() {
-    var overlay = document.getElementById('devOverlay');
-    if (!overlay) return;
-
-    // Mostrar (en este archivo el overlay usa .hidden para ocultarse)
-    overlay.classList.remove('hidden');
-
-    // Bloquear scroll mientras está visible
-    document.body.style.overflow = 'hidden';
-
-    // Botones dentro del overlay (sin tocar HTML)
-    var btnClose = overlay.querySelector('.dev-overlay-close');
-    var btnContinue = overlay.querySelector('.dev-overlay-btn');
-
-    function hide() {
-      overlay.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    if (btnClose) btnClose.addEventListener('click', hide);
-    if (btnContinue) btnContinue.addEventListener('click', hide);
-
-    // Cerrar si hacen clic fuera de la tarjeta
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) hide();
-    });
+  if (!esHome) {
+    const cookies = document.getElementById("cookie-banner");
+    if (cookies) cookies.remove();
   }
-
-  // Ejecutar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', showDevOverlay);
-  } else {
-    showDevOverlay();
-  }
-})();
-       </script>
-    <script>
-    (function(){
-        // Crear el modal de cookies dinámicamente
-        function createCookiesModal() {
-            // Crear el contenedor principal
-            const container = document.createElement('div');
-            container.id = 'cookiesContainer';
-            container.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99998;display:none;justify-content:center;align-items:center;';
-            
-            // Crear el modal
-            const modal = document.createElement('div');
-            modal.style.cssText = 'background-color:#1a1a1a;border:3px solid #ff0000;border-radius:15px;padding:50px;max-width:600px;text-align:center;box-shadow:0 0 50px rgba(255,0,0,0.7);font-family:Arial,sans-serif;';
-            
-            // Título
-            const title = document.createElement('h2');
-            title.textContent = 'Política de Cookies';
-            title.style.cssText = 'color:#ff0000;margin:0 0 30px 0;font-size:28px;font-weight:700;';
-            modal.appendChild(title);
-            
-            // Párrafo
-            const text = document.createElement('p');
-            text.textContent = 'Utilizamos cookies para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.';
-            text.style.cssText = 'color:#cccccc;margin:0 0 30px 0;font-size:16px;line-height:1.8;';
-            modal.appendChild(text);
-            
-            // Contenedor de botones
-            const buttonGroup = document.createElement('div');
-            buttonGroup.style.cssText = 'display:flex;gap:20px;justify-content:center;flex-wrap:wrap;';
-            
-            // Botón Aceptar
-            const acceptBtn = document.createElement('button');
-            acceptBtn.textContent = 'Aceptar';
-            acceptBtn.style.cssText = 'padding:15px 40px;background-color:#ff0000;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:background-color 0.3s ease;';
-            acceptBtn.onmouseover = function() { this.style.backgroundColor = '#cc0000'; };
-            acceptBtn.onmouseout = function() { this.style.backgroundColor = '#ff0000'; };
-            acceptBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(acceptBtn);
-            
-            // Botón Rechazar
-            const rejectBtn = document.createElement('button');
-            rejectBtn.textContent = 'Rechazar';
-            rejectBtn.style.cssText = 'padding:15px 40px;background-color:transparent;color:#ff0000;border:3px solid #ff0000;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:all 0.3s ease;';
-            rejectBtn.onmouseover = function() { this.style.backgroundColor = '#ff0000'; this.style.color = 'white'; };
-            rejectBtn.onmouseout = function() { this.style.backgroundColor = 'transparent'; this.style.color = '#ff0000'; };
-            rejectBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(rejectBtn);
-            
-            modal.appendChild(buttonGroup);
-            container.appendChild(modal);
-            
-            return container;
-        }
-        
-        // Esperar a que el DOM esté listo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                const cookiesContainer = createCookiesModal();
-                document.body.appendChild(cookiesContainer);
-                
-                // Mostrar cuando se cierre el devOverlay
-                const devOverlay = document.getElementById('devOverlay');
-                if (devOverlay) {
-                    const checkInterval = setInterval(function() {
-                        const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                        if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                            cookiesContainer.style.display = 'flex';
-                            clearInterval(checkInterval);
-                        }
-                    }, 100);
-                }
-            });
-        } else {
-            const cookiesContainer = createCookiesModal();
-            document.body.appendChild(cookiesContainer);
-            
-            // Mostrar cuando se cierre el devOverlay
-            const devOverlay = document.getElementById('devOverlay');
-            if (devOverlay) {
-                const checkInterval = setInterval(function() {
-                    const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                    if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                        cookiesContainer.style.display = 'flex';
-                        clearInterval(checkInterval);
-                    }
-                }, 100);
-            }
-        }
-    })();
-    </script>
+});
+</script>
 
     <!-- Script de mejoras de scroll snapping y transiciones -->
     <script src="scroll-enhancements.js"></script>
+
 </body>
 </html>

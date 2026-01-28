@@ -568,9 +568,16 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-top: 2rem;
+        }
+        
+        #plans-chofer .pricing-grid {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pricing-card {
@@ -924,25 +931,7 @@
             .footer-content { grid-template-columns: repeat(2, 1fr); }
             .nav-links { display: none; }
         }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
+
     
 @keyframes vibrar {
   0% { transform: translate(0); }
@@ -962,6 +951,24 @@
   animation: vibrar 0.1s infinite;
 }
 
+
+@keyframes pilot-vibrate {
+  0% { transform: translate(0); }
+  10% { transform: translate(-2px, 2px); }
+  20% { transform: translate(-2px, -2px); }
+  30% { transform: translate(2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  60% { transform: translate(2px, 2px); }
+  70% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, -2px); }
+  90% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.pilot-vibrate {
+  animation: pilot-vibrate 0.1s infinite 5s;
+}
 </style>
 
     <style>
@@ -988,6 +995,7 @@
             text-align: center;
             position: relative;
             box-shadow: 0 0 60px rgba(255, 0, 0, 0.2);
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) 5s 1;
         }
         .dev-overlay-close {
             position: absolute;
@@ -1013,25 +1021,6 @@
             font-weight: 600;
             cursor: pointer;
         }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
     
 @keyframes vibrar {
   0% { transform: translate(0); }
@@ -1051,6 +1040,24 @@
   animation: vibrar 0.1s infinite;
 }
 
+
+@keyframes pilot-vibrate {
+  0% { transform: translate(0); }
+  10% { transform: translate(-2px, 2px); }
+  20% { transform: translate(-2px, -2px); }
+  30% { transform: translate(2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  60% { transform: translate(2px, 2px); }
+  70% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, -2px); }
+  90% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.pilot-vibrate {
+  animation: pilot-vibrate 0.1s infinite 5s;
+}
 </style>
 
     <style>
@@ -1078,6 +1085,16 @@
                 transform: scale(1.05);
             }
         }
+
+        /* Pilot Banner */
+        .pilot-banner { position: relative; z-index: 2; padding: 5.5rem 2.5rem; background: linear-gradient(135deg, rgba(255, 0, 0, 0.05), rgba(0, 0, 0, 0.2)); }
+        .pilot-content { max-width: 1200px; margin: 0 auto; background: rgba(10, 10, 10, 0.8); border-radius: 12px; border: 2px solid rgba(255, 0, 0, 0.3); padding: 3.5rem; text-align: center; transition: all 0.4s ease; box-shadow: 0 10px 40px rgba(255, 0, 0, 0.1); }
+        .pilot-banner:hover .pilot-content { border: 2px solid var(--rojo-principal); background: rgba(10, 10, 10, 0.95); box-shadow: 0 0 60px rgba(255, 0, 0, 0.4), inset 0 0 40px rgba(255, 0, 0, 0.08); transform: translateY(-8px); animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; }
+        @keyframes shake { 10%, 90% { transform: translate3d(-1px, -8px, 0); } 20%, 80% { transform: translate3d(2px, -8px, 0); } 30%, 50%, 70% { transform: translate3d(-4px, -8px, 0); } 40%, 60% { transform: translate3d(4px, -8px, 0); } }
+        .pilot-content h2 { font-family: 'Inter', sans-serif; font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--rojo-principal); font-weight: 700; letter-spacing: -0.02em; transition: all 0.3s ease; text-shadow: 0 0 20px rgba(255, 0, 0, 0.3); }
+        .pilot-banner:hover .pilot-content h2 { text-shadow: 0 0 40px rgba(255, 0, 0, 0.6); transform: scale(1.05); }
+        .pilot-content p { font-size: 1.05rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 2rem; line-height: 1.7; font-weight: 300; transition: color 0.3s ease; }
+        .pilot-banner:hover .pilot-content p { color: rgba(255, 255, 255, 0.9); }
     
 @keyframes vibrar {
   0% { transform: translate(0); }
@@ -1097,78 +1114,8 @@
   animation: vibrar 0.1s infinite;
 }
 
-</style>
 
-    <style>
-        .dev-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.98);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-            backdrop-filter: blur(8px);
-        }
-        .dev-overlay.hidden { display: none; }
-        .dev-overlay-card {
-            max-width: 600px;
-            background: rgba(10, 10, 10, 0.9);
-            border: 2px solid rgba(255, 0, 0, 0.3);
-            border-radius: 16px;
-            padding: 4rem 3rem;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 0 60px rgba(255, 0, 0, 0.2);
-        }
-        .dev-overlay-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 2rem;
-            cursor: pointer;
-            opacity: 0.6;
-        }
-        .dev-overlay-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; color: #ffffff; }
-        .dev-overlay-title .highlight { color: #ff0000; }
-        .dev-overlay-text { font-size: 1.05rem; color: rgba(255, 255, 255, 0.75); margin-bottom: 1.2rem; line-height: 1.7; }
-        .dev-overlay-btn {
-            background: #ff0000;
-            color: #000000;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-        /* Cookie Banner */
-        .cookie-banner {
-            position: fixed;
-            bottom: -100%;
-            left: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--rojo-principal);
-            padding: 1.5rem 2.5rem;
-            z-index: 10000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: bottom 0.5s ease;
-        }
-        .cookie-banner.active { bottom: 0; }
-        .cookie-text { font-size: 0.9rem; color: rgba(255,255,255,0.8); max-width: 800px; }
-        .cookie-btns { display: flex; gap: 1rem; }
-    
-@keyframes vibrar {
+@keyframes pilot-vibrate {
   0% { transform: translate(0); }
   10% { transform: translate(-2px, 2px); }
   20% { transform: translate(-2px, -2px); }
@@ -1182,79 +1129,19 @@
   100% { transform: translate(0); }
 }
 
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
+.pilot-vibrate {
+  animation: pilot-vibrate 0.1s infinite 5s;
 }
-
 </style>
-
-    <style>
-        .epic-glow-text {
-            color: #fff;
-            text-align: center;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            animation: epic-glow 2s ease-in-out infinite alternate, epic-blink 1s step-end infinite;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-
-        @keyframes epic-blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
-        }
-        @keyframes epic-glow {
-            from {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
-                transform: scale(1);
-            }
-            to {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
-                transform: scale(1.05);
-            }
-        }
-    
-@keyframes vibrar {
-  0% { transform: translate(0); }
-  10% { transform: translate(-2px, 2px); }
-  20% { transform: translate(-2px, -2px); }
-  30% { transform: translate(2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  50% { transform: translate(-2px, 2px); }
-  60% { transform: translate(2px, 2px); }
-  70% { transform: translate(-2px, -2px); }
-  80% { transform: translate(2px, -2px); }
-  90% { transform: translate(-1px, 1px); }
-  100% { transform: translate(0); }
-}
-
-.vibrar-5s {
-  animation: vibrar 0.1s infinite;
-}
-
-</style>
-    <title>Inicio - FleetChofer by Clara</title>
+    <title>Roles - FleetChofer by Clara</title>
     <!-- Mejoras de scroll snapping y transiciones -->
     <link rel="stylesheet" href="scroll-enhancements.css">
 </head>
 <body style="overflow: auto;">
-    <div class="dev-overlay hidden" id="devOverlay">
-        <div class="dev-overlay-card">
-            <button class="dev-overlay-close" onclick="document.getElementById('devOverlay').classList.add('hidden')">×</button>
-            <h2 class="dev-overlay-title">🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo</h2>
-            <p class="dev-overlay-text">Estamos creando una nueva plataforma logística que conecta <strong>chóferes, empresas y cargadores</strong> en una sola red profesional.</p>
-            <p class="dev-overlay-text">Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos, <strong>sin prospección ni negociaciones interminables</strong>.</p>
-            <p class="dev-overlay-text" style="margin-top: 2rem; font-style: italic; font-size: 0.85rem; opacity: 0.8;">La web que estás viendo es informativa. La plataforma completa se activará en breve.</p>
-            <div class="dev-overlay-actions" style="margin-top: 1.5rem;">
-                <button class="dev-overlay-btn" onclick="document.getElementById('devOverlay').classList.add('hidden')">Seguir viendo la web</button>
-            </div>
-        </div>
-    </div>
-
     <header>
         <nav>
             <a href="index.html" class="logo">
-                <img src="logo_new.png" alt="FleetChofer Logo">
+                <img src="images/1.png" alt="FleetChofer Logo">
                 <div class="logo-text">
                     <div class="logo-subtitle" style="font-size: 0.55rem; font-weight: 600; letter-spacing: 0.05em; color: var(--rojo-principal);">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
                 </div>
@@ -1322,6 +1209,24 @@
   animation: vibrar 0.1s infinite;
 }
 
+
+@keyframes pilot-vibrate {
+  0% { transform: translate(0); }
+  10% { transform: translate(-2px, 2px); }
+  20% { transform: translate(-2px, -2px); }
+  30% { transform: translate(2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  50% { transform: translate(-2px, 2px); }
+  60% { transform: translate(2px, 2px); }
+  70% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, -2px); }
+  90% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.pilot-vibrate {
+  animation: pilot-vibrate 0.1s infinite 5s;
+}
 </style>
     
     <button class="floating-button-custom" id="floatingBtnCustom">
@@ -1340,49 +1245,270 @@
         });
     </script>
 
-<section id="hero" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>LA LLAMA QUE CONECTA<br><span class="highlight">EMPRESAS Y CONDUCTORES</span></h1>
-                <p>La red profesional de logística que reúne en un mismo lugar a empresas, chóferes y clientes. Todo lo que necesitas: rutas, documentación, pagos, seguimiento y comunicación. Sin caos, sin papeles sueltos, sin llamadas perdidas.</p>
-                <div class="cta-buttons">
-                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">Comenzar Ahora</a>
-                    <a href="#plataforma" class="btn btn-secondary">Conocer Más</a>
-                </div>
+    <!-- Pilot Banner Modal -->
+    <div class="dev-overlay" id="pilotOverlay" class="pilot-vibrate">
+        <div class="dev-overlay-card">
+            <button class="dev-overlay-close" onclick="document.getElementById('pilotOverlay').classList.add('hidden')">×</button>
+            <h2 class="dev-overlay-title">🚀 <span class="highlight">Participa en la fase piloto</span></h2>
+            <p class="dev-overlay-text">Buscamos empresas y profesionales del sector logístico para probar FleetChofer by Clara, aportar feedback real y ayudarnos a construir una herramienta adaptada al día a día de la operativa.</p>
+            <p class="dev-overlay-text">Estamos en fase de lanzamiento con un grupo selecto de usuarios. Únete y accede de forma anticipada con condiciones especiales y beneficios exclusivos como miembro inicial de la comunidad FleetChofer.</p>
+            <div class="dev-overlay-actions" style="margin-top: 1.5rem;">
+                <a href="https://wa.me/34679362474" target="_blank" class="dev-overlay-btn" style="display: inline-block; text-decoration: none;">Solicitar Acceso</a>
             </div>
-            <div class="hero-image">
-                <img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
+        </div>
+    </div>
+
+<section id="roles" class="roles-pricing">
+        <h2 class="section-title">Soluciones para <span class="highlight">Cada Perfil</span></h2>
+        <p style="text-align: center; font-size: 1.05rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 3.5rem; font-weight: 300; letter-spacing: 0.02em;"><span class="epic-glow-text">¡¡Haz clic en tu perfil para conocer tu plan!!</span></p>
+        <div class="roles-grid">
+            <!-- Tarjeta Chófer -->
+            <div class="role-card chofer" onclick="openPlans('chofer')">
+                <div class="role-icon">🚛</div>
+                <h3>Chóferes</h3>
+                <p class="role-description">Tu perfil profesional verificado, visible para miles de empresas</p>
+                <ul class="role-features">
+                    <li>Accede a rutas diarias sin buscar clientes</li>
+                    <li>Tu documentación siempre actualizada</li>
+                    <li>Gestiona tus servicios y pagos</li>
+                    <li>Construye tu reputación profesional</li>
+                    <li>Cubre kilómetros de retorno</li>
+                    <li>Comunícate de forma segura</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Empresa Logística -->
+            <div class="role-card empresa" onclick="openPlans('empresa')">
+                <div class="role-icon">🏭</div>
+                <h3>Empresas Logísticas</h3>
+                <p class="role-description">Gestiona tu flota, chóferes y operaciones desde un solo lugar</p>
+                <ul class="role-features">
+                    <li>Publica y asigna rutas en segundos</li>
+                    <li>Accede a chóferes verificados 24/7</li>
+                    <li>Centro de operaciones en tiempo real</li>
+                    <li>Documentación corporativa centralizada</li>
+                    <li>CRM especializado en logística</li>
+                    <li>Control total de incidencias</li>
+                </ul>
+            </div>
+
+            <!-- Tarjeta Empresa Cargadora -->
+            <div class="role-card cargadora" onclick="openPlans('cargadora')">
+                <div class="role-icon">📦</div>
+                <h3>Empresas Cargadoras</h3>
+                <p class="role-description">Encuentra el servicio logístico perfecto para cada envío</p>
+                <ul class="role-features">
+                    <li>Publica necesidades y recibe ofertas</li>
+                    <li>Revisa perfiles y documentación</li>
+                    <li>Seguimiento completo de mercancía</li>
+                    <li>Comunicación directa y segura</li>
+                    <li>Gestión de incidencias</li>
+                    <li>Historial de envíos</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-symbol">🕐</div>
-                <div class="stat-label">Disponibilidad 24/7</div>
+    <!-- Plans Overlay -->
+    <div class="plans-overlay" id="plansOverlay">
+        <button class="plans-close" id="plansClose">✕</button>
+        
+        <!-- Planes Chófer -->
+        <div class="profile-plans" id="plans-chofer">
+            <h2 class="section-title">🚛 Planes para <span class="highlight">Chóferes</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Plan Free</div>
+                    <div class="plan-price">0€<span>/mes</span></div>
+                    <div class="plan-users">👤 1 Usuario incluido</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Perfil creado y visible en la plataforma</li>
+                        <li>Subida y gestión de su propia documentación</li>
+                        <li>Acceso a la plataforma</li>
+                        <li>Mensajes, chat y notificaciones</li>
+                        <li>Acceso a rutas limitadas (2 rutas al mes)</li>
+                        <li class="excluded">Sistema de reputación</li>
+                        <li class="excluded">Prioridad en asignación de rutas</li>
+                        <li class="excluded">Acceso a rutas ilimitadas</li>
+                        <li class="excluded">Historial completo de rutas</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Comenzar Gratis</a>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="plan-name">Plan Pro Chófer</div>
+                    <div class="plan-price">49€<span>/mes</span></div>
+                    <div class="plan-users">👤 1 Usuario incluido</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Perfil profesional destacado</li>
+                        <li>Acceso a rutas ilimitadas</li>
+                        <li>Prioridad en asignación de rutas</li>
+                        <li>Historial completo de rutas</li>
+                        <li>Sistema de reputación</li>
+                        <li>Finanzas y tacógrafo</li>
+                        <li>Inteligencia operativa completa</li>
+                        <li>CRM profesional</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
             </div>
-            <div class="stat-item">
-                <div class="stat-symbol">✓</div>
-                <div class="stat-label">Trazabilidad 100%</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">📄</div>
-                <div class="stat-label">Papeles Sueltos 0</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-symbol">∞</div>
-                <div class="stat-label">Oportunidades</div>
-            </div>
-         </div>
-    </section>
+        </div>
 
-    <!-- Divisor -->
-    <div style="width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--rojo-principal), transparent); box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);"></div>
+        <!-- Planes Empresa Logística -->
+        <div class="profile-plans" id="plans-empresa">
+            <h2 class="section-title">🏭 Planes para <span class="highlight">Empresas Logísticas</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Plan Free</div>
+                    <div class="plan-price">0€<span>/mes</span></div>
+                    <div class="plan-users">👤 1 Usuario incluido</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Acceso a la plataforma</li>
+                        <li>Creación de perfil de empresa</li>
+                        <li>Gestión de hasta 5 choferes y 5 vehículos</li>
+                        <li>Publicación de hasta 2 rutas al mes</li>
+                        <li>Mensajes, chat y notificaciones</li>
+                        <li>Solicitar 2 rutas</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Comenzar Gratis</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Plan Operativo</div>
+                    <div class="plan-price">249€<span>/mes</span></div>
+                    <div class="plan-users">👤 2 Usuarios incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/usuario adicional</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Rutas activas ilimitadas</li>
+                        <li>Panel de control operativo</li>
+                        <li>Check operativo en tiempo real</li>
+                        <li>Solicitar 5 rutas</li>
+                        <li>Gestión de Flota:
+                            <div class="nested-feature">• 1-5 perfiles → 0€/perfil</div>
+                            <div class="nested-feature">• 6-20 perfiles → 15€/perfil</div>
+                            <div class="nested-feature">• 21-50 perfiles → 12€/perfil</div>
+                            <div class="nested-feature">• +50 perfiles → Precio a definir</div>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="plan-name">Plan Pro Empresa</div>
+                    <div class="plan-price">399€<span>/mes</span></div>
+                    <div class="plan-users">👤 5 Usuarios incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/usuario adicional</div>
+                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
+                    <ul class="plan-features">
+                        <li>Priorización en rutas</li>
+                        <li>Acceso a chóferes premium</li>
+                        <li>Centro de inteligencia completa</li>
+                        <li>Solicitar Rutas Ilimitadas</li>
+                        <li>Sistema de Reputación</li>
+                        <li>CRM FleetChofer Ilimitado</li>
+                        <li>Gestión de flota ilimitada</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+            </div>
+        </div>
 
-    <!-- Quénes Somos -->
-    <section 
+        <!-- Planes Empresa Cargadora -->
+        <div class="profile-plans" id="plans-cargadora">
+            <h2 class="section-title">📦 Planes para <span class="highlight">Empresas Cargadoras</span></h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Plan Free</div>
+                    <div class="plan-price">0€<span>/mes</span></div>
+                    <div class="plan-users">👤 1 Usuario incluido</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Acceso a la plataforma</li>
+                        <li>Publicación de hasta 2 rutas</li>
+                        <li>Visualización de rutas activas</li>
+                        <li>Confirmación de carga y descarga</li>
+                        <li>Mensajes, chat y notificaciones</li>
+                        <li>Historial básico de envíos</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Comenzar Gratis</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Plan Plus</div>
+                    <div class="plan-price">99€<span>/mes</span></div>
+                    <div class="plan-users">👤 2 Usuarios incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/perfil</div>
+                    <div class="features-title">INCLUYE</div>
+                    <ul class="plan-features">
+                        <li>Seguimiento detallado de rutas</li>
+                        <li>Gestión de incidencias en tiempo real</li>
+                        <li>Historial completo de envíos</li>
+                        <li>Panel de control Propio</li>
+                        <li>Gestión de Flota:
+                            <div class="nested-feature">• 1-5 perfiles → 0€/perfil</div>
+                            <div class="nested-feature">• 6-20 perfiles → 15€/perfil</div>
+                            <div class="nested-feature">• 21-50 perfiles → 12€/perfil</div>
+                            <div class="nested-feature">• +50 perfiles → Precio a definir</div>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+                <div class="pricing-card recommended">
+                    <div class="plan-name">Plan Pro Logístico</div>
+                    <div class="plan-price">249€<span>/mes</span></div>
+                    <div class="plan-users">👤 5 Perfiles incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/perfil adicional</div>
+                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
+                    <ul class="plan-features">
+                        <li>Gestión de rutas internas (flota propia)</li>
+                        <li>Sistema de Reputación</li>
+                        <li>CRM FleetChofer ilimitado</li>
+                        <li>Centro de Inteligencia completa</li>
+                        <li>Gestión de flota ilimitada</li>
+                        <li>Priorización de rutas</li>
+                        <li>Acceso a chóferes premium</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function openPlans(profileType) {
+        const overlay = document.getElementById('plansOverlay');
+        const allPlans = document.querySelectorAll('.profile-plans');
+        allPlans.forEach(plan => plan.classList.remove('active'));
+        
+        const targetPlan = document.getElementById(`plans-${profileType}`);
+        if (targetPlan) {
+            targetPlan.classList.add('active');
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    const plansClose = document.getElementById('plansClose');
+    const plansOverlay = document.getElementById('plansOverlay');
+
+    if (plansClose) {
+        plansClose.addEventListener('click', () => {
+            plansOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    if (plansOverlay) {
+        plansOverlay.addEventListener('click', (e) => {
+            if (e.target === plansOverlay) {
+                plansOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+</script>
+
 <div id="contactFormModal" class="contact-form-modal">
         <div class="contact-form-content">
             <button class="form-close" onclick="closeContactForm()">×</button>
@@ -1467,167 +1593,10 @@
         });
     </script>
 
-    <div id="cookieBanner" class="cookie-banner">
-        <div class="cookie-text">
-            Utilizamos cookies propias y de terceros para mejorar nuestros servicios y mostrarle publicidad relacionada con sus preferencias mediante el análisis de sus hábitos de navegación. Si continúa navegando, consideramos que acepta su uso.
-        </div>
-        <div class="cookie-btns">
-            <button onclick="acceptCookies()" class="btn btn-primary" style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Aceptar</button>
-        </div>
-    </div>
 
-    <script>
-        function acceptCookies() {
-            document.getElementById('cookieBanner').classList.remove('active');
-            localStorage.setItem('cookiesAccepted', 'true');
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    const banner = document.getElementById('cookieBanner');
-                    if (banner) banner.classList.add('active');
-                }, 1000);
-            }
-        });
-    </script>
-
-    <script>
-/* FleetChofer: Mensaje de bienvenida SIEMPRE al entrar/refrescar */
-(function () {
-  function showDevOverlay() {
-    var overlay = document.getElementById('devOverlay');
-    if (!overlay) return;
-
-    // Mostrar (en este archivo el overlay usa .hidden para ocultarse)
-    overlay.classList.remove('hidden');
-
-    // Bloquear scroll mientras está visible
-    document.body.style.overflow = 'hidden';
-
-    // Botones dentro del overlay (sin tocar HTML)
-    var btnClose = overlay.querySelector('.dev-overlay-close');
-    var btnContinue = overlay.querySelector('.dev-overlay-btn');
-
-    function hide() {
-      overlay.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    if (btnClose) btnClose.addEventListener('click', hide);
-    if (btnContinue) btnContinue.addEventListener('click', hide);
-
-    // Cerrar si hacen clic fuera de la tarjeta
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) hide();
-    });
-  }
-
-  // Ejecutar cuando el DOM esté listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', showDevOverlay);
-  } else {
-    showDevOverlay();
-  }
-})();
-       </script>
-    <script>
-    (function(){
-        // Crear el modal de cookies dinámicamente
-        function createCookiesModal() {
-            // Crear el contenedor principal
-            const container = document.createElement('div');
-            container.id = 'cookiesContainer';
-            container.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:99998;display:none;justify-content:center;align-items:center;';
-            
-            // Crear el modal
-            const modal = document.createElement('div');
-            modal.style.cssText = 'background-color:#1a1a1a;border:3px solid #ff0000;border-radius:15px;padding:50px;max-width:600px;text-align:center;box-shadow:0 0 50px rgba(255,0,0,0.7);font-family:Arial,sans-serif;';
-            
-            // Título
-            const title = document.createElement('h2');
-            title.textContent = 'Política de Cookies';
-            title.style.cssText = 'color:#ff0000;margin:0 0 30px 0;font-size:28px;font-weight:700;';
-            modal.appendChild(title);
-            
-            // Párrafo
-            const text = document.createElement('p');
-            text.textContent = 'Utilizamos cookies para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.';
-            text.style.cssText = 'color:#cccccc;margin:0 0 30px 0;font-size:16px;line-height:1.8;';
-            modal.appendChild(text);
-            
-            // Contenedor de botones
-            const buttonGroup = document.createElement('div');
-            buttonGroup.style.cssText = 'display:flex;gap:20px;justify-content:center;flex-wrap:wrap;';
-            
-            // Botón Aceptar
-            const acceptBtn = document.createElement('button');
-            acceptBtn.textContent = 'Aceptar';
-            acceptBtn.style.cssText = 'padding:15px 40px;background-color:#ff0000;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:background-color 0.3s ease;';
-            acceptBtn.onmouseover = function() { this.style.backgroundColor = '#cc0000'; };
-            acceptBtn.onmouseout = function() { this.style.backgroundColor = '#ff0000'; };
-            acceptBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(acceptBtn);
-            
-            // Botón Rechazar
-            const rejectBtn = document.createElement('button');
-            rejectBtn.textContent = 'Rechazar';
-            rejectBtn.style.cssText = 'padding:15px 40px;background-color:transparent;color:#ff0000;border:3px solid #ff0000;border-radius:8px;cursor:pointer;font-weight:700;font-size:16px;font-family:Arial,sans-serif;transition:all 0.3s ease;';
-            rejectBtn.onmouseover = function() { this.style.backgroundColor = '#ff0000'; this.style.color = 'white'; };
-            rejectBtn.onmouseout = function() { this.style.backgroundColor = 'transparent'; this.style.color = '#ff0000'; };
-            rejectBtn.onclick = function() {
-                container.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-            };
-            buttonGroup.appendChild(rejectBtn);
-            
-            modal.appendChild(buttonGroup);
-            container.appendChild(modal);
-            
-            return container;
-        }
-        
-        // Esperar a que el DOM esté listo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', function() {
-                const cookiesContainer = createCookiesModal();
-                document.body.appendChild(cookiesContainer);
-                
-                // Mostrar cuando se cierre el devOverlay
-                const devOverlay = document.getElementById('devOverlay');
-                if (devOverlay) {
-                    const checkInterval = setInterval(function() {
-                        const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                        if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                            cookiesContainer.style.display = 'flex';
-                            clearInterval(checkInterval);
-                        }
-                    }, 100);
-                }
-            });
-        } else {
-            const cookiesContainer = createCookiesModal();
-            document.body.appendChild(cookiesContainer);
-            
-            // Mostrar cuando se cierre el devOverlay
-            const devOverlay = document.getElementById('devOverlay');
-            if (devOverlay) {
-                const checkInterval = setInterval(function() {
-                    const devOverlayStyle = window.getComputedStyle(devOverlay).display;
-                    if (devOverlayStyle === 'none' && !localStorage.getItem('cookiesAccepted')) {
-                        cookiesContainer.style.display = 'flex';
-                        clearInterval(checkInterval);
-                    }
-                }, 100);
-            }
-        }
-    })();
-    </script>
 
     <!-- Script de mejoras de scroll snapping y transiciones -->
     <script src="scroll-enhancements.js"></script>
+
 </body>
 </html>

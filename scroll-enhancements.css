@@ -1,0 +1,360 @@
+/* ========================================
+   SCROLL SNAPPING Y TRANSICIONES SUTILES
+   FleetChofer by Clara - Mejoras 2026
+   ======================================== */
+
+/* Configuración base para scroll snapping */
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+/* Aplicar scroll snap a las secciones principales */
+.hero,
+.stats,
+.plataforma-descripcion,
+.features,
+.roles-pricing,
+.security,
+.pilot-banner,
+.doc-management,
+.cta-section,
+.contact,
+footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Excepciones para secciones que no necesitan 100vh */
+.stats {
+    min-height: auto;
+    scroll-snap-stop: normal;
+    scroll-snap-align: center;
+}
+
+/* Divisor visual - no hace snap */
+div[style*="height: 2px"] {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    min-height: auto;
+}
+
+/* ========================================
+   TRANSICIONES SUTILES AL ENTRAR
+   ======================================== */
+
+/* Animación de entrada suave para secciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplicar animaciones a elementos principales */
+.hero-content {
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.hero-image {
+    animation: fadeInDown 0.8s ease-out 0.3s both;
+}
+
+.stats-grid {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.descripcion-contenido {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.features-grid > .feature-card {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.features-grid > .feature-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.features-grid > .feature-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.roles-grid > .role-card {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.roles-grid > .role-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.roles-grid > .role-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.security-content {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.security-features > .security-item {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.security-features > .security-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.security-features > .security-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.pilot-content {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.doc-management-card {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-content {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.contact-grid > .contact-card {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.contact-grid > .contact-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.footer-content {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* ========================================
+   OPTIMIZACIÓN PARA MÓVIL
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* Reducir animaciones en móvil */
+    @keyframes fadeInUpMobile {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInDownMobile {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Aplicar animaciones más lentas en móvil */
+    .hero-content {
+        animation: fadeInUpMobile 1s ease-out 0.1s both;
+    }
+
+    .hero-image {
+        animation: fadeInDownMobile 1s ease-out 0.3s both;
+    }
+
+    .stats-grid {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .descripcion-contenido {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .features-grid > .feature-card {
+        animation: fadeInUpMobile 1s ease-out !important;
+    }
+
+    .features-grid > .feature-card:nth-child(2) {
+        animation-delay: 0.15s !important;
+    }
+
+    .features-grid > .feature-card:nth-child(3) {
+        animation-delay: 0.3s !important;
+    }
+
+    .roles-grid > .role-card {
+        animation: fadeInUpMobile 1s ease-out !important;
+    }
+
+    .roles-grid > .role-card:nth-child(2) {
+        animation-delay: 0.15s !important;
+    }
+
+    .roles-grid > .role-card:nth-child(3) {
+        animation-delay: 0.3s !important;
+    }
+
+    .security-content {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .security-features > .security-item {
+        animation: fadeInUpMobile 1s ease-out !important;
+    }
+
+    .security-features > .security-item:nth-child(2) {
+        animation-delay: 0.15s !important;
+    }
+
+    .security-features > .security-item:nth-child(3) {
+        animation-delay: 0.3s !important;
+    }
+
+    .pilot-content {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .doc-management-card {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .cta-content {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    .contact-grid > .contact-card {
+        animation: fadeInUpMobile 1s ease-out !important;
+    }
+
+    .contact-grid > .contact-card:nth-child(2) {
+        animation-delay: 0.15s !important;
+    }
+
+    .footer-content {
+        animation: fadeInUpMobile 1s ease-out 0.2s both;
+    }
+
+    /* Reducir velocidad de animaciones existentes en móvil */
+    @keyframes floatImageMobile {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .hero-image img {
+        animation: floatImageMobile 5s ease-in-out infinite;
+    }
+
+    @keyframes securityScrollMobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .security-track {
+        animation: securityScrollMobile 60s linear infinite;
+    }
+
+    /* Desactivar scroll snapping en móvil para mejor UX */
+    html {
+        scroll-snap-type: none;
+    }
+
+    .hero,
+    .stats,
+    .plataforma-descripcion,
+    .features,
+    .roles-pricing,
+    .security,
+    .pilot-banner,
+    .doc-management,
+    .cta-section,
+    .contact,
+    footer {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+        min-height: auto;
+    }
+}
+
+/* ========================================
+   TRANSICIONES SUAVES EN HOVER
+   ======================================== */
+
+.feature-card,
+.role-card,
+.security-item,
+.contact-card,
+.pricing-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   MEJORAS DE RENDIMIENTO
+   ======================================== */
+
+/* Usar will-change para optimizar animaciones */
+.hero-content,
+.hero-image,
+.stats-grid,
+.descripcion-contenido,
+.features-grid,
+.roles-grid,
+.security-content,
+.security-features,
+.pilot-content,
+.doc-management-card,
+.cta-content,
+.contact-grid,
+.footer-content {
+    will-change: opacity, transform;
+}
+
+/* Remover will-change después de la animación */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-snap-type: none !important;
+    }
+}
