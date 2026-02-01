@@ -1252,7 +1252,10 @@
     </div>
 
     <header>
-        <nav>
+       <button class="menu-toggle" aria-label="Abrir menú">
+  ☰
+</button>
+ <nav>
             <a href="index.html" class="logo">
                 <img src="logo_new.png" alt="FleetChofer Logo">
                 <div class="logo-text">
@@ -1292,7 +1295,54 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
+       /* === AJUSTES SOLO PARA MÓVIL === */
+@media (max-width: 768px) {
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    background: rgba(0,0,0,0.95);
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--rojo-principal);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.98);
+    display: none;
+    flex-direction: column;
+    padding: 1.5rem 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  body {
+    padding-top: 80px;
+  }
+
+}
+ }
         
         .floating-button-custom:hover {
             transform: translateY(-3px);
@@ -1628,6 +1678,8 @@
     </script>
 
     <!-- Script de mejoras de scroll snapping y transiciones -->
-    <script src="scroll-enhancements.js"></script>
+   <script src="scroll-enhancements.js"></script>
+
 </body>
 </html>
+
