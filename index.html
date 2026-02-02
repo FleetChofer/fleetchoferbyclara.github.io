@@ -1297,6 +1297,64 @@
             gap: 8px;
        /* === AJUSTES SOLO PARA MÓVIL === */
 @media (max-width: 768px) {
+/* === FIX CENTRADO MÓVIL: HEADER + HERO === */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.logo-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-subtitle {
+  text-align: center !important;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.hero, .hero-content {
+  text-align: center !important;
+}
+
+.hero-content {
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.hero h1 {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.hero p {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 92%;
+}
+
+.hero-buttons, .cta-buttons {
+  justify-content: center !important;
+}
 
   header {
     position: fixed;
