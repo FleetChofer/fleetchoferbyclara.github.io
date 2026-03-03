@@ -84,6 +84,7 @@ cursor:pointer;
 }
 
 /* VARIABLES Y RESET */
+
 :root {
 --rojo-principal: #ff0000;
 --verde-chofer: #33FD00;
@@ -92,7 +93,7 @@ cursor:pointer;
 --blanco: #ffffff;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Inter',sans-serif;
@@ -301,6 +302,54 @@ align-items:center;
 gap:8px;
 }
 
+/* FORMULARIO */
+
+.contact-form-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:99999;
+}
+
+.contact-form-content{
+background:#0a0a0a;
+padding:40px;
+border-radius:12px;
+width:90%;
+max-width:500px;
+border:1px solid rgba(255,0,0,0.3);
+}
+
+.form-group{
+margin-bottom:20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+width:100%;
+padding:10px;
+background:#000;
+border:1px solid rgba(255,255,255,0.2);
+color:white;
+border-radius:6px;
+}
+
+.form-close{
+background:none;
+border:none;
+color:white;
+font-size:22px;
+float:right;
+cursor:pointer;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:968px){
@@ -329,7 +378,6 @@ text-align:center;
 .stats-grid{grid-template-columns:repeat(2,1fr);}
 
 .logo{width:100%;justify-content:center;}
-.logo-text{align-items:center;}
 
 }
 
@@ -338,7 +386,7 @@ text-align:center;
 
 <body>
 
-<!-- ===== TARJETA BIENVENIDA ===== -->
+<!-- TARJETA BIENVENIDA -->
 
 <div class="dev-overlay" id="devOverlay">
 
@@ -460,12 +508,49 @@ Conocer Más
 </div>
 </section>
 
-<button class="floating-button-custom" onclick="window.location.href='contact.html'">
+<button class="floating-button-custom" onclick="openContactForm()">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
 </svg>
 Cuéntanos qué necesitas
 </button>
+
+<div id="contactFormModal" class="contact-form-modal">
+
+<div class="contact-form-content">
+
+<button class="form-close" onclick="closeContactForm()">×</button>
+
+<h2>Cuéntanos qué necesitas</h2>
+
+<form action="https://formsubmit.co/hola@fleetchoferbyclara.com" method="POST">
+
+<div class="form-group">
+<label>Rol</label>
+<select name="rol" required>
+<option value="">Selecciona</option>
+<option value="chofer">Chófer</option>
+<option value="empresa">Empresa logística</option>
+<option value="cargador">Empresa cargadora</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Mensaje</label>
+<textarea name="mensaje" rows="5" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email">
+</div>
+
+<button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+</div>
+</div>
 
 <script>
 
@@ -491,6 +576,14 @@ link.addEventListener('click',()=>{
 menu.classList.remove('active');
 });
 });
+
+function openContactForm(){
+document.getElementById("contactFormModal").style.display="flex";
+}
+
+function closeContactForm(){
+document.getElementById("contactFormModal").style.display="none";
+}
 
 </script>
 
