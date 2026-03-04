@@ -301,7 +301,8 @@ align-items:center;
 gap:8px;
 }
 
-/* ===== NUEVOS ESTILOS DEL MODAL DE CONTACTO ===== */
+/* ===== ESTILOS DEL FORMULARIO COMPLETO (IDÉNTICO A CONTACT) ===== */
+
 .contact-form-modal {
     display: none;
     position: fixed;
@@ -315,46 +316,90 @@ gap:8px;
     align-items: center;
     justify-content: center;
 }
-.contact-form-modal.active { display: flex; }
+
+.contact-form-modal.active {
+    display: flex;
+}
+
 .contact-form-content {
     background: rgba(10, 10, 10, 0.9);
     border: 1px solid rgba(255, 0, 0, 0.3);
     border-radius: 12px;
-    padding: 2.5rem;
-    max-width: 500px;
+    padding: 3rem;
+    max-width: 600px;
     width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
     position: relative;
+    box-shadow: 0 20px 60px rgba(255, 0, 0, 0.2);
 }
+
 .form-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     background: none;
     border: none;
-    color: white;
-    font-size: 1.5rem;
+    color: var(--blanco);
+    font-size: 2rem;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
-.form-group { margin-bottom: 1.2rem; }
-.form-group label { display: block; color: var(--rojo-principal); margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
-.form-group select, .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 6px;
-    border: 1px solid rgba(255,0,0,0.2);
-    background: white;
-    color: black;
-    font-family: inherit;
+
+.form-close:hover {
+    color: var(--rojo-principal);
+    transform: rotate(90deg);
 }
-.btn-submit {
-    background: var(--rojo-principal);
-    color: white;
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 6px;
+
+.contact-form-content h2 {
+    color: var(--rojo-principal);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.form-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: var(--rojo-principal);
     font-weight: 600;
-    cursor: pointer;
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.form-group select,
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #000;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 /* RESPONSIVE */
@@ -395,175 +440,226 @@ text-align:center;
 <body>
 
 <div class="dev-overlay" id="devOverlay">
-    <div class="dev-overlay-card">
-        <button class="dev-overlay-close" onclick="closeDevOverlay()">×</button>
-        <h2 class="dev-overlay-title">
-        🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo
-        </h2>
-        <p class="dev-overlay-text">
-        Estamos creando una nueva plataforma logística que conecta
-        <strong>chóferes, empresas y cargadores</strong> en una sola red profesional.
-        </p>
-        <p class="dev-overlay-text">
-        Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos,
-        <strong>sin prospección ni negociaciones interminables</strong>.
-        </p>
-        <p class="dev-overlay-text" style="margin-top:2rem;font-style:italic;font-size:0.85rem;opacity:0.8;">
-        La web que estás viendo es informativa. La plataforma completa se activará en breve.
-        </p>
-        <div style="margin-top:1.5rem;">
-        <button class="dev-overlay-btn" onclick="closeDevOverlay()">Seguir viendo la web</button>
-        </div>
-    </div>
+<div class="dev-overlay-card">
+<button class="dev-overlay-close" onclick="closeDevOverlay()">×</button>
+<h2 class="dev-overlay-title">
+🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo
+</h2>
+<p class="dev-overlay-text">
+Estamos creando una nueva plataforma logística que conecta
+<strong>chóferes, empresas y cargadores</strong> en una sola red profesional.
+</p>
+<p class="dev-overlay-text">
+Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos,
+<strong>sin prospección ni negociaciones interminables</strong>.
+</p>
+<p class="dev-overlay-text" style="margin-top:2rem;font-style:italic;font-size:0.85rem;opacity:0.8;">
+La web que estás viendo es informativa. La plataforma completa se activará en breve.
+</p>
+<div style="margin-top:1.5rem;">
+<button class="dev-overlay-btn" onclick="closeDevOverlay()">Seguir viendo la web</button>
+</div>
+</div>
 </div>
 
 <header>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="logo_new.png" alt="FleetChofer Logo">
-            <div class="logo-text">
-                <div class="logo-subtitle">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
-            </div>
-        </a>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <ul class="nav-links" id="navMenu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
-            <li><a href="plataforma.html">¿Cómo funciona?</a></li>
-            <li><a href="features.html">Características</a></li>
-            <li><a href="roles.html">Soluciones</a></li>
-            <li><a href="security.html">Seguridad</a></li>
-            <li><a href="doc-management.html">Gestión Documental</a></li>
-            <li><a href="contact.html">Contactos</a></li>
-        </ul>
-    </nav>
+<nav>
+<a href="index.html" class="logo">
+<img src="logo_new.png" alt="FleetChofer Logo">
+<div class="logo-text">
+<div class="logo-subtitle">LA LLAMA QUE CONECTA EMPRESAS CON CONDUCTORES</div>
+</div>
+</a>
+<button class="menu-toggle" id="menuToggle">☰</button>
+<ul class="nav-links" id="navMenu">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+<li><a href="plataforma.html">¿Cómo funciona?</a></li>
+<li><a href="features.html">Características</a></li>
+<li><a href="roles.html">Soluciones</a></li>
+<li><a href="security.html">Seguridad</a></li>
+<li><a href="doc-management.html">Gestión Documental</a></li>
+<li><a href="contact.html">Contactos</a></li>
+</ul>
+</nav>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>
-            LA LLAMA QUE CONECTA<br>
-            <span class="highlight">EMPRESAS Y CONDUCTORES</span>
-            </h1>
-            <p>
-            La red profesional de logística que reúne en un mismo lugar a empresas,
-            chóferes y clientes. Todo lo que necesitas: rutas, documentación,
-            pagos y comunicación sin caos.
-            </p>
-            <div class="cta-buttons">
-                <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">Comenzar Ahora</a>
-                <a href="#plataforma" class="btn btn-secondary">Conocer Más</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
-        </div>
-    </div>
+<div class="hero-content">
+<div class="hero-text">
+<h1>
+LA LLAMA QUE CONECTA<br>
+<span class="highlight">EMPRESAS Y CONDUCTORES</span>
+</h1>
+<p>
+La red profesional de logística que reúne en un mismo lugar a empresas,
+chóferes y clientes. Todo lo que necesitas: rutas, documentación,
+pagos y comunicación sin caos.
+</p>
+<div class="cta-buttons">
+<a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">
+Comenzar Ahora
+</a>
+<a href="#plataforma" class="btn btn-secondary">
+Conocer Más
+</a>
+</div>
+</div>
+<div class="hero-image">
+<img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
+</div>
+</div>
 </section>
 
 <section class="stats">
-    <div class="stats-grid">
-        <div class="stat-item">
-            <div class="stat-symbol">🕐</div>
-            <div class="stat-label">Disponibilidad 24/7</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-symbol">✓</div>
-            <div class="stat-label">Trazabilidad 100%</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-symbol">📄</div>
-            <div class="stat-label">Papeles Sueltos 0</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-symbol">∞</div>
-            <div class="stat-label">Oportunidades</div>
-        </div>
-    </div>
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-symbol">🕐</div>
+<div class="stat-label">Disponibilidad 24/7</div>
+</div>
+<div class="stat-item">
+<div class="stat-symbol">✓</div>
+<div class="stat-label">Trazabilidad 100%</div>
+</div>
+<div class="stat-item">
+<div class="stat-symbol">📄</div>
+<div class="stat-label">Papeles Sueltos 0</div>
+</div>
+<div class="stat-item">
+<div class="stat-symbol">∞</div>
+<div class="stat-label">Oportunidades</div>
+</div>
+</div>
 </section>
 
-<button class="floating-button-custom" id="openFormBtn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-    Cuéntanos qué necesitas
+<button class="floating-button-custom" id="floatingBtnCustom">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+Cuéntanos qué necesitas
 </button>
 
 <div id="contactFormModal" class="contact-form-modal">
     <div class="contact-form-content">
-        <button class="form-close" id="closeFormBtn">×</button>
-        <h2 style="color: var(--rojo-principal); margin-bottom: 1rem;">💡 ¿Qué necesitas?</h2>
+        <button class="form-close" id="closeContactFormBtn">×</button>
+        <h2>💡 Cuéntanos qué necesitas</h2>
+        <p class="form-subtitle">Tu feedback nos ayuda a mejorar FleetChofer</p>
         
-        <form action="https://formsubmit.co/hola@fleetchoferbyclara.com" method="POST">
+        <form id="contactForm" action="https://formsubmit.co/hola@fleetchoferbyclara.com" method="POST">
             <div class="form-group">
-                <label>Tu Rol</label>
+                <label>🎯 ¿En qué rol?</label>
                 <select name="rol" required>
+                    <option value="">Seleccionar rol</option>
                     <option value="chofer">Chófer</option>
-                    <option value="empresa">Empresa</option>
-                    <option value="cargador">Cargador</option>
+                    <option value="empresa-logistica">Empresa logística</option>
+                    <option value="empresa-cargadora">Empresa cargadora</option>
                 </select>
             </div>
+
             <div class="form-group">
-                <label>Tu Mensaje</label>
-                <textarea name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                <label>📍 ¿Dónde quieres la mejora?</label>
+                <select name="seccion" required>
+                    <option value="">Selecciona una sección</option>
+                    <option value="perfil">Perfil y cuenta</option>
+                    <option value="busqueda">Búsqueda de ofertas/Chóferes</option>
+                    <option value="mensajeria">Mensajería</option>
+                    <option value="documentacion">Gestión de documentación</option>
+                    <option value="pagos">Pagos y Facturación</option>
+                    <option value="operaciones">Centro de Operaciones</option>
+                    <option value="rutas">Gestión de rutas</option>
+                    <option value="tacografo">Tacógrafo</option>
+                    <option value="notificaciones">Notificaciones</option>
+                    <option value="otros">Otros</option>
+                </select>
             </div>
+
             <div class="form-group">
-                <label>Email de contacto</label>
-                <input type="email" name="email" placeholder="tu@email.com" required>
+                <label>💡 ¿Qué tipo de mejora?</label>
+                <select name="tipo" required>
+                    <option value="">Selecciona el tipo</option>
+                    <option value="nueva">Nueva funcionalidad</option>
+                    <option value="mejora">Mejora de funcionalidad existente</option>
+                    <option value="error">Reportar error</option>
+                    <option value="usabilidad">Mejora usabilidad</option>
+                    <option value="rendimiento">Mejora rendimiento</option>
+                    <option value="otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>📝 Cuéntanos con detalle</label>
+                <textarea name="detalle" rows="5" placeholder="Describe qué necesitas, qué problema quieres resolver, o qué funcionalidad te gustaría ver..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>📧 Tu email (opcional)</label>
+                <input type="email" name="email" placeholder="tu@email.com (si quieres que te contactemos)">
             </div>
 
             <input type="hidden" name="_subject" value="Nueva solicitud desde FleetChofer Home">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_template" value="table">
             
-            <button type="submit" class="btn-submit">🚀 Enviar Solicitud</button>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                <button type="submit" class="btn btn-primary">🚀 Enviar Solicitud</button>
+            </div>
         </form>
     </div>
 </div>
 
 <script>
-// Lógica de la Tarjeta de Bienvenida
+// Lógica Bienvenida
 function closeDevOverlay(){
-    document.getElementById("devOverlay").classList.add("hidden");
-    document.body.style.overflow="auto";
+document.getElementById("devOverlay").classList.add("hidden");
+document.body.style.overflow="auto";
 }
 
 window.addEventListener("DOMContentLoaded",function(){
-    document.getElementById("devOverlay").classList.remove("hidden");
-    document.body.style.overflow="hidden";
+document.getElementById("devOverlay").classList.remove("hidden");
+document.body.style.overflow="hidden";
 });
 
-// Lógica del Menú Móvil
+// Lógica Menú
 const toggle=document.getElementById('menuToggle');
 const menu=document.getElementById('navMenu');
 
 toggle.addEventListener('click',()=>{
-    menu.classList.toggle('active');
+menu.classList.toggle('active');
 });
 
-// Lógica del Formulario de Contacto
-const openBtn = document.getElementById('openFormBtn');
-const closeBtn = document.getElementById('closeFormBtn');
+// --- LÓGICA DEL FORMULARIO ---
 const modal = document.getElementById('contactFormModal');
+const floatingBtn = document.getElementById('floatingBtnCustom');
+const closeBtn = document.getElementById('closeContactFormBtn');
+const cancelBtn = document.getElementById('cancelBtn');
 
-openBtn.addEventListener('click', () => {
+function openForm() {
     modal.classList.add('active');
-    document.body.style.overflow = "hidden";
-});
+    document.body.style.overflow = 'hidden';
+}
 
-closeBtn.addEventListener('click', () => {
+function closeForm() {
     modal.classList.remove('active');
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
+}
+
+// Abrir siempre al pulsar el botón flotante
+floatingBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openForm();
 });
 
-// Cerrar si pulsan fuera del cuadro
-window.addEventListener('click', (e) => {
-    if (e.target == modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = "auto";
+closeBtn.addEventListener('click', closeForm);
+cancelBtn.addEventListener('click', closeForm);
+
+// Cerrar al pulsar fuera del cuadro
+window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+        closeForm();
     }
 });
+
 </script>
 
 </body>
