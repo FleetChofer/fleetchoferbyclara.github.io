@@ -301,75 +301,10 @@ align-items:center;
 gap:8px;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:968px){
-
-.nav-links{
-position:fixed;
-top:70px;
-left:0;
-width:100%;
-background:rgba(0,0,0,0.95);
-flex-direction:column;
-padding:2rem;
-display:none;
-}
-
-.nav-links.active{display:flex;}
-.menu-toggle{display:block;}
-
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-text h1{font-size:2.2rem;}
-.cta-buttons{justify-content:center;flex-wrap:wrap;}
-.stats-grid{grid-template-columns:repeat(2,1fr);}
-
-.logo{width:100%;justify-content:center;}
-.logo-text{align-items:center;}
-
-}
-
 </style>
 </head>
 
 <body>
-
-<!-- ===== TARJETA BIENVENIDA ===== -->
-
-<div class="dev-overlay" id="devOverlay">
-
-<div class="dev-overlay-card">
-
-<button class="dev-overlay-close" onclick="closeDevOverlay()">×</button>
-
-<h2 class="dev-overlay-title">
-🚧 <span class="highlight">FleetChofer by Clara</span> está en desarrollo
-</h2>
-
-<p class="dev-overlay-text">
-Estamos creando una nueva plataforma logística que conecta
-<strong>chóferes, empresas y cargadores</strong> en una sola red profesional.
-</p>
-
-<p class="dev-overlay-text">
-Muy pronto podrás acceder a la app y gestionar rutas con clientes nuevos,
-<strong>sin prospección ni negociaciones interminables</strong>.
-</p>
-
-<p class="dev-overlay-text" style="margin-top:2rem;font-style:italic;font-size:0.85rem;opacity:0.8;">
-La web que estás viendo es informativa. La plataforma completa se activará en breve.
-</p>
-
-<div style="margin-top:1.5rem;">
-<button class="dev-overlay-btn" onclick="closeDevOverlay()">Seguir viendo la web</button>
-</div>
-
-</div>
-</div>
 
 <header>
 <nav>
@@ -409,82 +344,57 @@ LA LLAMA QUE CONECTA<br>
 
 <p>
 La red profesional de logística que reúne en un mismo lugar a empresas,
-chóferes y clientes. Todo lo que necesitas: rutas, documentación,
-pagos y comunicación sin caos.
+chóferes y clientes.
 </p>
 
-<div class="cta-buttons">
-
-<a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary">
-Comenzar Ahora
-</a>
-
-<a href="#plataforma" class="btn btn-secondary">
-Conocer Más
-</a>
-
 </div>
-</div>
-
-<div class="hero-image">
-<img src="Portada,carreteraquevaunidaaFleetChofer.png" alt="FleetChofer Platform">
-</div>
-
 </div>
 </section>
 
-<section class="stats">
+<!-- FORMULARIO -->
+<div id="contactFormModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000000e6;align-items:center;justify-content:center;z-index:9999;">
 
-<div class="stats-grid">
+<div style="background:#0a0a0a;padding:40px;border-radius:12px;width:90%;max-width:500px;border:1px solid rgba(255,0,0,0.3);">
 
-<div class="stat-item">
-<div class="stat-symbol">🕐</div>
-<div class="stat-label">Disponibilidad 24/7</div>
+<button onclick="closeContactForm()" style="background:none;border:none;color:white;font-size:22px;float:right;cursor:pointer;">×</button>
+
+<h2>Cuéntanos qué necesitas</h2>
+
+<form action="https://formsubmit.co/hola@fleetchoferbyclara.com" method="POST">
+
+<div style="margin-bottom:20px;">
+<label>Rol</label>
+<select name="rol" required style="width:100%;padding:10px;">
+<option value="">Selecciona</option>
+<option value="chofer">Chófer</option>
+<option value="empresa">Empresa logística</option>
+<option value="cargador">Empresa cargadora</option>
+</select>
 </div>
 
-<div class="stat-item">
-<div class="stat-symbol">✓</div>
-<div class="stat-label">Trazabilidad 100%</div>
+<div style="margin-bottom:20px;">
+<label>Mensaje</label>
+<textarea name="mensaje" rows="5" required style="width:100%;padding:10px;"></textarea>
 </div>
 
-<div class="stat-item">
-<div class="stat-symbol">📄</div>
-<div class="stat-label">Papeles Sueltos 0</div>
+<div style="margin-bottom:20px;">
+<label>Email</label>
+<input type="email" name="email" style="width:100%;padding:10px;">
 </div>
 
-<div class="stat-item">
-<div class="stat-symbol">∞</div>
-<div class="stat-label">Oportunidades</div>
-</div>
+<button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
 
 </div>
-</section>
+</div>
 
-<button class="floating-button-custom" onclick="window.location.href='contact.html'">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-</svg>
+<button class="floating-button-custom" onclick="openContactForm()">
 Cuéntanos qué necesitas
 </button>
 
 <script>
 
-function closeDevOverlay(){
-document.getElementById("devOverlay").classList.add("hidden");
-document.body.style.overflow="auto";
-}
-
-window.addEventListener("DOMContentLoaded",function(){
-document.getElementById("devOverlay").classList.remove("hidden");
-document.body.style.overflow="hidden";
-});
-
-const toggle=document.getElementById('menuToggle');
-const menu=document.getElementById('navMenu');
-
-toggle.addEventListener('click',()=>{
-menu.classList.toggle('active');
-});
 function openContactForm(){
 document.getElementById("contactFormModal").style.display="flex";
 }
@@ -492,15 +402,8 @@ document.getElementById("contactFormModal").style.display="flex";
 function closeContactForm(){
 document.getElementById("contactFormModal").style.display="none";
 }
-document.querySelectorAll('.nav-links a').forEach(link=>{
-link.addEventListener('click',()=>{
-menu.classList.remove('active');
-});
-});
 
 </script>
 
 </body>
 </html>
-
-
