@@ -21,6 +21,107 @@
             --blanco: #ffffff;
         }
 
+        /* Estilos para los Pop-ups de Retención */
+        .retention-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 11000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .retention-content {
+            background: var(--negro);
+            border: 2px solid var(--rojo-principal);
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .retention-title {
+            font-size: 2rem;
+            color: var(--rojo-principal);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .retention-text {
+            font-size: 1.1rem;
+            color: var(--blanco);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .retention-highlight {
+            color: var(--rojo-principal);
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .retention-list {
+            text-align: left;
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+
+        .retention-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--blanco);
+        }
+
+        .retention-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .retention-btn-main {
+            background: var(--rojo-principal);
+            color: var(--blanco);
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .retention-btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .retention-btn-sec {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 0.5rem;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--negro);
@@ -1248,7 +1349,7 @@
     <!-- Pilot Banner Modal -->
     <div class="dev-overlay" id="pilotOverlay" class="pilot-vibrate">
         <div class="dev-overlay-card">
-            <button class="dev-overlay-close" onclick="document.getElementById('pilotOverlay').classList.add('hidden')">×</button>
+            <button class="dev-overlay-close" onclick="handlePilotClose()">×</button>
             <h2 class="dev-overlay-title">🚀 <span class="highlight">Participa en la fase piloto</span></h2>
             <p class="dev-overlay-text">Buscamos empresas y profesionales del sector logístico para probar FleetChofer by Clara, aportar feedback real y ayudarnos a construir una herramienta adaptada al día a día de la operativa.</p>
             <p class="dev-overlay-text">Estamos en fase de lanzamiento con un grupo selecto de usuarios. Únete y accede de forma anticipada con condiciones especiales y beneficios exclusivos como miembro inicial de la comunidad FleetChofer.</p>
@@ -1374,6 +1475,25 @@
                     </ul>
                     <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Comenzar Gratis</a>
                 </div>
+                <!-- Plan Pro Empresa (AHORA EN EL CENTRO) -->
+                <div class="pricing-card recommended">
+                    <div class="plan-name">Plan Pro Empresa</div>
+                    <div class="plan-price">399€<span>/mes</span></div>
+                    <div class="plan-users">👤 5 Usuarios incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/usuario adicional</div>
+                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
+                    <ul class="plan-features">
+                        <li>Priorización en rutas</li>
+                        <li>Acceso a chóferes premium</li>
+                        <li>Centro de inteligencia completa</li>
+                        <li>Solicitar Rutas Ilimitadas</li>
+                        <li>Sistema de Reputación</li>
+                        <li>CRM FleetChofer Ilimitado</li>
+                        <li>Gestión de flota ilimitada</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+                <!-- Plan Operativo (AHORA A LA DERECHA) -->
                 <div class="pricing-card">
                     <div class="plan-name">Plan Operativo</div>
                     <div class="plan-price">249€<span>/mes</span></div>
@@ -1393,23 +1513,6 @@
                         </li>
                     </ul>
                     <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
-                </div>
-                <div class="pricing-card recommended">
-                    <div class="plan-name">Plan Pro Empresa</div>
-                    <div class="plan-price">399€<span>/mes</span></div>
-                    <div class="plan-users">👤 5 Usuarios incluidos</div>
-                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/usuario adicional</div>
-                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
-                    <ul class="plan-features">
-                        <li>Priorización en rutas</li>
-                        <li>Acceso a chóferes premium</li>
-                        <li>Centro de inteligencia completa</li>
-                        <li>Solicitar Rutas Ilimitadas</li>
-                        <li>Sistema de Reputación</li>
-                        <li>CRM FleetChofer Ilimitado</li>
-                        <li>Gestión de flota ilimitada</li>
-                    </ul>
-                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
                 </div>
             </div>
         </div>
@@ -1433,6 +1536,25 @@
                     </ul>
                     <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Comenzar Gratis</a>
                 </div>
+                <!-- Plan Pro Logístico (AHORA EN EL CENTRO) -->
+                <div class="pricing-card recommended">
+                    <div class="plan-name">Plan Pro Logístico</div>
+                    <div class="plan-price">249€<span>/mes</span></div>
+                    <div class="plan-users">👤 5 Perfiles incluidos</div>
+                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/perfil adicional</div>
+                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
+                    <ul class="plan-features">
+                        <li>Gestión de rutas internas (flota propia)</li>
+                        <li>Sistema de Reputación</li>
+                        <li>CRM FleetChofer ilimitado</li>
+                        <li>Centro de Inteligencia completa</li>
+                        <li>Gestión de flota ilimitada</li>
+                        <li>Priorización de rutas</li>
+                        <li>Acceso a chóferes premium</li>
+                    </ul>
+                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
+                </div>
+                <!-- Plan Plus (AHORA A LA DERECHA) -->
                 <div class="pricing-card">
                     <div class="plan-name">Plan Plus</div>
                     <div class="plan-price">99€<span>/mes</span></div>
@@ -1452,23 +1574,6 @@
                         </li>
                     </ul>
                     <a href="https://wa.me/34679362474" target="_blank" class="btn btn-secondary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
-                </div>
-                <div class="pricing-card recommended">
-                    <div class="plan-name">Plan Pro Logístico</div>
-                    <div class="plan-price">249€<span>/mes</span></div>
-                    <div class="plan-users">👤 5 Perfiles incluidos</div>
-                    <div class="plan-users" style="margin-top: -1rem;">+ 49€/perfil adicional</div>
-                    <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
-                    <ul class="plan-features">
-                        <li>Gestión de rutas internas (flota propia)</li>
-                        <li>Sistema de Reputación</li>
-                        <li>CRM FleetChofer ilimitado</li>
-                        <li>Centro de Inteligencia completa</li>
-                        <li>Gestión de flota ilimitada</li>
-                        <li>Priorización de rutas</li>
-                        <li>Acceso a chóferes premium</li>
-                    </ul>
-                    <a href="https://wa.me/34679362474" target="_blank" class="btn btn-primary" style="display: inline-block; text-align: center;">Probar 2 Meses Gratis</a>
                 </div>
             </div>
         </div>
@@ -1598,5 +1703,176 @@
     <!-- Script de mejoras de scroll snapping y transiciones -->
     <script src="scroll-enhancements.js"></script>
 
-</body>
+    <!-- POP-UPS DE RETENCIÓN -->
+    <!-- Pop-up Fase Piloto -->
+    <div id="pilotRetentionModal" class="retention-modal">
+        <div class="retention-content">
+            <h2 class="retention-title">¿Seguro que quieres dejar el asiento del conductor? 🚛</h2>
+            <p class="retention-text">Si cierras ahora, pierdes la oportunidad de que diseñemos FleetChofer exactamente a tu medida. No queremos ser una app más; queremos ser la solución a tus problemas diarios.</p>
+            <p class="retention-text retention-highlight">Cuéntanos qué te frena. Tu feedback hoy hará que mañana trabajes mejor, cobres antes y gestiones menos papeles.</p>
+            <div class="retention-buttons">
+                <button class="retention-btn-main" onclick="openContactFormFromRetention()">¡Vale, quiero dar mi opinión!</button>
+                <a href="https://wa.me/34679362474" target="_blank" class="retention-btn-main" style="background: #25D366; margin-top: 0.5rem;">Hablar con tu asesor (WhatsApp)</a>
+                <button class="retention-btn-sec" onclick="closePilotRetention()">No me interesa participar.</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Genérico de Planes (Se personaliza por JS) -->
+    <div id="exitIntentModal" class="retention-modal">
+        <div class="retention-content">
+            <h2 class="retention-title" id="exitTitle">¡Un momento! Tu competencia se queda... ¿tú te vas? 🛑</h2>
+            <p class="retention-text" id="exitHeader">¡Espera! Si sales ahora, apagas el sistema operativo que va a simplificar tu vida operativa. Fuera de FleetChofer, vuelves a las llamadas infinitas y al descontrol. Quédate y asegura tu éxito. ¿O acaso:</p>
+            <ul class="retention-list" id="exitQuestions">
+                <!-- Se llena dinámicamente -->
+            </ul>
+            <p class="retention-text retention-highlight">Danos 2 minutos. Dinos qué necesitas para confiar en nosotros y te haremos un plan personalizado.</p>
+            <div class="retention-buttons">
+                <a href="https://wa.me/34679362474" target="_blank" class="retention-btn-main">Hablar con un asesor (WhatsApp)</a>
+                <button class="retention-btn-sec" onclick="showFinalConfirmation()">Solo estaba echando un vistazo.</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up de Confirmación Final -->
+    <div id="finalConfirmationModal" class="retention-modal">
+        <div class="retention-content">
+            <h2 class="retention-title">¡Piénsalo bien! 🛑</h2>
+            <p class="retention-text" id="finalConfirmationText">
+                <!-- Se llena dinámicamente -->
+            </p>
+            <div class="retention-buttons">
+                <button class="retention-btn-main" onclick="backToExitIntent()">Volver a ver el plan</button>
+                <button class="retention-btn-sec" onclick="closeEverything()">Entiendo, quiero salir de todos modos.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentProfileType = '';
+
+        // Sobreescribir openPlans para guardar el tipo de perfil actual
+        const originalOpenPlans = window.openPlans;
+        window.openPlans = function(profileType) {
+            currentProfileType = profileType;
+            if (typeof originalOpenPlans === 'function') {
+                originalOpenPlans(profileType);
+            } else {
+                // Si por alguna razón no está definida globalmente, replicamos la lógica básica
+                const overlay = document.getElementById('plansOverlay');
+                const allPlans = document.querySelectorAll('.profile-plans');
+                allPlans.forEach(plan => plan.classList.remove('active'));
+                const targetPlan = document.getElementById(`plans-${profileType}`);
+                if (targetPlan) {
+                    targetPlan.classList.add('active');
+                    overlay.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        };
+
+        const retentionData = {
+            'chofer': [
+                "prefieres seguir buscando rutas sin garantías de cobro?",
+                "quieres seguir perdiendo dinero en lugar de reducir un 30% o mas en Kilometros en vacio?",
+                "estás dispuesto a que nadie valide tu reputación para que las grandes empresas confíen en ti?",
+                "quieres perder tus 2 meses gratis de lanzamiento?"
+            ],
+            'empresa': [
+                "de verdad quieres volver a gestionar tu flota con hojas de Excel y llamadas infinitas?",
+                "prefieres seguir asumiendo el coste de tus kilómetros en vacío en lugar de rentabilizar cada ruta?",
+                "vas a arriesgarte a seguir operando a ciegas, sin ver la ubicación y el estado de tus conductores?",
+                "quieres perder tus 2 meses gratis de lanzamiento?"
+            ],
+            'cargadora': [
+                "quieres seguir perdiendo tiempo buscando transportistas de confianza uno por uno?",
+                "prefieres irte sabiendo que podrías haber cerrado tu próximo envío en menos de 5 minutos?",
+                "no piensas asegurar que tu mercancía viaja con los mejores conductores sabiendo siempre dónde está en tiempo real?",
+                "quieres perder tus 2 meses gratis de lanzamiento?"
+            ]
+        };
+
+        function showExitIntent() {
+            const list = document.getElementById('exitQuestions');
+            list.innerHTML = '';
+            const questions = retentionData[currentProfileType] || retentionData['chofer'];
+            
+            questions.forEach(q => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>❌</span> ${q}`;
+                list.appendChild(li);
+            });
+
+            document.getElementById('exitIntentModal').style.display = 'flex';
+        }
+
+        // Lógica para el cierre de la Fase Piloto
+        function handlePilotClose() {
+            document.getElementById('pilotOverlay').classList.add('hidden');
+            document.getElementById('pilotRetentionModal').style.display = 'flex';
+        }
+
+        function closePilotRetention() {
+            document.getElementById('pilotRetentionModal').style.display = 'none';
+        }
+
+        function openContactFormFromRetention() {
+            closePilotRetention();
+            document.getElementById('contactFormModal').style.display = 'flex';
+        }
+
+        // Lógica Exit Intent para los Planes
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0 && !exitIntentShown && document.getElementById('plansOverlay').style.display === 'flex') {
+                showExitIntent();
+                exitIntentShown = true;
+            }
+        });
+
+        function showFinalConfirmation() {
+            const finalModal = document.getElementById('finalConfirmationModal');
+            const finalText = document.getElementById('finalConfirmationText');
+            
+            if (currentProfileType === 'chofer') {
+                finalText.innerText = "Si sales, renuncias a la primera Red Social donde tú eliges con que empresa trabajar, grandes o pequeñas. Conecta como, no como 'amigo', si no como contacto operativo y accede a sus rutas con tu buena reputación.";
+            } else {
+                finalText.innerText = "Recuerda que si sales ahora, estarás renunciando a la primera Red Social 100% Logística donde no buscas 'amigos', sino vinculaciones operativas que eliminan la prospección para siempre.";
+            }
+            
+            document.getElementById('exitIntentModal').style.display = 'none';
+            finalModal.style.display = 'flex';
+        }
+
+        function backToExitIntent() {
+            document.getElementById('finalConfirmationModal').style.display = 'none';
+            document.getElementById('exitIntentModal').style.display = 'flex';
+        }
+
+        function closeEverything() {
+            document.getElementById('finalConfirmationModal').style.display = 'none';
+            document.getElementById('exitIntentModal').style.display = 'none';
+            document.getElementById('plansOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            exitIntentShown = false;
+        }
+
+        function closeExitIntent() {
+            document.getElementById('exitIntentModal').style.display = 'none';
+            document.getElementById('plansOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            exitIntentShown = false; // Permitir que vuelva a salir si reabren
+        }
+
+        // Modificación del cierre original de planes
+        const plansCloseBtn = document.getElementById('plansClose');
+        if (plansCloseBtn) {
+            plansCloseBtn.onclick = function(e) {
+                e.preventDefault();
+                showExitIntent();
+                exitIntentShown = true;
+            };
+        }
+    </script>
+</body>>
 </html>
