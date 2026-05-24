@@ -53,14 +53,35 @@
         .team-label { text-align: center; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,0,0,0.7); margin-bottom: 2rem; }
         .team-label::before, .team-label::after { content:''; display:inline-block; width:40px; height:1px; background:rgba(255,0,0,0.4); vertical-align:middle; margin:0 0.8rem; }
         .team-grid { display: flex; justify-content: center; gap: 3rem; margin-bottom: 1.9rem; flex-wrap: wrap; }
-        .team-member { text-align: center; flex: 0 1 180px; }
-        .team-photo-wrap { position: relative; width: 160px; height: 160px; margin: 0 auto 1rem; }
-        .team-photo-wrap img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; display: block; border: 2px solid rgba(255,0,0,0.5); box-shadow: 0 0 0 4px rgba(255,0,0,0.08), 0 0 20px rgba(255,0,0,0.35), 0 0 45px rgba(255,0,0,0.15); transition: box-shadow 0.4s ease, transform 0.4s ease; }
-        .team-photo-wrap img:hover { box-shadow: 0 0 0 4px rgba(255,0,0,0.15), 0 0 30px rgba(255,0,0,0.55), 0 0 65px rgba(255,0,0,0.25); transform: translateY(-4px) scale(1.03); }
-        .team-photo-wrap.mystery img { border-color: rgba(255,0,0,0.7); animation: mystery-pulse 3s ease-in-out infinite; }
-        @keyframes mystery-pulse { 0%,100%{ box-shadow:0 0 0 4px rgba(255,0,0,0.12),0 0 28px rgba(255,0,0,0.6),0 0 60px rgba(255,0,0,0.3); } 50%{ box-shadow:0 0 0 4px rgba(255,0,0,0.22),0 0 40px rgba(255,0,0,0.85),0 0 90px rgba(255,0,0,0.45); } }
-        .team-member-name { font-size: 0.88rem; font-weight: 600; color: var(--blanco); margin-bottom: 0.3rem; }
-        .team-member-role { font-size: 0.78rem; color: rgba(255,255,255,0.6); line-height: 1.4; font-style: italic; }
+        .team-member { text-align: center; flex: 0 1 220px; }
+        .team-photo-wrap { position: relative; width: 200px; height: 200px; margin: 0 auto 1.35rem; overflow: visible; }
+        .team-photo-wrap img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; border: none; box-shadow: 0 16px 34px rgba(0,0,0,0.42), 0 18px 42px rgba(255,0,0,0.18), 0 0 28px rgba(255,0,0,0.16); transition: box-shadow 0.4s ease, transform 0.4s ease, filter 0.4s ease; position: relative; z-index: 2; }
+        .team-photo-wrap img:hover { box-shadow: 0 22px 48px rgba(0,0,0,0.45), 0 26px 70px rgba(255,0,0,0.28), 0 0 45px rgba(255,0,0,0.24); transform: translateY(-7px) scale(1.025); filter: brightness(1.04); }
+        .team-photo-wrap.mystery img { animation: mystery-pulse 3s ease-in-out infinite; }
+
+        .team-photo-wrap::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -16px;
+            width: 78%;
+            height: 30px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(255,0,0,0.55) 0%, rgba(255,50,0,0.25) 38%, rgba(255,0,0,0.08) 62%, transparent 100%);
+            filter: blur(9px);
+            z-index: 1;
+            pointer-events: none;
+            animation: team-float-base 3.4s ease-in-out infinite;
+        }
+        @keyframes team-float-base {
+            0%,100% { opacity: 0.68; transform: translateX(-50%) scaleX(1); }
+            50% { opacity: 1; transform: translateX(-50%) scaleX(1.13); }
+        }
+
+        @keyframes mystery-pulse { 0%,100%{ box-shadow:0 16px 34px rgba(0,0,0,0.42),0 18px 42px rgba(255,0,0,0.22),0 0 34px rgba(255,0,0,0.22); } 50%{ box-shadow:0 22px 48px rgba(0,0,0,0.45),0 26px 76px rgba(255,0,0,0.34),0 0 58px rgba(255,0,0,0.34); } }
+        .team-member-name { font-size: 0.76rem; font-weight: 500; color: rgba(255,255,255,0.92); margin-bottom: 0.08rem; letter-spacing: 0.01em; line-height: 1.15; }
+        .team-member-role { font-size: 0.66rem; color: rgba(255,255,255,0.52); line-height: 1.2; font-style: italic; font-weight: 300; letter-spacing: 0.01em; }
         .team-member-role.mystery-role { color: rgba(255,0,0,0.75); font-style: normal; font-weight: 500; }
 
         /* Helpers de texto */
@@ -1067,6 +1088,33 @@ nav {
 #fc-popup-overlay {
   overflow-y: auto !important;
   overscroll-behavior: contain;
+}
+
+
+/* ===== AJUSTE FINAL TIPOGRAFÍA CLARA Y ESTHER ===== */
+#quienes-somos .team-grid .team-member:nth-child(1) .team-member-name,
+#quienes-somos .team-grid .team-member:nth-child(2) .team-member-name {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    line-height: 1.18 !important;
+    letter-spacing: 0.012em !important;
+    color: rgba(255,255,255,0.88) !important;
+    margin-top: 0.12rem !important;
+    margin-bottom: 0.12rem !important;
+    text-shadow: none !important;
+}
+
+#quienes-somos .team-grid .team-member:nth-child(1) .team-member-role,
+#quienes-somos .team-grid .team-member:nth-child(2) .team-member-role {
+    font-size: 0.78rem !important;
+    font-weight: 300 !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.01em !important;
+    color: rgba(255,255,255,0.50) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-style: italic !important;
+    text-shadow: none !important;
 }
 
 </style>
