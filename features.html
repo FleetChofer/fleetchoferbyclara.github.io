@@ -1720,7 +1720,17 @@
             </div>
         </div>
 
-        <div class="insignias-grid">
+        <!-- ── TÍTULO BLOQUE CHÓFERES ── -->
+        <div style="display:flex; align-items:center; gap:1rem; margin:1.6rem 0 1.4rem;">
+            <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,0,0,0.35));"></div>
+            <span style="font-size:0.65rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,100,60,0.75); white-space:nowrap;">✦ &nbsp;Insignias de chóferes&nbsp; ✦</span>
+            <div style="flex:1; height:1px; background:linear-gradient(90deg,rgba(255,0,0,0.35),transparent);"></div>
+        </div>
+
+        <!-- ── BLOQUE UNIFICADO: chóferes arriba, empresas abajo, mismo grid ── -->
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; position:relative;">
+
+            <!-- COL IZQ: positivas chóferes -->
             <div class="insignias-col positivas">
                 <h4>🔥 Insignias que encienden tu perfil</h4>
                 <div class="insignia-item">
@@ -1755,11 +1765,49 @@
                     <span class="ins-badge fc">ApagaInfiernos</span>
                     <span class="ins-text"><strong>Especialista en urgencias.</strong> Activación inmediata, soluciona incidencias en ruta y tiene un 100% de efectividad en picos de demanda.</span>
                 </div>
-                <!-- LOGO EN EL HUECO VACÍO ENTRE APAGAINFIERNOS Y VALORACIÓN INJUSTA -->
-                <div class="insignias-logo-center">
-                    <img src="Logo_redondo.png" alt="FleetChofer Logo">
+                <!-- Título empresas — nace aquí, debajo de ApagaInfiernos, en la col izq -->
+                <div style="display:flex; align-items:center; gap:0.8rem; margin:1.2rem 0 1rem; grid-column: span 1;">
+                    <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,0,0,0.35));"></div>
+                    <span style="font-size:0.65rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,100,60,0.75); white-space:nowrap;">✦ &nbsp;Insignias de empresas&nbsp; ✦</span>
+                    <div style="flex:1; height:1px; background:linear-gradient(90deg,rgba(255,0,0,0.35),transparent);"></div>
+                </div>
+                <!-- Positivas empresas -->
+                <h4 style="margin-top:0;">🔥 Insignias que encienden el perfil</h4>
+                <div class="insignia-item">
+                    <span class="ins-badge pos">Muelle Exprés</span>
+                    <span class="ins-text"><strong>Carga o descarga rápida y puntual.</strong> Sin tiempos muertos.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge pos">Alianza Operativa</span>
+                    <span class="ins-text"><strong>Facilitan el trabajo</strong> y solucionan imprevistos en el muelle.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge pos">Zona de Confort</span>
+                    <span class="ins-text"><strong>Instalaciones de primer nivel</strong> para el chófer con aseos limpios y zona de descanso.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge pos">Acceso Cinco Estrellas</span>
+                    <span class="ins-text"><strong>Maniobras fáciles,</strong> parking amplio y accesos seguros para vehículos pesados.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge pos">Trato Humano</span>
+                    <span class="ins-text"><strong>Personal de almacén respetuoso,</strong> colaborador y educado con el transportista.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge fc">Llama Logística Certificada</span>
+                    <span class="ins-text"><strong>Excelencia en la gestión de tiempos.</strong> Erradica por completo los tiempos muertos en la ruta.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge fc">Fuego de Respeto</span>
+                    <span class="ins-text"><strong>Compromiso total</strong> con la dignidad del transportista. Instalaciones excelentes y trato humano de primer nivel.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge fc">Faro Logístico</span>
+                    <span class="ins-text"><strong>Infraestructura y agilidad perfectas.</strong> El destino ideal para cualquier flota.</span>
                 </div>
             </div>
+
+            <!-- COL DER: negativas chóferes + "Cada ruta" + negativas empresas + logo -->
             <div class="insignias-col negativas">
                 <h4>❄️ Insignias que apagan el servicio</h4>
                 <div class="insignia-item">
@@ -1778,7 +1826,7 @@
                     <span class="ins-badge neg">Fuego Mojado</span>
                     <span class="ins-text">Documentación siempre con problemas o nunca lista a tiempo.</span>
                 </div>
-                <div class="insignia-item" style="margin-top: 1.5rem; padding: 1.1rem; background: linear-gradient(135deg, rgba(255,0,0,0.07), rgba(180,0,0,0.04)); border: 1px solid rgba(255,0,0,0.22); border-radius: 8px; flex-direction: column; gap: 0.5rem;">
+                <div class="insignia-item" style="margin-top:1.5rem; padding:1.1rem; background:linear-gradient(135deg,rgba(255,0,0,0.07),rgba(180,0,0,0.04)); border:1px solid rgba(255,0,0,0.22); border-radius:8px; flex-direction:column; gap:0.5rem;">
                     <span style="font-size:0.7rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:rgba(255,120,80,0.9);">🔥 ¡CADA RUTA ENCIENDE TU MARCADOR!</span>
                     <span class="ins-text" style="font-size:0.75rem; line-height:1.7; color:rgba(255,255,255,0.62)">
                         En FleetChofer tu reputación nunca se congela: las insignias se acumulan viaje a viaje. No es lo mismo lucir un distintivo de Brillo en la llama que acumular cincuenta y que se vea reflejado en tu vitrina.<br><br>
@@ -1789,11 +1837,34 @@
                         ✦ Las insignias doradas se desbloquean acumulando insignias operativas positivas y manteniendo constancia en el servicio, sobre todo en las rutas urgentes.
                     </span>
                 </div>
+                <!-- Negativas empresas — debajo del cuadro "Cada ruta" -->
+                <h4 style="margin-top:1.4rem;">❄️ Insignias que apagan el servicio</h4>
+                <div class="insignia-item">
+                    <span class="ins-badge neg">Muelle Eterno</span>
+                    <span class="ins-text">Esperas injustificadas de horas que destrozan tus tiempos de conducción.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge neg">Trato Hostil</span>
+                    <span class="ins-text">Personal del muelle antipático, borde o que te trata con desprecio.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge neg">Trinchera Insegura</span>
+                    <span class="ins-text">Accesos criminales, parkings peligrosos o nula iluminación.</span>
+                </div>
+                <div class="insignia-item">
+                    <span class="ins-badge neg">Puerta Cerrada</span>
+                    <span class="ins-text">Prohibición de uso de servicios básicos: sin baños, sin agua o esperando a la intemperie.</span>
+                </div>
+                <!-- LOGO: misma animación, mismo glow, mismo tamaño -->
+                <div class="insignias-logo-center">
+                    <img src="Logo_redondo.png" alt="FleetChofer Logo">
+                </div>
             </div>
+
         </div>
 
-        <!-- Pie de sección: valoración justa -->
-        <div style="margin-top:2rem; padding:1rem 1.5rem; border-top:1px solid rgba(255,0,0,0.1); display:flex; align-items:flex-start; gap:10px;">
+        <!-- Pie de sección: valoración justa — margin reducido para eliminar hueco excesivo -->
+        <div style="margin-top:0.8rem; padding:0.9rem 1.5rem; border-top:1px solid rgba(255,0,0,0.1); display:flex; align-items:flex-start; gap:10px;">
             <span style="color:rgba(255,0,0,0.5); font-size:0.75rem; flex-shrink:0; margin-top:1px;">✦</span>
             <p style="font-size:0.75rem; color:rgba(255,255,255,0.38); line-height:1.7; font-weight:300; font-style:italic;">
                 <strong style="color:rgba(255,255,255,0.5); font-weight:500; font-style:normal;">¿Valoración injusta?</strong>
