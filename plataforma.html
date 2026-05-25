@@ -289,8 +289,10 @@
         }
         @media (max-width: 968px) { .nav-links { display: none; } }
     
-
-/* ===== BLOQUES COPIADOS DE INDEX: HEADER, ALIADOS, 3 BOTONES Y POPUP ===== */
+/* ================================================================
+   ACTUALIZACIÓN DESDE INDEX FINAL
+   Navegador + Aliados + Tres botones + Popup
+   ================================================================ */
 /* ===== HEADER ===== */
 header {
   position:fixed; top:0; width:100%; z-index:10000;
@@ -413,7 +415,9 @@ nav {
 
 
 /* ===== TRES BOTONES FLEETCHOFER — CSS LIMPIO ===== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 /* BUTTONS */
         .btn { padding: 0.85rem 2rem; border: none; border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; letter-spacing: 0.02em; }
         .btn-primary { background: var(--rojo-principal); color: var(--blanco); box-shadow: 0 4px 20px rgba(255,0,0,0.3); }
@@ -832,6 +836,7 @@ nav {
     animation: fcVibracionDespertador 0.16s linear infinite !important;
 }
 
+
 /* ===== POPUP DOCUMENTAL — CSS LIMPIO ===== */
 /* ── Reset local ── */
   #fc-popup-overlay *,
@@ -1187,6 +1192,7 @@ nav {
   }
 
 
+
 /* ===== ALIADOS EN RUTA EMBEBIDO EN INDEX ===== */
 .allies-page-overlay {
   position: fixed;
@@ -1232,7 +1238,15 @@ nav {
 }
 
 
-/* ===== FIN BLOQUES COPIADOS DE INDEX ===== */
+
+/* ===== AJUSTE MODALES: PERMITIR SCROLL EN ESTA PÁGINA ===== */
+.contact-form-modal,
+.urgent-modal,
+.allies-page-overlay,
+#fc-popup-overlay {
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
 
 </style>
     <link rel="stylesheet" href="scroll-enhancements.css">
@@ -1289,38 +1303,116 @@ nav {
 
             <!-- TEXTO EXACTO — parte superior (columna derecha) -->
             <div class="desc-text">
+
                 <h3>¿Cómo funciona?</h3>
 
-                <p><strong>FleetChofer by Clara</strong> es la primera red social, profesional y <strong>100% exclusiva del sector logístico</strong>: te conectas con chóferes y perfiles del sector, no como una amistad, sino como una <strong>vinculación operativa</strong>.</p>
+                <p>Ahora que ya sabes quiénes somos y cómo nació <strong>FleetChofer by Clara</strong>, quiero enseñarte la parte más importante de todo esto:</p>
 
-                <p>Además de publicar rutas y conectar operativas, FleetChofer by Clara también cuenta con su propio muro interno: <strong>La Emisora</strong>. Un espacio donde chóferes, empresas y profesionales del transporte pueden compartir información, avisos, incidencias, rutas y también conectar entre compañeros del sector.</p>
+                <p><strong>¿Cómo funciona?</strong> ¿Cómo convertí esa idea en algo real?</p>
 
-                <p>Desde decir dónde vas a hacer una parada rápida para no tomarte un café solo, hasta coordinarte con otros chóferes que hacen rutas similares para cenar juntos, echar unas cartas y unas risas antes de descansar. La carretera también puede tener comunidad, información útil y gente con la que coincidir.</p>
+                <p>Hubo un momento en el que me di cuenta de algo muy importante: en logística tenemos demasiado normalizados pequeños problemas del día a día que, cuando se juntan, terminan convirtiéndose en un <strong>caos constante</strong>.</p>
+
+                <p>Y ahí fue cuando entendí que no quería crear simplemente una herramienta.</p>
+
+                <p>Quería crear <strong>una red</strong>. Nuestra red social, <strong>por y para el sector</strong>.</p>
+
+                <p>Una comunidad donde empresas, chóferes y profesionales pudieran sentirse <strong>conectados, respaldados y acompañados</strong> de verdad.</p>
+
             </div>
 
         </div><!-- /desc-inner -->
 
         <!-- TEXTO — parte inferior (ancho completo) -->
         <div class="desc-full">
-            <p>Cuando aceptas un contacto, ese perfil pasa automáticamente a formar parte de tu <strong>CRM dentro de FleetChofer</strong>. Desde ahí puedes mantener el contacto, ver las rutas que publica y detectar oportunidades, tanto en servicios recurrentes como en rutas de última hora, a nivel nacional o internacional. Todo en un mismo sitio, sin perseguir a nadie por WhatsApp.</p>
 
-            <p><strong>Cada interacción cuenta. Y cuenta de verdad.</strong></p>
+            <p>Un lugar donde se pudiera trabajar con <strong>confianza</strong> y sobre todo con <strong>calidad</strong>.</p>
 
-            <p>En FleetChofer, cada servicio realizado suma <strong>experiencia real y deja rastro</strong>, creando una <strong>reputación basada en hechos</strong> —cumplimiento, fiabilidad y operativa— que te permite decidir rápido, con datos y con confianza, incluso cuando trabajas con alguien por primera vez. Sin intuiciones a ciegas ni "a ver qué pasa".</p>
+            <p>Por eso FleetChofer no funciona como una red social tradicional. Aquí no agregas contactos porque sí; creas <strong>vinculaciones operativas reales</strong>. Personas con las que realmente puedes trabajar, colaborar y construir una relación profesional basada en <strong>confianza, reputación y experiencia real</strong>.</p>
 
-            <p>Porque FleetChofer no es una app más ni un marketplace caótico donde todos compiten a gritos. Es un <strong>ecosistema logístico digital</strong>, un punto de encuentro operativo donde empresas logísticas, chóferes y clientes trabajan conectados desde un único espacio, con reglas claras y datos reales. Aquí todo tiene contexto, historial y sentido.</p>
+            <p>Y una de las cosas que más claro tenía desde el principio era que la carretera no tenía por qué sentirse tan sola.</p>
 
-            <p><strong>La idea es sencilla:</strong></p>
+            <p>Por eso nació <strong>La Emisora</strong>.</p>
 
-            <p><strong>Menos improvisación, menos tiempo perdido y menos kilómetros vacíos y grupajes.</strong> Publicas rutas, detectas oportunidades, conectas con los perfiles adecuados y gestionas todo de forma ordenada. Lo que antes se repartía entre llamadas, correos, WhatsApp, notas sueltas y prisas, ahora está centralizado, claro y listo para trabajar.</p>
+            <p>Inspirada en aquellas antiguas emisoras donde los chóferes hablaban entre ellos durante horas para hacerse compañía en ruta, compartir incidencias durante la ruta o simplemente sentirse acompañados durante el viaje.</p>
 
-            <p>FleetChofer nace desde dentro del sector y pensando en el día a día real. En las urgencias, en los cambios de última hora y en la necesidad de tenerlo todo bajo control sin complicarte más la vida. No viene a decirte cómo tienes que trabajar, sino a <strong>facilitarte que trabajes mejor</strong>.</p>
+            <p>Solo que ahora llevada al mundo actual.</p>
 
-            <p><strong>En resumen:</strong></p>
+            <p>Un espacio donde no solo se comparten incidencias, avisos de ruta o se preguntan servicios, sino donde también se crean <strong>conexiones reales</strong>.</p>
 
-            <p>FleetChofer no es solo una herramienta. Es ese sitio donde entras y sabes que todo encaja. Donde vas un paso por delante y dejas de apagar fuegos para centrarte en hacer que la operativa funcione.</p>
+            <p>Un espacio donde poder decir: ‘Voy a hacer “las 11” en La Panadella, ¿unas cartas después de cenar?’, ‘Estoy parado en el área de servicio de Fraga, ¿hay alguien por aquí?’ o ‘voy de ruta hacia Valencia, ¿alguien anda cerca para desayunar juntos?’.</p>
+
+            <p>Porque a veces una conversación, unas cartas, unas risas o simplemente compartir un café con alguien que entiende tu misma vida hace que <strong>la carretera pese mucho menos</strong>.</p>
+
+            <p>Porque a veces no hace falta “hacer networking”.<br>A veces solo hace falta sentir que <strong>formas parte de algo</strong>.</p>
+
+            <p><strong>Ahora viene el corazón, la idea que encendió la llama de FleetChofer.</strong></p>
+
+            <p>De una pequeña bolsa de trabajo para chóferes a:</p>
+
+            <p><strong>Una red real que conecta directamente empresas con conductores, sin intermediarios.</strong></p>
+
+            <p>Un espacio pensado para <strong>reducir kilómetros en vacío</strong>, evitar <strong>rutas mal pagadas</strong>, eliminar intermediarios que viven de llevarse parte del trabajo de otros y acabar con la sensación constante de improvisación que lleva años castigando al sector.</p>
+
+            <p>Por eso FleetChofer no solo permite publicar <strong>rutas urgentes</strong> para cubrir imprevistos en cuestión de minutos. También incorpora herramientas de <strong>planificación</strong> para que empresas y chóferes puedan organizar operativas con tiempo, preparar campañas, encontrar cargas de retorno, optimizar grupajes y trabajar con mucha más tranquilidad y control sobre su operativa diaria.</p>
+
+            <p>Porque la carretera necesita velocidad cuando aparece una urgencia, y las urgencias siempre van a existir: averías, chóferes enfermos, cambios de última hora o imprevistos que nadie puede controlar. Pero también necesita <strong>organización</strong> para que vivir apagando fuegos constantemente deje de ser la normalidad.</p>
+
+            <p>Porque la idea nunca es trabajar más.</p>
+
+            <p><strong>La idea es trabajar mejor.</strong></p>
+
+            <p>Y otra de las partes más importantes de todo esto son los <strong>pagos</strong>.</p>
+
+            <p>FleetChofer permite tener toda la información de cada ruta organizada en un mismo sitio: qué servicio se realizó, cuánto se acordó, qué estado tiene el cobro, descargar la factura asociada y mantener un <strong>control claro y real de toda la operativa económica</strong>.</p>
+
+            <p>Pero además, queremos ayudar a solucionar uno de los mayores problemas del sector: <strong>los pagos tardíos</strong>.</p>
+
+            <p>Por eso FleetChofer incorpora sistemas para facilitar <strong>pagos inmediatos</strong> al finalizar una ruta y, al mismo tiempo, ofrecer opciones flexibles para aquellas empresas que necesitan más margen de pago porque todavía no han cobrado sus propios servicios.</p>
+
+            <p>La idea es simple: que nadie tenga que seguir trabajando con <strong>incertidumbre constante</strong>, pagos descontrolados o meses esperando cobrar un trabajo que ya hizo hace tiempo.</p>
+
+            <p>Y si había algo que tampoco tenía sentido era seguir teniendo la documentación repartida entre carpetas, WhatsApps, llamadas y papeles perdidos.</p>
+
+            <p>Por eso quisimos <strong>centralizar toda la parte documental</strong> dentro de la propia plataforma. Desde la documentación personal de un chófer hasta la gestión completa de flotas, vehículos y empresas.</p>
+
+            <p>La idea era sencilla:</p>
+
+            <p><strong>menos tiempo persiguiendo papeles y más tiempo dedicándolo a trabajar tranquilos.</strong></p>
+
+            <p>También tenía claro que quería acabar con esa sensación de <strong>trabajar a ciegas</strong>.</p>
+
+            <p>Cuántas veces aceptamos una ruta sin conocer realmente cómo trabaja la otra parte.<br>Cuántas veces un chófer acepta un viaje sin saber cómo paga una empresa.<br>Cuántas veces una empresa se juega una carga importante sin saber quién hay realmente al volante.</p>
+
+            <p>Por eso pensé en la <strong>reputación FleetChofer</strong>:</p>
+
+            <p>Algo que fuera mucho más que un simple número, un comentario o unas estrellas. Una <strong>reputación viva</strong>, construida a través de cada ruta, cada incidencia, cada experiencia operativa y cada valoración entre profesionales. Porque aquí todos construyen su historial: las empresas valoran a los chóferes, los chóferes valoran a las empresas y cada experiencia deja huella a través de <strong>insignias positivas y negativas</strong> que reflejan cómo trabaja realmente cada profesional en el día a día.</p>
+
+            <p>Nuestra reputación funciona como un <strong>currículum en movimiento</strong>, un historial profesional que evoluciona constantemente con el trabajo del día a día y que cada usuario muestra en su perfil. Porque cuando trabajas con información real, las decisiones dejan de depender de la suerte.</p>
+
+            <p>Además, para que toda la operativa pueda controlarse desde una sola pantalla, existe el <strong>Centro de Operaciones de FleetChofer</strong>. Un espacio donde poder ver en tiempo real todo lo que está ocurriendo dentro de tu operativa: rutas activas, incidencias, pagos, cobros, documentación pendiente, renovaciones, adjudicaciones o cualquier movimiento del día a día.</p>
+
+            <p>Y no solo verlo. También actuar sobre ello. Porque el Centro de Operaciones permite gestionar incidencias al momento, delegarlas a quien corresponda y mantener un <strong>historial completo</strong> donde queda registrado qué ocurrió, cuándo empezó, quién lo solucionó y cómo se resolvió.</p>
+
+            <p>Y poco a poco todo empezó a conectarse.</p>
+
+            <p><strong>Las rutas.<br>La documentación.<br>La reputación.<br>La planificación.<br>Los pagos.<br>La comunicación.<br>El control operativo.</strong></p>
+
+            <p>Ya no tenía sentido crear herramientas separadas como tenemos ahora.</p>
+
+            <p><strong>Todo tenía que formar parte del mismo ecosistema.</strong></p>
+
+            <p>Por eso FleetChofer también incorpora CRM, inteligencia operativa y sistemas de seguridad con geolocalización para los chóferes. No para controlar más a las personas, sino porque cuando toda la información queda registrada y conectada, puedes saber qué pasó, cuándo ocurrió, quién actuó y cómo se solucionó. Manteniendo así una <strong>auditoría interna real</strong> y un historial completo de toda la operativa del día a día.</p>
+
+            <p>Y cuando toda esa auditoría diaria empieza a conectarse, también aparecen mejoras que muchas veces el propio día a día no deja ver: una ruta que siempre acumula retrasos y podría optimizarse con un pequeño desvío, un camión que empieza a generar demasiadas incidencias o incluso qué tipo de rutas encajan mejor con el rendimiento real de cada chófer.</p>
+
+            <p>Al final, toda la idea de FleetChofer se resume en algo muy simple:</p>
+
+            <p><strong>Donde trabajar con calidad vuelva a tener valor.<br>Donde la tecnología ayude de verdad.<br>Donde las empresas encuentren profesionales con confianza.<br>Y donde los profesionales vuelvan a sentir que forman parte de una comunidad y no solo de una ruta más.</strong></p>
+
+            <p>Porque si algo he aprendido durante todos estos años, es que <strong>la logística mueve el mundo</strong>… pero las personas son las que hacen que siga avanzando.</p>
 
             <p class="flame-line">La llama que conecta empresas y conductores.</p>
+
         </div>
 
     </div>
@@ -1329,6 +1421,9 @@ nav {
 <!-- Divisor -->
 <div style="width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--rojo-principal),transparent);box-shadow:0 0 20px rgba(255,0,0,0.6);"></div>
 
+
+
+<!-- ===== TRES BOTONES FLEETCHOFER — COPIADOS DESDE INDEX ===== -->
 <!-- ===== TRES BOTONES FLEETCHOFER — HTML + JS LIMPIO ===== -->
 <!-- FLOATING BUTTON — BLINDAR DOC -->
 <a href="doc-management.html" class="floating-button-doc">
@@ -1592,7 +1687,7 @@ nav {
     document.getElementById('floatingBtnCustom').addEventListener('click', function() {
         const modal = document.getElementById('contactFormModal');
         modal.style.display = 'flex';
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'hidden';
         // Reset state
         document.getElementById('cfmForm').style.display = 'block';
         document.getElementById('cfmThanks').style.display = 'none';
@@ -1601,7 +1696,7 @@ nav {
     });
     function closeContactForm() {
         document.getElementById('contactFormModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'hidden';
     }
     document.getElementById('contactFormModal').addEventListener('click', (e) => {
         if (e.target.id === 'contactFormModal') closeContactForm();
@@ -1646,7 +1741,7 @@ nav {
     function openUrgentModal() {
         urgentContacted = false;
         document.getElementById('urgentModal').classList.add('open');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'hidden';
     }
     function closeUrgentModal() {
         if (!urgentContacted) {
@@ -1657,7 +1752,7 @@ nav {
     }
     function _doCloseUrgent() {
         document.getElementById('urgentModal').classList.remove('open');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflow = 'hidden';
     }
     function activateFromUrgentRetention() {
         document.getElementById('urgentRetentionModal').style.display = 'none';
@@ -1681,6 +1776,8 @@ nav {
         }
     });
 </script>
+
+
 
 
 <!-- ===== ALIADOS EN RUTA — PÁGINA EMBEBIDA ===== -->
@@ -3093,6 +3190,8 @@ function updatePrices(mode) {
 
 
 
+
+<!-- ===== POPUP DOCUMENTAL — COPIADO DESDE INDEX ===== -->
 <!-- ===== POPUP DOCUMENTAL ===== -->
 <div id="fc-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="fc-popup-title">
 
@@ -3144,6 +3243,145 @@ function updatePrices(mode) {
 </div>
 
 <!-- ░░░ JAVASCRIPT ░░░ -->
+
+
+
+<!-- ── JS ── -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const esHome = window.location.pathname === "/" || window.location.pathname.endsWith("index.html");
+        if (!esHome) {
+            const cookies = document.getElementById("cookie-banner");
+            if (cookies) cookies.remove();
+        }
+
+        /* Partículas de fuego alrededor del logo */
+        const container = document.getElementById('fireSparks');
+        if (container) {
+            const pts = [
+                {top:'2%',  left:'18%', d:0,    dur:2.1, s:3},
+                {top:'0%',  left:'48%', d:0.35, dur:1.8, s:2},
+                {top:'4%',  left:'74%', d:0.7,  dur:2.4, s:4},
+                {top:'18%', left:'92%', d:0.15, dur:2,   s:3},
+                {top:'40%', left:'97%', d:0.9,  dur:2.2, s:3},
+                {top:'62%', left:'92%', d:0.5,  dur:1.9, s:2},
+                {top:'80%', left:'76%', d:0.25, dur:2.3, s:3},
+                {top:'90%', left:'52%', d:0.8,  dur:2,   s:4},
+                {top:'86%', left:'28%', d:0.4,  dur:2.1, s:2},
+                {top:'72%', left:'6%',  d:1,    dur:2.2, s:3},
+                {top:'50%', left:'1%',  d:0.6,  dur:1.9, s:2},
+                {top:'28%', left:'4%',  d:0.2,  dur:2.5, s:4},
+                {top:'12%', left:'8%',  d:1.1,  dur:2,   s:3},
+            ];
+            pts.forEach(p => {
+                const s = document.createElement('span');
+                s.style.top  = p.top;
+                s.style.left = p.left;
+                s.style.animationDuration = p.dur + 's';
+                s.style.animationDelay   = p.d + 's';
+                const sz = (p.s || 3) + 'px';
+                s.style.width  = sz;
+                s.style.height = sz;
+                container.appendChild(s);
+            });
+        }
+    });
+</script>
+
+<script>
+
+    document.getElementById('floatingBtnCustom').addEventListener('click', function() {
+        const modal = document.getElementById('contactFormModal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'auto';
+        // Reset state
+        document.getElementById('cfmForm').style.display = 'block';
+        document.getElementById('cfmThanks').style.display = 'none';
+        document.querySelectorAll('.cfm-chip').forEach(c => c.classList.remove('active'));
+        document.getElementById('cfmRolField').value = '';
+    });
+    function closeContactForm() {
+        document.getElementById('contactFormModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    document.getElementById('contactFormModal').addEventListener('click', (e) => {
+        if (e.target.id === 'contactFormModal') closeContactForm();
+    });
+    function selectChip(el) {
+        document.querySelectorAll('.cfm-chip').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+        document.getElementById('cfmRolField').value = el.dataset.val;
+    }
+    // Intercept form submit → show thanks screen
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const rolVal = document.getElementById('cfmRolField').value;
+        if (!rolVal) {
+            const chips = document.getElementById('cfmChips');
+            chips.style.outline = '1px solid rgba(255,0,0,0.6)';
+            chips.style.borderRadius = '8px';
+            setTimeout(() => { chips.style.outline = 'none'; }, 1800);
+            return;
+        }
+        const btn = document.getElementById('cfmSendBtn');
+        btn.textContent = 'Enviando...';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+        const formData = new FormData(this);
+        const form = this;
+        fetch(this.action, { method: 'POST', body: formData, mode: 'no-cors' })
+            .then(() => {
+                document.getElementById('cfmForm').style.display = 'none';
+                const thanks = document.getElementById('cfmThanks');
+                thanks.style.display = 'flex';
+            })
+            .catch(() => {
+                // fallback: submit normally
+                form.submit();
+            });
+    });
+
+    // ── URGENT MODAL ──
+    let urgentContacted = false;
+
+    function openUrgentModal() {
+        urgentContacted = false;
+        document.getElementById('urgentModal').classList.add('open');
+        document.body.style.overflow = 'auto';
+    }
+    function closeUrgentModal() {
+        if (!urgentContacted) {
+            document.getElementById('urgentRetentionModal').style.display = 'flex';
+            return;
+        }
+        _doCloseUrgent();
+    }
+    function _doCloseUrgent() {
+        document.getElementById('urgentModal').classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+    function activateFromUrgentRetention() {
+        document.getElementById('urgentRetentionModal').style.display = 'none';
+        // Modal stays open so user can choose
+    }
+    function confirmCloseUrgent() {
+        document.getElementById('urgentRetentionModal').style.display = 'none';
+        urgentContacted = true;
+        _doCloseUrgent();
+    }
+    function openUrgentContact(subject) {
+        urgentContacted = true;
+        _doCloseUrgent();
+    }
+    document.getElementById('urgentModal').addEventListener('click', function(e) {
+        if (e.target === this) closeUrgentModal();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && document.getElementById('urgentModal').classList.contains('open')) {
+            closeUrgentModal();
+        }
+    });
+</script>
 <script>
 (function () {
   'use strict';
@@ -3195,8 +3433,6 @@ function updatePrices(mode) {
 
 })();
 </script>
-
-
 <script>
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
@@ -3204,8 +3440,6 @@ if (menuToggle && navMenu) {
   menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 }
 </script>
-
-
 <script>
 (function(){
   const openBtn = document.getElementById('openAlliesPage');
@@ -3236,8 +3470,6 @@ if (menuToggle && navMenu) {
   }
 })();
 </script>
-
-
 <script src="scroll-enhancements.js"></script>
 
 </body>
