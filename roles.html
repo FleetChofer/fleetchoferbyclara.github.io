@@ -1701,6 +1701,7 @@ nav {
                 <div class="plan-users">👤 1 Perfil incluido</div>
                 <div class="features-title">INCLUYE</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Perfil creado y visible en la plataforma</li>
                     <li>CRM FleetChofer incluido</li>
                     <li>Amistad operativa ilimitada</li>
@@ -1733,6 +1734,7 @@ nav {
                 <div class="plan-users">👤 1 Perfil incluido</div>
                 <div class="features-title">INCLUYE TODO LO ANTERIOR MÁS</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Perfil profesional destacado</li>
                     <li>Solicitar rutas ilimitadas</li>
                     <li>Prioridad en asignación de rutas</li>
@@ -1762,6 +1764,7 @@ nav {
                 <div class="plan-users">👤 1 Admin<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">INCLUYE</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Acceso a la plataforma</li>
                     <li>Creación de perfil de empresa</li>
                     <li>CRM FleetChofer incluido</li>
@@ -1796,6 +1799,7 @@ nav {
                 <div class="plan-users">👤 1 Admin + 3 Usuarios<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">CONTROL TOTAL — TODO INCLUIDO</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Solicitar y publicar rutas ilimitadas</li>
                     <li>Buscador de chóferes</li>
                     <li>Gestión de flota ilimitada</li>
@@ -1825,10 +1829,11 @@ nav {
                 <div class="plan-users">👤 1 Admin + 1 Usuario<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">INCLUYE</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Publicar rutas ilimitadas, solicitar 5 rutas/mes</li>
                     <li>Gestión de flota:<br>
                         <span class="nested-feature">• 1–5 perfiles → 0€/perfil</span>
-                        <span class="nested-feature">• 6–20 perfiles → 15€/perfil</span>
+                        <span class="nested-feature">• 6–20 perfiles → 9€/perfil</span>
                     </li>
                     <li>Centro de Operaciones limitado</li>
                     <li>Inteligencia Operativa limitada</li>
@@ -1862,6 +1867,7 @@ nav {
                 <div class="plan-users">👤 1 Admin<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">INCLUYE</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Acceso a la plataforma</li>
                     <li>Publicación de rutas ilimitadas</li>
                     <li>CRM FleetChofer incluido</li>
@@ -1895,6 +1901,7 @@ nav {
                 <div class="plan-users">👤 1 Admin + 3 Usuarios<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">CONTROL TOTAL — TODO INCLUIDO</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Publicar rutas ilimitadas, buscar chóferes</li>
                     <li>Gestión de flota ilimitada</li>
                     <li>Reputación total (ver y mostrar)</li>
@@ -1923,10 +1930,11 @@ nav {
                 <div class="plan-users">👤 1 Admin + 1 Usuario<br><small>Usuarios adicionales: +49€/usuario</small></div>
                 <div class="features-title">INCLUYE</div>
                 <ul class="plan-features">
+                    <li>Acceso a la emisora</li>
                     <li>Publicación de rutas ilimitadas</li>
                     <li>Gestión de flota:<br>
                         <span class="nested-feature">• 1–5 perfiles → 0€/perfil</span>
-                        <span class="nested-feature">• 6–20 perfiles → 20€/perfil</span>
+                        <span class="nested-feature">• 6–20 perfiles → 9€/perfil</span>
                     </li>
                     <li>Centro de Operaciones limitado</li>
                     <li>Inteligencia Operativa limitada</li>
@@ -3173,6 +3181,210 @@ nav {
             .intro-right { gap: 0.8rem; }
             .hero h1 { font-size: 2.5rem; }
         }
+        /* ═══════════════════════════════════════════════════
+           REPUTACIÓN E INSIGNIAS DE ALIADOS
+           CSS copiado 1:1 del sistema de Características
+           ═══════════════════════════════════════════════════ */
+        .aliados-rep-section {
+            padding: 2.5rem 2.5rem 2rem;
+            background: rgba(255,0,0,0.02);
+            position: relative; z-index: 1;
+        }
+        .aliados-rep-inner {
+            max-width: 1100px; margin: 0 auto;
+        }
+        /* Título de sección */
+        .aliados-rep-titulo {
+            display: flex; align-items: center; gap: 1rem;
+            margin-bottom: 2.8rem;
+        }
+        .aliados-rep-titulo::before,
+        .aliados-rep-titulo::after {
+            content: &#x27;&#x27;; flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,0,0,0.3));
+        }
+        .aliados-rep-titulo::after {
+            background: linear-gradient(90deg, rgba(255,0,0,0.3), transparent);
+        }
+        .aliados-rep-titulo span {
+            font-size: 0.72rem; font-weight: 800; letter-spacing: 0.18em;
+            text-transform: uppercase; color: rgba(255,0,0,0.85);
+            white-space: nowrap;
+        }
+        /* Bloque de texto intro */
+        .aliados-rep-intro-card {
+            background: rgba(10,0,0,0.55);
+            border: 1px solid rgba(255,0,0,0.18);
+            border-radius: 12px;
+            padding: 2.2rem 2.8rem;
+            margin-bottom: 2.8rem;
+            position: relative; overflow: hidden;
+        }
+        .aliados-rep-intro-card::before {
+            content: &#x27;&#x27;;
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255,0,0,0.4), transparent);
+        }
+        .aliados-rep-intro-card p {
+            font-size: 0.95rem; color: rgba(255,255,255,0.62);
+            line-height: 1.85; font-weight: 300; margin-bottom: 1.1rem;
+        }
+        .aliados-rep-intro-card p:last-child { margin-bottom: 0; }
+        .aliados-rep-intro-card .rep-highlight {
+            color: rgba(255,0,0,0.85);
+            font-weight: 500;
+            text-shadow: 0 0 12px rgba(255,0,0,0.2);
+        }
+        .aliados-rep-intro-card .rep-highlight-white {
+            color: rgba(255,255,255,0.88);
+            font-weight: 500;
+        }
+        /* Subtítulos de columna (encienden / apagan) */
+        .ar-col-title-row {
+            display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;
+        }
+        .ar-col-title-row::after {
+            content: &#x27;&#x27;; flex: 1; height: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+        .ar-col-title-row span {
+            font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+            text-transform: uppercase; padding-bottom: 0; white-space: nowrap;
+        }
+        .ar-col-title-row.pos span { color: rgba(100,255,100,0.7); }
+        .ar-col-title-row.neg span { color: rgba(255,100,80,0.7); }
+        /* Subtexto pequeño bajo el título de columna */
+        .ar-col-subtitle {
+            font-size: 0.72rem; color: rgba(255,255,255,0.32);
+            line-height: 1.6; margin-bottom: 1.4rem; font-style: italic;
+        }
+        /* Grid de 2 columnas — idéntico al de Características */
+        .ar-insignias-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem; position: relative;
+        }
+        .ar-insignias-col { display: flex; flex-direction: column; }
+        /* Separador de sello dorado dentro de columna izq */
+        .ar-sello-divider {
+            display: flex; align-items: center; gap: 0.7rem;
+            margin: 1.4rem 0 1rem;
+        }
+        .ar-sello-divider::before, .ar-sello-divider::after {
+            content: &#x27;&#x27;; flex: 1; height: 1px;
+            background: rgba(255,180,0,0.2);
+        }
+        .ar-sello-divider span {
+            font-size: 0.58rem; font-weight: 800; letter-spacing: 0.14em;
+            text-transform: uppercase; color: rgba(255,210,80,0.65);
+            white-space: nowrap;
+        }
+        /* Insignia item — idéntico al de Características */
+        .ar-insignia-item {
+            display: flex; align-items: baseline; gap: 10px;
+            padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.8rem;
+        }
+        .ar-insignia-item:last-child { border-bottom: none; }
+        .ar-ins-badge {
+            flex-shrink: 0; padding: 2px 8px; border-radius: 20px;
+            font-size: 0.58rem; font-weight: 800; white-space: nowrap;
+            letter-spacing: 0.04em; min-width: 110px; max-width: 180px; text-align: center;
+        }
+        .ar-ins-badge.pos { background: rgba(51,253,0,0.1); border: 1px solid rgba(51,253,0,0.25); color: rgba(80,230,80,0.9); }
+        .ar-ins-badge.neg { background: rgba(255,0,0,0.08); border: 1px solid rgba(255,0,0,0.22); color: rgba(255,120,80,0.9); }
+        .ar-ins-badge.fc  { background: rgba(255,180,0,0.1);  border: 1px solid rgba(255,180,0,0.25);  color: rgba(255,210,80,0.9); }
+        .ar-ins-text { color: rgba(255,255,255,0.55); line-height: 1.5; }
+        .ar-ins-text strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+        /* Sello dorado expandido (con &quot;Cómo se activa&quot; y frase) */
+        .ar-sello-card {
+            background: rgba(255,180,0,0.05);
+            border: 1px solid rgba(255,180,0,0.2);
+            border-radius: 8px; padding: 1rem 1.2rem;
+            margin-bottom: 0.6rem;
+        }
+        .ar-sello-card-header {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 0.6rem;
+        }
+        .ar-sello-icon { font-size: 1.2rem; flex-shrink: 0; line-height: 1.3; }
+        .ar-sello-name {
+            font-size: 0.78rem; font-weight: 800;
+            color: rgba(255,210,80,0.95); margin-bottom: 0.2rem;
+        }
+        .ar-sello-sub {
+            font-size: 0.65rem; color: rgba(255,210,80,0.5);
+            font-style: italic; font-weight: 400;
+        }
+        .ar-sello-how {
+            font-size: 0.7rem; color: rgba(255,255,255,0.35);
+            line-height: 1.6; margin-bottom: 0.5rem;
+        }
+        .ar-sello-how strong { color: rgba(255,255,255,0.55); font-weight: 600; }
+        .ar-sello-frase {
+            font-size: 0.72rem; color: rgba(255,210,80,0.6);
+            font-style: italic; line-height: 1.6;
+            border-left: 2px solid rgba(255,180,0,0.25);
+            padding-left: 0.7rem; margin-top: 0.4rem;
+        }
+        /* Logo animado — igual que en Características */
+        .ar-logo-center {
+            position: relative; z-index: 2; pointer-events: none;
+            width: 100%; display: flex;
+            justify-content: center; align-items: center;
+            margin: 1.2rem 0 0.5rem; min-height: 190px;
+            animation: logoSwing 6s ease-in-out infinite;
+        }
+        .ar-logo-center::before, .ar-logo-center::after {
+            content: none !important; display: none !important; animation: none !important;
+        }
+        .ar-logo-center img {
+            width: 185px; height: 185px; border-radius: 50%; display: block;
+            position: relative;
+            filter:
+                drop-shadow(0 0 10px rgba(255,0,0,0.58))
+                drop-shadow(0 0 24px rgba(255,0,0,0.34))
+                drop-shadow(0 0 44px rgba(255,0,0,0.22));
+        }
+        /* Pie valoración injusta */
+        .ar-valoracion-pie {
+            margin-top: 0.8rem; padding: 0.9rem 1.5rem 0;
+            border-top: 1px solid rgba(255,0,0,0.1);
+            display: flex; align-items: flex-start; gap: 10px;
+        }
+        .ar-valoracion-pie .ar-pie-star {
+            color: rgba(255,0,0,0.5); font-size: 0.75rem; flex-shrink: 0; margin-top: 1px;
+        }
+        .ar-valoracion-pie p {
+            font-size: 0.75rem; color: rgba(255,255,255,0.38);
+            line-height: 1.7; font-weight: 300; font-style: italic;
+        }
+        .ar-valoracion-pie p strong {
+            color: rgba(255,255,255,0.5); font-weight: 500; font-style: normal;
+        }
+        /* Separador visual entre título y columnas */
+        .ar-section-sep {
+            display: flex; align-items: center; gap: 1rem; margin: 1.4rem 0 1.6rem;
+        }
+        .ar-section-sep::before, .ar-section-sep::after {
+            content: &#x27;&#x27;; flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,0,0,0.25));
+        }
+        .ar-section-sep::after {
+            background: linear-gradient(90deg, rgba(255,0,0,0.25), transparent);
+        }
+        .ar-section-sep span {
+            font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em;
+            text-transform: uppercase; color: rgba(255,255,255,0.18); white-space: nowrap;
+        }
+        /* Responsive */
+        @media (max-width: 860px) {
+            .ar-insignias-grid { grid-template-columns: 1fr; }
+            .aliados-rep-section { padding: 3.5rem 1.5rem; }
+            .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
+        }
+        /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
+
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -3251,6 +3463,144 @@ nav {
                 &lt;div class=&quot;intro-pill-text&quot;&gt;No son seguidores. Son profesionales con camiones, rutas y necesidades reales que buscan soluciones en tiempo real.&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- ══════════════════════════════════════════
+     REPUTACIÓN E INSIGNIAS DE LOS ALIADOS
+══════════════════════════════════════════ --&gt;
+&lt;section class=&quot;aliados-rep-section&quot;&gt;
+    &lt;div class=&quot;aliados-rep-inner&quot;&gt;
+
+        &lt;!-- Título --&gt;
+        &lt;div class=&quot;aliados-rep-titulo&quot;&gt;
+            &lt;span&gt;✦ &amp;nbsp;Reputación e Insignias de los Aliados&amp;nbsp; ✦&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Texto introductorio --&gt;
+        &lt;div class=&quot;aliados-rep-intro-card&quot;&gt;
+            &lt;p&gt;
+                Y como en FleetChofer todo forma parte de una misma red,
+                &lt;span class=&quot;rep-highlight-white&quot;&gt;los aliados también construyen su propia reputación dentro del ecosistema.&lt;/span&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                Porque aquí no solo importa estar.
+                &lt;span class=&quot;rep-highlight&quot;&gt;Importa cómo haces sentir a quienes viven la carretera cada día.&lt;/span&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                La rapidez con la que trabajas, el trato que das, la seguridad de tus instalaciones,
+                cómo respondes ante una incidencia o cómo haces sentir a quien para en tu negocio
+                también dejan huella.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Cada experiencia puede traducirse en valoraciones e insignias que quedarán visibles en tu perfil,
+                porque &lt;span class=&quot;rep-highlight-white&quot;&gt;cuando un negocio cuida a los profesionales, la carretera acaba hablándolo.&lt;/span&gt;
+                Y esas insignias terminan convirtiéndose en algo más que un símbolo:
+                &lt;span class=&quot;rep-highlight&quot;&gt;en orgullo, confianza y reconocimiento dentro del sector.&lt;/span&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Grid principal: izquierda positivas+sellos / derecha negativas+logo --&gt;
+        &lt;div class=&quot;ar-insignias-grid&quot;&gt;
+
+            &lt;!-- ── COL IZQUIERDA: positivas + sellos dorados ── --&gt;
+            &lt;div class=&quot;ar-insignias-col&quot;&gt;
+
+                &lt;!-- Título col positiva --&gt;
+                &lt;div class=&quot;ar-col-title-row pos&quot;&gt;
+                    &lt;span&gt;🔥 Insignias que encienden el perfil del Aliado&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;ar-col-subtitle&quot;&gt;Premios que la comunidad otorga a los negocios que de verdad respetan y cuidan al transportista en su día a día.&lt;/p&gt;
+
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge pos&quot;&gt;Estación de Descanso&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;Trato humano, instalaciones cuidadas&lt;/strong&gt; y un ambiente excelente para el profesional.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge pos&quot;&gt;Muelle Ágil&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;Servicio rápido y eficiente.&lt;/strong&gt; No hacen perder tiempo al profesional porque entienden que el tacógrafo no espera.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge pos&quot;&gt;Cuenta Sin Sorpresas&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;Transparencia total.&lt;/strong&gt; El precio presupuestado o la condición acordada es lo que se cumple.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge pos&quot;&gt;Surtidor de Confianza&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;Instalaciones seguras,&lt;/strong&gt; parkings vigilados y servicios de alta calidad.&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Separador sellos dorados --&gt;
+                &lt;div class=&quot;ar-sello-divider&quot;&gt;
+                    &lt;span&gt;✦ &amp;nbsp;Sellos Oficiales FleetChofer&amp;nbsp; ✦&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;ar-col-subtitle&quot;&gt;Los premios que marcan la diferencia. Solo los otorgamos a los negocios que han demostrado, servicio tras servicio, un compromiso impecable con nuestra comunidad.&lt;/p&gt;
+
+                &lt;!-- Sellos dorados — mismo formato compacto que las demás insignias --&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge fc&quot;&gt;🥇 Llama Auxiliar Certificada&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;El Sello de la Rapidez Operativa.&lt;/strong&gt; Se activa acumulando 50 insignias de &lt;em&gt;Muelle Ágil&lt;/em&gt; y 50 de &lt;em&gt;Cuenta Sin Sorpresas&lt;/em&gt;.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge fc&quot;&gt;🏆 Faro del Asfalto&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;El Sello del Trato Humano y la Hospitalidad.&lt;/strong&gt; Se activa acumulando 50 insignias de &lt;em&gt;Estación de Descanso&lt;/em&gt; y 50 de &lt;em&gt;Cuenta Sin Sorpresas&lt;/em&gt;.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge fc&quot;&gt;🛡️ Fuego Sagrado&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;&lt;strong&gt;El Sello del Servicio Prioritario y Seguridad.&lt;/strong&gt; Se activa acumulando 50 insignias de &lt;em&gt;Surtidor de Confianza&lt;/em&gt; y 50 de &lt;em&gt;Muelle Ágil&lt;/em&gt;.&lt;/span&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+            &lt;!-- ── COL DERECHA: negativas + logo ── --&gt;
+            &lt;div class=&quot;ar-insignias-col&quot;&gt;
+
+                &lt;!-- Título col negativa --&gt;
+                &lt;div class=&quot;ar-col-title-row neg&quot;&gt;
+                    &lt;span&gt;❄️ Insignias de Riesgo que apagan el servicio del Aliado&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;ar-col-subtitle&quot;&gt;Alertas operativas basadas en hechos para que la comunidad sepa dónde NO merece la pena parar.&lt;/p&gt;
+
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge neg&quot;&gt;Grifo Lento&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;Tiempos muertos absurdos, esperas eternas y desorganización total que te jode la planificación del viaje.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge neg&quot;&gt;Muelle Frío&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;Mala educación. Trato antipático, despectivo o falta de respeto hacia la figura del profesional del transporte.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge neg&quot;&gt;Gato Encerrado&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;Te cambian las condiciones a última hora, te meten cargos ocultos o te dan información engañosa.&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;ar-insignia-item&quot;&gt;
+                    &lt;span class=&quot;ar-ins-badge neg&quot;&gt;Zona Insegura&lt;/span&gt;
+                    &lt;span class=&quot;ar-ins-text&quot;&gt;Parkings sin luz, mala accesibilidad para vehículos pesados o total abandono de las instalaciones.&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Separador visual antes del logo --&gt;
+                &lt;div class=&quot;ar-section-sep&quot; style=&quot;margin-top:auto; margin-top:1.6rem;&quot;&gt;
+                    &lt;span&gt;FleetChofer by Clara&lt;/span&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Logo animado — misma clase, mismo efecto, centrado --&gt;
+                &lt;div class=&quot;ar-logo-center&quot;&gt;
+                    &lt;img src=&quot;Logo_redondo.png&quot; alt=&quot;FleetChofer Logo&quot;&gt;
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Pie: valoración injusta --&gt;
+        &lt;div class=&quot;ar-valoracion-pie&quot;&gt;
+            &lt;span class=&quot;ar-pie-star&quot;&gt;✦&lt;/span&gt;
+            &lt;p&gt;
+                &lt;strong&gt;¿Valoración injusta?&lt;/strong&gt;
+                Si crees que una insignia no refleja la realidad, abre una reclamación.
+                FleetChofer investiga, habla con ambas partes y, si la insignia es incorrecta, la retira.
+                La reputación de tu negocio siempre será un reflejo fiel y justo de cómo tratas a los profesionales.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
     &lt;/div&gt;
 &lt;/section&gt;
 
@@ -3738,8 +4088,7 @@ function updatePrices(mode) {
 
 &lt;!-- Actualizado: hero final Aliados en Ruta --&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
+&lt;/html&gt;"></iframe>
 </div>
 <button class="allies-page-close" id="closeAlliesPage" aria-label="Cerrar Aliados en Ruta">✕</button>
 
@@ -3881,11 +4230,6 @@ document.getElementById('plansClose').addEventListener('click', function(e) {
 document.getElementById('plansOverlay').addEventListener('click', function(e) {
     if (e.target === this) {
         if (!exitIntentShown) { showExitIntent(); exitIntentShown = true; }
-    }
-});
-document.addEventListener('mouseleave', function(e) {
-    if (e.clientY < 0 && !exitIntentShown && document.getElementById('plansOverlay').style.display === 'block') {
-        showExitIntent(); exitIntentShown = true;
     }
 });
 // ── Retention data ──
