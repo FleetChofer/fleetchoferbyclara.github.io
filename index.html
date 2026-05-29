@@ -3480,5 +3480,32 @@ if (menuToggle && navMenu) {
 })();
 </script>
 
+
+<style>
+.fc-legal-bar{
+position:fixed;bottom:8px;left:50%;transform:translateX(-50%);
+z-index:9999;display:flex;gap:14px;flex-wrap:wrap;
+justify-content:center;align-items:center;
+padding:8px 14px;background:rgba(0,0,0,.82);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,0,0,.22);
+border-radius:999px;font-family:'Inter',sans-serif;font-size:11px;
+}
+.fc-legal-bar a,.fc-legal-bar button{
+color:rgba(255,255,255,.72);text-decoration:none;
+background:none;border:0;cursor:pointer;font:inherit;
+}
+.fc-legal-bar a:hover,.fc-legal-bar button:hover{color:#ff0000;}
+@media(max-width:768px){
+.fc-legal-bar{max-width:95%;font-size:10px;gap:8px;}
+}
+</style>
+<div class="fc-legal-bar">
+<a href="aviso-legal.html">Aviso Legal</a>
+<a href="politica-privacidad.html">Política de Privacidad</a>
+<a href="cookies.html">Política de Cookies</a>
+<button type="button" data-open-cookie-settings>Configurar Cookies</button>
+</div>
+
 </body>
 </html>
