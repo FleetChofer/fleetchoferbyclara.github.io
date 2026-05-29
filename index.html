@@ -1485,7 +1485,7 @@ nav {
             <div class="cfm-thanks-icon">✅</div>
             <h3 class="cfm-thanks-title">Mensaje recibido.<br><span>Aquí sí se escucha.</span></h3>
             <p class="cfm-thanks-text">Gracias por ayudarnos a mejorar FleetChofer. Las ideas, problemas y necesidades del sector nos importan de verdad.<br><br>Hemos recibido tu mensaje, lo revisaremos personalmente y te enviaremos una respuesta.</p>
-            <a href="https://fleetchoferbyclara.com" class="cfm-thanks-back">← Volver a FleetChofer</a>
+            
         </div>
     </div>
 </div>
@@ -3801,6 +3801,182 @@ Pega este bloque antes de
 }
 </style>
 <!-- FIN AJUSTE GLOBAL MÓVIL FLEETCHOFER -->
+
+
+<!-- AJUSTE MÓVIL EXTRA FLEETCHOFER — URGENTES + ALIADOS -->
+<style>
+@media (max-width: 768px){
+
+  /* Rutas urgentes: evita tarjetas/botones de 4,99 y 7,99 aplastados */
+  .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .urgent-card{
+    width:100% !important;
+    min-width:0 !important;
+    padding:1.15rem 1rem !important;
+    gap:.55rem !important;
+    overflow:visible !important;
+  }
+
+  .urgent-card-name{
+    font-size:1rem !important;
+    line-height:1.22 !important;
+    white-space:normal !important;
+    word-break:normal !important;
+  }
+
+  .urgent-card-price{
+    font-size:1.65rem !important;
+    line-height:1.1 !important;
+    flex-wrap:wrap !important;
+    align-items:flex-end !important;
+  }
+
+  .urgent-price-inc{
+    font-size:.62rem !important;
+    white-space:normal !important;
+    line-height:1.2 !important;
+  }
+
+  .urgent-card-desc,
+  .urgent-card-details{
+    font-size:.78rem !important;
+    line-height:1.45 !important;
+    white-space:normal !important;
+  }
+
+  .urgent-profile-tags{
+    gap:.35rem !important;
+  }
+
+  .urgent-profile-tag{
+    font-size:.55rem !important;
+    padding:2px 6px !important;
+    white-space:normal !important;
+  }
+
+  /* Botones inferiores: que no se monten ni desaparezcan detrás */
+  .urgent-fab,
+  .floating-button-custom,
+  .floating-button-doc{
+    white-space:normal !important;
+    text-align:center !important;
+    line-height:1.15 !important;
+    min-height:38px !important;
+  }
+
+  .floating-button-custom{
+    display:flex !important;
+  }
+
+  /* Aliados en ruta: evita cortes en insignias/tarjetas */
+  #alliesPageOverlay,
+  .allies-page-overlay,
+  .allies-overlay{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #alliesPageOverlay .allies-page,
+  #alliesPageOverlay .allies-content,
+  #alliesPageOverlay .allies-modal,
+  #alliesPageOverlay .allies-wrapper,
+  .allies-page-overlay .allies-page,
+  .allies-page-overlay .allies-content,
+  .allies-page-overlay .allies-modal,
+  .allies-page-overlay .allies-wrapper{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* Rejillas de insignias: una columna o dos compactas, sin cortar */
+  #alliesPageOverlay [class*="badge"],
+  #alliesPageOverlay [class*="insignia"],
+  .allies-page-overlay [class*="badge"],
+  .allies-page-overlay [class*="insignia"]{
+    max-width:100% !important;
+    overflow:visible !important;
+    white-space:normal !important;
+  }
+
+  #alliesPageOverlay [class*="grid"],
+  .allies-page-overlay [class*="grid"]{
+    max-width:100% !important;
+  }
+
+  #alliesPageOverlay .badges-grid,
+  #alliesPageOverlay .insignias-grid,
+  #alliesPageOverlay .badge-grid,
+  #alliesPageOverlay .allies-badges-grid,
+  .allies-page-overlay .badges-grid,
+  .allies-page-overlay .insignias-grid,
+  .allies-page-overlay .badge-grid,
+  .allies-page-overlay .allies-badges-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:.75rem !important;
+    width:100% !important;
+    overflow:visible !important;
+  }
+
+  /* Si hay pestañas Chofer/Empresa dentro de aliados, que entren en móvil */
+  #alliesPageOverlay .tabs,
+  #alliesPageOverlay .role-tabs,
+  #alliesPageOverlay .allies-tabs,
+  .allies-page-overlay .tabs,
+  .allies-page-overlay .role-tabs,
+  .allies-page-overlay .allies-tabs{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:.45rem !important;
+    width:100% !important;
+    overflow:visible !important;
+  }
+
+  #alliesPageOverlay .tabs button,
+  #alliesPageOverlay .role-tabs button,
+  #alliesPageOverlay .allies-tabs button,
+  .allies-page-overlay .tabs button,
+  .allies-page-overlay .role-tabs button,
+  .allies-page-overlay .allies-tabs button{
+    flex:1 1 auto !important;
+    min-width:120px !important;
+    white-space:normal !important;
+    font-size:.78rem !important;
+    padding:.65rem .75rem !important;
+  }
+
+  /* Evita carruseles cortados dentro de aliados */
+  #alliesPageOverlay [class*="carousel"],
+  #alliesPageOverlay [class*="slider"],
+  .allies-page-overlay [class*="carousel"],
+  .allies-page-overlay [class*="slider"]{
+    overflow-x:auto !important;
+    overflow-y:visible !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  /* Cruz de cierre siempre visible */
+  #closeAlliesPage,
+  .close-allies,
+  .allies-close{
+    position:fixed !important;
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:10000002 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL EXTRA FLEETCHOFER — URGENTES + ALIADOS -->
 
 </body> en TODAS las páginas HTML de la web.
 Añade también en el footer:
