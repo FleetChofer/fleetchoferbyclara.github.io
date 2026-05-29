@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — FleetChofer by Clara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#ff0000;
+  --negro:#000000;
+  --blanco:#ffffff;
+  --gris:rgba(255,255,255,.68);
+  --borde:rgba(255,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:#000;
+  color:#fff;
+  line-height:1.75;
+  font-weight:300;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,0,0,.13),transparent 35%),
+    radial-gradient(circle at 80% 90%,rgba(255,0,0,.08),transparent 35%),
+    linear-gradient(rgba(255,0,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,0,0,.025) 1px,transparent 1px);
+  background-size:auto,auto,70px 70px,70px 70px;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,0,0,.18);
+}
+nav{
+  max-width:1180px;
+  margin:0 auto;
+  padding:1rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  color:#fff;
+  text-decoration:none;
+}
+.brand-mark{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ff0000 0%,#6b0000 42%,#090000 70%);
+  box-shadow:0 0 18px rgba(255,0,0,.7);
+}
+.brand-text{
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--rojo);
+}
+.nav-link{
+  color:rgba(255,255,255,.76);
+  text-decoration:none;
+  font-size:.78rem;
+  border:1px solid rgba(255,0,0,.24);
+  padding:.5rem .8rem;
+  border-radius:8px;
+  background:rgba(255,0,0,.04);
+}
+.nav-link:hover{
+  color:#fff;
+  border-color:rgba(255,0,0,.55);
+  box-shadow:0 0 18px rgba(255,0,0,.28);
+}
+main{
+  position:relative;
+  z-index:1;
+  max-width:980px;
+  margin:0 auto;
+  padding:5rem 2rem 4rem;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.62rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:rgba(255,130,90,.95);
+  border:1px solid rgba(255,0,0,.25);
+  background:rgba(255,0,0,.07);
+  border-radius:999px;
+  padding:.35rem .8rem;
+  margin-bottom:1rem;
+}
+.eyebrow::before{
+  content:"●";
+  color:var(--rojo);
+  font-size:.52rem;
+  filter:drop-shadow(0 0 8px var(--rojo));
+}
+h1{
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.05;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+h1 span{
+  background:linear-gradient(135deg,#ff4500,#ff0000,#ff6600);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 18px rgba(255,0,0,.35));
+}
+.intro{
+  color:var(--gris);
+  max-width:760px;
+  font-size:1rem;
+  margin-bottom:1rem;
+}
+.meta-line{
+  display:inline-flex;
+  margin:.2rem .5rem .6rem 0;
+  color:rgba(255,255,255,.55);
+  border:1px solid rgba(255,0,0,.22);
+  background:rgba(255,0,0,.045);
+  border-radius:999px;
+  padding:.28rem .75rem;
+  font-size:.78rem;
+}
+.legal-card{
+  margin-top:1.5rem;
+  background:linear-gradient(145deg,rgba(15,0,0,.78),rgba(5,5,5,.92));
+  border:1px solid var(--borde);
+  border-radius:18px;
+  padding:2rem;
+  box-shadow:0 0 55px rgba(255,0,0,.12), inset 0 0 30px rgba(255,0,0,.035);
+}
+section{
+  padding:1.4rem 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+section:last-child{border-bottom:0}
+h2{
+  font-size:1.05rem;
+  color:var(--rojo);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin-bottom:.65rem;
+  text-shadow:0 0 16px rgba(255,0,0,.35);
+}
+h3{
+  font-size:.98rem;
+  color:#fff;
+  margin:1rem 0 .35rem;
+}
+p,li{
+  color:rgba(255,255,255,.75);
+  font-size:.92rem;
+}
+p{margin:.45rem 0}
+ul{padding-left:1.2rem;margin:.55rem 0}
+li{margin:.35rem 0}
+strong{color:#fff;font-weight:700}
+footer{
+  position:relative;
+  z-index:1;
+  border-top:1px solid rgba(255,0,0,.18);
+  background:rgba(0,0,0,.92);
+  padding:1.5rem 2rem;
+  text-align:center;
+  color:rgba(255,255,255,.35);
+  font-size:.78rem;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:.8rem;
+}
+.footer-links a,.footer-links button{
+  color:rgba(255,255,255,.55);
+  background:none;
+  border:0;
+  text-decoration:none;
+  cursor:pointer;
+  font:inherit;
+}
+.footer-links a:hover,.footer-links button:hover{color:var(--rojo)}
+@media(max-width:700px){
+  nav{padding:.8rem 1rem}
+  main{padding:3rem 1rem}
+  .legal-card{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html"><span class="brand-mark"></span><span class="brand-text">FleetChofer by Clara</span></a>
+<a class="nav-link" href="index.html">Volver a la web</a>
+</nav>
+</header>
+
+<main>
+<div class="eyebrow">Protección de datos</div>
+<h1>Política de <span>Privacidad</span></h1>
+<p class="intro">Esta Política de Privacidad explica cómo tratamos los datos personales cuando utilizas FleetChofer, incluyendo funcionalidades de rutas, comunicación interna, geolocalización, tacógrafo inteligente, documentación, reputación y comunidad.</p>
+
+<div class="legal-card">
+<p class="meta-line">Versión: 1.0</p>
+<p class="meta-line">Fecha de entrada en vigor: 12/05/2026</p>
+<p>Esta Política de Privacidad explica cómo tratamos los datos personales cuando utilizas FleetChofer (app y/o web), incluyendo funcionalidades de rutas, comunicación interna, geolocalización, “tacógrafo inteligente”, documentación, reputación y comunidad (“La Emisora”).</p>
+</section>
+<section><h2>1. Responsable del tratamiento</h2>
+<p><strong>Responsable:</strong> FleetChofer S.L.U.</p>
+<p><strong>CIF:</strong> B26722256</p>
+<p><strong>Domicilio social:</strong> c/ Ramon Argiles nº 42, 2º-2ª</p>
+<p><strong>Correo de contacto (privacidad y soporte):</strong> clara@fleetchoferbyclara.com</p>
+<p>Si tienes dudas sobre esta Política o sobre el tratamiento de tus datos, puedes escribirnos a ese correo.</p>
+</section>
+<section><h2>2. Datos que tratamos y de dónde proceden</h2>
+<p><strong>Tratamos datos personales que:</strong></p>
+<p>(i) nos aportas directamente, por ejemplo al registrarte o usar la app (datos de perfil, datos profesionales, publicaciones, documentos, etc.);</p>
+<p>(ii) se generan por el uso de la Plataforma, por ejemplo logs, estados de ruta, evidencias de operativa; y</p>
+<p>(iii) nos facilitan terceros imprescindibles para el servicio, por ejemplo el proveedor de pagos.</p>
+<p>En general, los datos proceden de tu interacción con FleetChofer y de los servicios integrados necesarios para prestar el servicio.</p>
+</section>
+<section><h2>3. Finalidades del tratamiento, categorías de datos y bases de legitimación</h2>
+<p>A continuación describimos las finalidades principales, tipos de datos y base jurídica (art. 6 RGPD) de forma estructurada.</p>
+<h3>3.1. Registro, cuenta y gestión de usuarios</h3>
+<p><strong>Finalidad:</strong> alta, autenticación, gestión de cuenta, roles (empresa/chófer), soporte y atención.</p>
+<p><strong>Datos:</strong> identificativos y de contacto, datos profesionales, credenciales, preferencias y configuración, comunicaciones con soporte.</p>
+<p><strong>Base jurídica:</strong> ejecución de la relación contractual/uso de la plataforma (art. 6.1.b RGPD) y, en su caso, cumplimiento de obligaciones legales (art. 6.1.c RGPD).</p>
+<h3>3.2. Gestión de rutas/servicios y coordinación operativa</h3>
+<p><strong>Finalidad:</strong> publicación, solicitud, asignación, seguimiento, incidencias, cierre del servicio y trazabilidad operativa.</p>
+<p><strong>Datos:</strong> datos de rutas (origen/destino, horarios, requisitos), estados e hitos, incidencias, interacciones entre empresa y chófer.</p>
+<p><strong>Base jurídica:</strong> ejecución de la relación contractual/uso de la plataforma (art. 6.1.b RGPD) y interés legítimo en la seguridad y prevención de fraude y en la trazabilidad operativa (art. 6.1.f RGPD), ponderado con medidas de minimización.</p>
+<h3>3.3. Geolocalización (solo durante servicios activos)</h3>
+<p><strong>Qué hacemos:</strong> FleetChofer puede tratar datos de ubicación del dispositivo del chófer únicamente cuando el chófer activa manualmente el servicio pulsando “Iniciar Ruta”.</p>
+<p>No hay rastreo constante fuera de servicios activos.</p>
+<p><strong>Finalidad:</strong> seguimiento operativo del servicio, seguridad, coordinación logística, gestión de incidencias y trazabilidad.</p>
+<p><strong>Datos:</strong> coordenadas y registros de ubicación durante ruta activa, marca temporal y eventos asociados.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio solicitado por el usuario (art. 6.1.b RGPD) y, en su caso, interés legítimo en seguridad y trazabilidad (art. 6.1.f RGPD).</p>
+<p><strong>Importante:</strong> el permiso de geolocalización se gestiona también a nivel del sistema operativo del dispositivo; puedes revocarlo desde los ajustes del terminal, pero la funcionalidad de seguimiento en ruta podría dejar de estar disponible.</p>
+<h3>3.4. Comunicaciones internas y “Notario Digital” (chats y llamadas de voz grabadas)</h3>
+<p><strong>Qué hacemos:</strong> para aportar seguridad operativa y trazabilidad, FleetChofer registra los chats y graba las llamadas de voz realizadas a través de la Plataforma, asociándolas a la ruta/operativa cuando corresponda.</p>
+<p><strong>Finalidad:</strong> permitir la comunicación interna, prevenir abusos, resolver incidencias, aportar evidencia técnica en caso de disputa entre Usuarios, auditoría y seguridad del servicio.</p>
+<p><strong>Datos:</strong> contenido de mensajes, audios de llamadas, metadatos (fecha/hora, participantes, duración), y eventuales adjuntos.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio de comunicación y trazabilidad contratado/solicitado por el usuario (art. 6.1.b RGPD) e interés legítimo en la seguridad, prevención de fraude y protección ante disputas (art. 6.1.f RGPD).</p>
+<p><strong>Nota:</strong> FleetChofer no actúa como juez ni árbitro del conflicto; la finalidad de estas evidencias es técnica y de seguridad.</p>
+<h3>3.5. “Tacógrafo Inteligente” e informes de tiempos de conducción/descanso</h3>
+<p><strong>Qué hacemos:</strong> al pulsar “Iniciar Ruta”, FleetChofer puede iniciar cálculos y registros internos que ayudan al usuario a gestionar tiempos de conducción y descanso.</p>
+<p><strong>Finalidad:</strong> asistencia operativa, planificación, avisos y generación de informes internos asociados al servicio.</p>
+<p><strong>Datos:</strong> tiempos de actividad asociados a la ruta, eventos de inicio/pausa/fin, registros internos necesarios para informes.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) e interés legítimo en seguridad/planificación (art. 6.1.f RGPD).</p>
+<p><strong>Responsabilidad legal:</strong> esta herramienta es de apoyo; la responsabilidad del cumplimiento legal de tiempos de conducción y descanso corresponde al usuario y, en su caso, a su empresa.</p>
+<h3>3.6. Compartición de datos entre Empresa y Chófer durante el servicio</h3>
+<p><strong>Finalidad:</strong> permitir que la logística funcione (coordinación, seguimiento, incidencias, seguridad y cumplimiento operativo).</p>
+<p><strong>Datos compartidos:</strong> durante una ruta activa pueden compartirse entre Empresa y Chófer: estados de ruta, hitos, incidencias y, cuando esté activada la ruta, datos de ubicación necesarios para el seguimiento operativo.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) e interés legítimo en la coordinación y seguridad del servicio (art. 6.1.f RGPD).</p>
+<p><strong>Regla:</strong> el acceso se limita a los Usuarios intervinientes y a lo necesario para la finalidad.</p>
+<h3>3.7. Documentación y verificación (básica y premium)</h3>
+<p><strong>Finalidad:</strong> permitir que el Usuario suba documentos, gestione vigencias y, si contrata el servicio premium, verificación activa de corrección formal y vigencia.</p>
+<p><strong>Datos:</strong> documentos profesionales (según lo que el Usuario suba), evidencias de vigencia y estados (vigente/caducado/pendiente).</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) y, en su caso, interés legítimo en la seguridad operativa (art. 6.1.f RGPD).</p>
+<h3>3.8. Reputación/valoraciones/insignias y reclamaciones</h3>
+<p><strong>Finalidad:</strong> mostrar reputación y calidad operativa, permitir valoraciones verificadas y gestionar reclamaciones/impugnaciones internas de valoraciones.</p>
+<p><strong>Datos:</strong> puntuaciones, insignias, comentarios, historial asociado a servicios, datos de reclamación.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) e interés legítimo en calidad y seguridad del ecosistema (art. 6.1.f RGPD).</p>
+<h3>3.9. La Emisora (comunidad), moderación y seguridad</h3>
+<p><strong>Finalidad:</strong> permitir publicaciones, alertas, participación comunitaria; moderación reactiva por reportes y filtrado automático para seguridad (p. ej. bloqueo de datos personales, teléfonos, emails, insultos o contenidos prohibidos).</p>
+<p><strong>Datos:</strong> publicaciones, comentarios, reportes, metadatos y medidas de moderación.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) e interés legítimo en mantener un entorno seguro y prevenir abusos (art. 6.1.f RGPD).</p>
+<h3>3.10. Uso de historias para YouTube (solo con consentimiento específico)</h3>
+<p><strong>Finalidad:</strong> divulgación y comunicación en canal externo (por ejemplo, YouTube), utilizando historias de usuarios de forma anonimizada.</p>
+<p><strong>Datos:</strong> contenido aportado por el usuario en La Emisora (historias/publicaciones) que el usuario haya autorizado.</p>
+<p><strong>Base jurídica:</strong> consentimiento del usuario (art. 6.1.a RGPD), otorgado de forma específica en La Emisora y revocable en cualquier momento.</p>
+<h3>3.11. Pagos y facturación (Stripe)</h3>
+<p><strong>Finalidad:</strong> gestionar pagos integrados, cobros, pagos aplazados (si aplica), conciliación, prevención de fraude y cumplimiento contable/fiscal.</p>
+<p><strong>Datos:</strong> identificadores de transacción, importes, estado del pago, datos técnicos necesarios para el pago; los datos bancarios/tarjeta se tratan principalmente en el entorno del PSP.</p>
+<p><strong>Base jurídica:</strong> ejecución del servicio (art. 6.1.b RGPD) y cumplimiento de obligaciones legales contables/fiscales cuando aplique (art. 6.1.c RGPD).</p>
+<p><strong>Tercero esencial:</strong> Stripe actúa como proveedor de servicios de pago.</p>
+</section>
+<section><h2>4. Destinatarios y comunicaciones de datos</h2>
+<p><strong>Podemos comunicar datos personales a:</strong></p>
+<ul>
+<li>Otros Usuarios (Empresa ↔ Chófer) cuando sea necesario para prestar el servicio (por ejemplo, estados de ruta e incidencias, y geolocalización solo durante ruta activa).</li>
+<li>Stripe como proveedor de pagos, para procesar transacciones y funciones asociadas.</li>
+<li>Proveedores tecnológicos que nos prestan servicios imprescindibles (hosting, comunicaciones, almacenamiento, analítica técnica, seguridad), como encargados del tratamiento.</li>
+<li>Autoridades y Administraciones Públicas cuando exista obligación legal.</li>
+<li>No vendemos datos personales a terceros.</li>
+</ul>
+</section>
+<section><h2>5. Transferencias internacionales</h2>
+<p>Algunos proveedores tecnológicos (incluido el PSP) pueden tratar datos fuera del Espacio Económico Europeo o acceder a ellos desde terceros países. En esos casos, FleetChofer aplicará las garantías exigidas por el RGPD (por ejemplo, cláusulas contractuales tipo u otras medidas aplicables) según corresponda al proveedor y a la configuración del servicio.</p>
+</section>
+<section><h2>6. Plazos de conservación</h2>
+<p>Conservamos los datos durante el tiempo necesario para las finalidades indicadas y para el cumplimiento de obligaciones legales, y posteriormente durante los plazos de prescripción de posibles responsabilidades.</p>
+<p><strong>De forma general:</strong></p>
+<ul>
+<li>Datos de cuenta: mientras la cuenta esté activa y, tras la baja, durante el tiempo necesario para atender responsabilidades legales o reclamaciones.</li>
+<li>Evidencias operativas (chats, llamadas grabadas, estados de ruta, documentación asociada): durante el tiempo necesario para la trazabilidad del servicio, atención de disputas y cumplimiento, y, posteriormente, bloqueados si procede para atender responsabilidades.</li>
+<li>Datos de pagos y facturación: durante los plazos legales contables/fiscales aplicables.</li>
+<li>Consentimientos (p. ej., YouTube): mientras no se retiren y, en su caso, conservando evidencia del consentimiento mientras sea necesario para acreditar su obtención y la gestión de posibles reclamaciones.</li>
+</ul>
+<p>Puedes solicitar información adicional sobre criterios y plazos de conservación escribiendo a clara@fleetchoferbyclara.com.</p>
+</section>
+<section><h2>7. Seguridad de los datos</h2>
+<p>Aplicamos medidas técnicas y organizativas razonables para proteger los datos personales frente a pérdida, acceso no autorizado, alteración o divulgación indebida. Entre otras, controles de acceso, registros de actividad, y medidas de seguridad en la infraestructura y comunicaciones.</p>
+</section>
+<section><h2>8. Derechos de las personas usuarias</h2>
+<p><strong>Puedes ejercer los derechos reconocidos en la normativa de protección de datos:</strong></p>
+<ul>
+<li>Acceso</li>
+<li>Rectificación</li>
+<li>Supresión</li>
+<li>Oposición</li>
+<li>Limitación del tratamiento</li>
+<li>Portabilidad (cuando proceda)</li>
+<li>Retirada del consentimiento (cuando el tratamiento se base en consentimiento, por ejemplo, uso de historias para YouTube)</li>
+</ul>
+<h3>8.1. Cómo ejercer tus derechos</h3>
+<p><strong>Puedes ejercer tus derechos enviando una solicitud a:</strong> clara@fleetchoferbyclara.com, indicando:</p>
+<ul>
+<li>nombre y apellidos,</li>
+<li>el derecho que deseas ejercer,</li>
+<li>y la información necesaria para identificar tu cuenta.</li>
+</ul>
+<p>Podremos solicitar información adicional para verificar tu identidad si fuera necesario.</p>
+<h3>8.2. Reclamación ante la AEPD</h3>
+<p>Si consideras que el tratamiento de tus datos vulnera la normativa, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD): https://www.aepd.es/.</p>
+</section>
+<section><h2>9. Consentimientos y revocación (especial: YouTube)</h2>
+<p><strong>Cuando tratemos datos en base a tu consentimiento, este:</strong></p>
+<ul>
+<li>se solicitará de forma específica, inequívoca y separada;</li>
+<li>podrás retirarlo en cualquier momento sin efectos retroactivos sobre tratamientos ya realizados de forma lícita.</li>
+</ul>
+<p>En particular, la autorización para usar historias de La Emisora en un canal de YouTube de forma anonimizada solo se realizará si el Usuario presta consentimiento específico en el flujo habilitado para ello.</p>
+</section>
+<section><h2>10. Actualizaciones de esta Política</h2>
+<p>Podemos actualizar esta Política para reflejar cambios legales o técnicos. La versión vigente estará siempre disponible en la app/web. Si los cambios fueran relevantes, podremos notificarlo y, cuando proceda, solicitar aceptación/confirmación.</p>
+<p>Referencias normativas del contexto (para trazabilidad y transparencia)</p>
+<p><strong>LOPDGDD (Ley Orgánica 3/2018), art. 90 (geolocalización en ámbito laboral):</strong> https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673#art-90</p>
+<p>Criterios sobre información, derechos y seguridad (ejemplos de redacción informativa en resoluciones y documentos públicos):</p>
+<p>E-01443-2019 (AEPD)</p>
+<p>PS-00075-2021 (AEPD)</p>
+<p><strong>Ejemplo de exigencias de consentimiento informado y revocable en entorno app:</strong> BOE-A-2024-16672</p>
+</section>
+</div>
+</main>
+
+<footer>
+<div class="footer-links">
+<a href="aviso-legal.html">Aviso Legal</a>
+<a href="politica-privacidad.html">Política de Privacidad</a>
+<a href="cookies.html">Política de Cookies</a>
+<button type="button" data-open-cookie-settings>Configurar cookies</button>
+</div>
+© FleetChofer S.L.U.
+</footer>
+
+<!-- FLEETCHOFER — BANNER + PANEL DE COOKIES
+Pega este bloque antes de </body> en TODAS las páginas HTML de la web.
+Añade también en el footer:
+<a href="aviso-legal.html">Aviso Legal</a>
+<a href="cookies.html">Política de Cookies</a>
+<button type="button" data-open-cookie-settings>Configurar cookies</button>
+-->
+
+<style>
+#fc-cookie-banner{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:999999;
+  padding:1rem;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 20%);
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-card{
+  max-width:1120px;
+  margin:0 auto;
+  background:linear-gradient(145deg,rgba(14,0,0,.98),rgba(2,2,2,.98));
+  border:1px solid rgba(255,0,0,.35);
+  border-radius:18px;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  box-shadow:0 0 50px rgba(255,0,0,.22);
+}
+.fc-cookie-text strong{
+  color:#ff0000;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.72rem;
+}
+.fc-cookie-text p{
+  color:rgba(255,255,255,.74);
+  font-size:.85rem;
+  line-height:1.55;
+  margin:.25rem 0;
+}
+.fc-cookie-text a{
+  color:rgba(255,120,80,.95);
+  font-size:.8rem;
+  text-decoration:none;
+}
+.fc-cookie-actions{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.fc-cookie-btn{
+  border-radius:999px;
+  padding:.7rem 1rem;
+  font-family:Inter,Arial,sans-serif;
+  font-size:.78rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+.fc-cookie-btn.main{
+  color:#fff;
+  border:1px solid #ff0000;
+  background:linear-gradient(135deg,#cc0000,#ff0000,#ff4500);
+  box-shadow:0 0 18px rgba(255,0,0,.38);
+}
+.fc-cookie-btn.ghost{
+  color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.035);
+}
+.fc-cookie-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(255,0,0,.28);
+}
+#fc-cookie-panel{
+  position:fixed;
+  inset:0;
+  z-index:1000000;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(12px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-modal{
+  position:relative;
+  width:min(640px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:linear-gradient(150deg,rgba(15,0,0,.98),rgba(4,4,4,.98));
+  border:1px solid rgba(255,0,0,.38);
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 0 70px rgba(255,0,0,.25);
+}
+.fc-cookie-x{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+  font-size:1.3rem;
+}
+.fc-cookie-kicker{
+  display:inline-flex;
+  color:rgba(255,120,80,.9);
+  border:1px solid rgba(255,0,0,.25);
+  background:rgba(255,0,0,.07);
+  padding:.25rem .7rem;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.62rem;
+  font-weight:800;
+  margin-bottom:.8rem;
+}
+.fc-cookie-modal h2{
+  color:#fff;
+  font-size:1.6rem;
+  margin-bottom:.45rem;
+}
+.fc-cookie-muted{
+  color:rgba(255,255,255,.58);
+  font-size:.88rem;
+  line-height:1.6;
+  margin-bottom:1.2rem;
+}
+.fc-cookie-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  color:#fff;
+}
+.fc-cookie-row strong{
+  display:block;
+  font-size:.92rem;
+  color:#fff;
+}
+.fc-cookie-row small{
+  display:block;
+  color:rgba(255,255,255,.5);
+  font-size:.78rem;
+  line-height:1.45;
+  margin-top:.2rem;
+}
+.fc-cookie-row input{
+  width:22px;
+  height:22px;
+  accent-color:#ff0000;
+}
+.fc-cookie-row.locked{
+  opacity:.7;
+}
+.modal-actions{
+  margin-top:1.4rem;
+}
+@media(max-width:760px){
+  .fc-cookie-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .fc-cookie-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+</style>
+
+
+<script>
+(function(){
+  const KEY = "fleetchofer_cookie_consent_v1";
+
+  function getConsent(){
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
+  }
+
+  function saveConsent(consent){
+    localStorage.setItem(KEY, JSON.stringify({
+      necessary: true,
+      preferences: !!consent.preferences,
+      analytics: !!consent.analytics,
+      marketing: !!consent.marketing,
+      savedAt: new Date().toISOString()
+    }));
+    document.dispatchEvent(new CustomEvent("fleetchoferCookieConsentUpdated", {detail: getConsent()}));
+  }
+
+  function showBanner(){
+    const existing = document.getElementById("fc-cookie-banner");
+    if(existing) existing.remove();
+
+    const banner = document.createElement("div");
+    banner.id = "fc-cookie-banner";
+    banner.innerHTML = `
+      <div class="fc-cookie-card">
+        <div class="fc-cookie-text">
+          <strong>Cookies</strong>
+          <p>Usamos cookies propias y de terceros para que la web funcione correctamente y, si lo aceptas, para analizar el uso y mejorar tu experiencia. Puedes aceptar, rechazar o configurar tus preferencias en cualquier momento.</p>
+          <a href="cookies.html">Más información en nuestra Política de Cookies.</a>
+        </div>
+        <div class="fc-cookie-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="reject">Rechazar</button>
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="settings">Configurar</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-cookie="accept">Aceptar todas</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    banner.querySelector('[data-fc-cookie="accept"]').onclick = () => { saveConsent({preferences:true, analytics:true, marketing:true}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="reject"]').onclick = () => { saveConsent({preferences:false, analytics:false, marketing:false}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="settings"]').onclick = () => showPanel(banner);
+  }
+
+  function showPanel(banner){
+    const existing = document.getElementById("fc-cookie-panel");
+    if(existing) existing.remove();
+    const current = getConsent() || {preferences:false,analytics:false,marketing:false};
+    const panel = document.createElement("div");
+    panel.id = "fc-cookie-panel";
+    panel.innerHTML = `
+      <div class="fc-cookie-modal">
+        <button type="button" class="fc-cookie-x" aria-label="Cerrar">×</button>
+        <div class="fc-cookie-kicker">Panel de cookies</div>
+        <h2>Configura tus preferencias</h2>
+        <p class="fc-cookie-muted">Las cookies necesarias están siempre activas porque sin ellas la web se comportaría como un camión sin ruedas: muy conceptual, poco útil.</p>
+
+        <label class="fc-cookie-row locked">
+          <span><strong>Cookies técnicas o necesarias</strong><small>Obligatorias para funcionamiento, seguridad y gestión del consentimiento.</small></span>
+          <input type="checkbox" checked disabled>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Preferencias</strong><small>Recuerdan opciones como idioma o configuración visual.</small></span>
+          <input type="checkbox" id="fc-pref" ${current.preferences ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Análisis o medición</strong><small>Ayudan a saber cómo se usa la web para mejorarla.</small></span>
+          <input type="checkbox" id="fc-analytics" ${current.analytics ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Marketing</strong><small>Permiten medir campañas o mostrar publicidad personalizada.</small></span>
+          <input type="checkbox" id="fc-marketing" ${current.marketing ? "checked" : ""}>
+        </label>
+
+        <div class="fc-cookie-actions modal-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-panel="reject">Rechazar opcionales</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-panel="save">Guardar configuración</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    panel.querySelector(".fc-cookie-x").onclick = () => panel.remove();
+    panel.querySelector('[data-fc-panel="reject"]').onclick = () => {
+      saveConsent({preferences:false, analytics:false, marketing:false});
+      panel.remove();
+      if(banner) banner.remove();
+    };
+    panel.querySelector('[data-fc-panel="save"]').onclick = () => {
+      saveConsent({
+        preferences: panel.querySelector("#fc-pref").checked,
+        analytics: panel.querySelector("#fc-analytics").checked,
+        marketing: panel.querySelector("#fc-marketing").checked
+      });
+      panel.remove();
+      if(banner) banner.remove();
+    };
+  }
+
+  window.FleetChoferCookies = {
+    openSettings: function(){ showPanel(null); },
+    getConsent: getConsent
+  };
+
+  document.addEventListener("click", function(e){
+    const target = e.target.closest("[data-open-cookie-settings]");
+    if(target){
+      e.preventDefault();
+      showPanel(null);
+    }
+  });
+
+  if(!getConsent()){
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded", showBanner);
+    } else {
+      showBanner();
+    }
+  }
+})();
+</script>
+
+
+
+</body>
+</html>
