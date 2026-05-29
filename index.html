@@ -2626,6 +2626,97 @@ nav {
             .aliados-rep-section { padding: 3.5rem 1.5rem; }
             .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
         }
+        /* AJUSTE MÓVIL ALIADOS — REPUTACIÓN E INSIGNIAS: encaje limpio sin tocar diseño */
+        @media (max-width: 640px) {
+            .aliados-rep-section {
+                padding: 3rem 1rem 2.5rem;
+                overflow: hidden;
+            }
+            .aliados-rep-inner {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .aliados-rep-titulo {
+                gap: 0.55rem;
+                margin-bottom: 2rem;
+            }
+            .aliados-rep-titulo span {
+                white-space: normal;
+                text-align: center;
+                font-size: 0.62rem;
+                line-height: 1.45;
+            }
+            .aliados-rep-intro-card {
+                padding: 1.5rem 1.1rem;
+            }
+            .ar-insignias-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 1.8rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            .ar-insignias-col {
+                min-width: 0;
+                width: 100%;
+            }
+            .ar-col-title-row {
+                gap: 0.5rem;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+            }
+            .ar-col-title-row::after {
+                display: none;
+            }
+            .ar-col-title-row span {
+                white-space: normal;
+                max-width: 100%;
+                line-height: 1.45;
+                font-size: 0.58rem;
+            }
+            .ar-col-subtitle {
+                font-size: 0.7rem;
+                line-height: 1.55;
+            }
+            .ar-insignia-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.55rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0.75rem 0;
+            }
+            .ar-ins-badge {
+                min-width: 0;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.35;
+                text-align: left;
+            }
+            .ar-ins-text {
+                flex: 1 1 100%;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .ar-sello-divider,
+            .ar-section-sep {
+                gap: 0.45rem;
+            }
+            .ar-sello-divider span,
+            .ar-section-sep span {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.4;
+            }
+            .ar-logo-center {
+                min-height: 150px;
+            }
+            .ar-logo-center img {
+                width: 145px;
+                height: 145px;
+            }
+        }
+
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
     &lt;/style&gt;
@@ -4028,12 +4119,29 @@ Pega este bloque antes de
 <!-- FIN AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
 
 <!-- NOTA INTERNA OCULTA: bloque de instrucción que antes quedaba visible en móvil.
-</body> en TODAS las páginas HTML de la web.
-Añade también en el footer:
-<a href="aviso-legal.html">Aviso Legal</a>
-<a href="cookies.html">Política de Cookies</a>
-<button type="button" data-open-cookie-settings>Configurar cookies</button>
--->
+
+
+<!-- AJUSTE FINAL MÓVIL RUTAS URGENTES — SOLO SEPARACIÓN DE TARJETAS -->
+<style>
+@media (max-width: 768px){
+  .urgent-modal .urgent-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0, 1fr) !important;
+    gap:1rem !important;
+    row-gap:1rem !important;
+    column-gap:0 !important;
+    width:100% !important;
+  }
+
+  .urgent-modal .urgent-card{
+    grid-column:1 / -1 !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE FINAL MÓVIL RUTAS URGENTES -->
 
 <style>
 #fc-cookie-banner{
