@@ -4443,5 +4443,880 @@ if (menuToggle && navMenu) {
 })();
 </script>
 
+
+<!-- AJUSTE MÓVIL X FORMULARIO — SOLO BAJAR LA CRUZ -->
+<style>
+@media (max-width: 768px){
+  .cfm-close{
+    top: 2.05rem !important;
+    right: 1rem !important;
+    z-index: 10000002 !important;
+  }
+  .form-close{
+    top: 2.05rem !important;
+    right: 1rem !important;
+    z-index: 10000002 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL X FORMULARIO -->
+<style>
+.fc-legal-bar{
+position:fixed;bottom:8px;left:50%;transform:translateX(-50%);
+z-index:9999;display:flex;gap:14px;flex-wrap:wrap;
+justify-content:center;align-items:center;
+padding:8px 14px;background:rgba(0,0,0,.82);
+backdrop-filter:blur(8px);
+border:1px solid rgba(255,0,0,.22);
+border-radius:999px;font-family:'Inter',sans-serif;font-size:11px;
+}
+.fc-legal-bar a,.fc-legal-bar button{
+color:rgba(255,255,255,.72);text-decoration:none;
+background:none;border:0;cursor:pointer;font:inherit;
+}
+.fc-legal-bar a:hover,.fc-legal-bar button:hover{color:#ff0000;}
+@media(max-width:768px){
+.fc-legal-bar{max-width:95%;font-size:10px;gap:8px;}
+}
+</style>
+<div class="fc-legal-bar">
+<a href="aviso-legal.html">Aviso Legal</a>
+<a href="politica-privacidad.html">Política de Privacidad</a>
+<a href="cookies.html">Política de Cookies</a>
+<button type="button" data-open-cookie-settings>Configurar Cookies</button>
+</div>
+
+<!-- FLEETCHOFER — LEGAL + COOKIES + AJUSTES MÓVIL -->
+<!-- AJUSTE MÓVIL POPUP FLEETCHOFER -->
+<style>
+@media (max-width: 768px){
+  #fc-popup-overlay{
+    align-items:flex-start !important;
+    justify-content:center !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    padding:1rem !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #fc-popup-overlay .fc-card{
+    width:100% !important;
+    max-width:100% !important;
+    max-height:none !important;
+    margin:1rem auto 6rem !important;
+    padding:2.2rem 1.25rem 1.6rem !important;
+    overflow:visible !important;
+    transform:none !important;
+  }
+
+  #fc-popup-overlay .fc-title{
+    font-size:1.15rem !important;
+    line-height:1.25 !important;
+    padding-right:2.2rem !important;
+  }
+
+  #fc-popup-overlay .fc-body{
+    font-size:.84rem !important;
+    line-height:1.65 !important;
+  }
+
+  #fc-popup-overlay .fc-highlight{
+    font-size:.86rem !important;
+    line-height:1.55 !important;
+    padding:.85rem 1rem !important;
+    margin-bottom:1.2rem !important;
+  }
+
+  #fc-popup-overlay .fc-cta{
+    font-size:.82rem !important;
+    line-height:1.35 !important;
+    padding:.85rem 1rem !important;
+    white-space:normal !important;
+  }
+
+  #fc-popup-overlay .fc-close{
+    top:.75rem !important;
+    right:.75rem !important;
+    width:38px !important;
+    height:38px !important;
+    z-index:9999999 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL POPUP FLEETCHOFER -->
+
+
+<!-- AJUSTE GLOBAL MÓVIL FLEETCHOFER — POPUPS + BOTONES + LEGAL -->
+<style>
+@media (max-width: 768px){
+
+  /* Evita que la franja legal tape botones flotantes */
+  .fc-legal-bar{
+    bottom: 6px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 18px) !important;
+    max-width: 420px !important;
+    padding: 6px 8px !important;
+    gap: 7px !important;
+    border-radius: 14px !important;
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+    z-index: 99990 !important;
+  }
+
+  .fc-legal-bar a,
+  .fc-legal-bar button{
+    white-space: nowrap !important;
+  }
+
+  /* Recoloca los 3 botones flotantes para que no se pisen entre ellos ni la franja legal */
+  .urgent-fab{
+    left: 10px !important;
+    right: auto !important;
+    bottom: 78px !important;
+    max-width: calc(50% - 14px) !important;
+    padding: 10px 12px !important;
+    font-size: 10.5px !important;
+    gap: 6px !important;
+    border-radius: 999px !important;
+    z-index: 99920 !important;
+  }
+
+  .floating-button-custom{
+    right: 10px !important;
+    left: auto !important;
+    bottom: 78px !important;
+    max-width: calc(50% - 14px) !important;
+    padding: 10px 12px !important;
+    font-size: 10.5px !important;
+    gap: 6px !important;
+    border-radius: 999px !important;
+    z-index: 99920 !important;
+  }
+
+  .floating-button-doc{
+    right: 10px !important;
+    left: auto !important;
+    bottom: 126px !important;
+    max-width: calc(100% - 20px) !important;
+    padding: 10px 14px !important;
+    font-size: 10.5px !important;
+    gap: 6px !important;
+    border-radius: 999px !important;
+    z-index: 99921 !important;
+  }
+
+  .urgent-fab svg,
+  .floating-button-custom svg,
+  .floating-button-doc svg{
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .urgent-fab .fab-pill{
+    font-size: 9px !important;
+    padding: 1px 5px !important;
+  }
+
+  /* Pop-up documental: en móvil se puede subir/bajar y cerrar */
+  #fc-popup-overlay{
+    align-items: flex-start !important;
+    justify-content: center !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  #fc-popup-overlay .fc-card{
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    margin: 10px auto 150px !important;
+    padding: 2.1rem 1.15rem 1.45rem !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  #fc-popup-overlay .fc-title{
+    font-size: 1.08rem !important;
+    line-height: 1.24 !important;
+    padding-right: 2.4rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #fc-popup-overlay .fc-body{
+    font-size: .82rem !important;
+    line-height: 1.62 !important;
+  }
+
+  #fc-popup-overlay .fc-highlight{
+    font-size: .84rem !important;
+    line-height: 1.52 !important;
+    padding: .8rem .9rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #fc-popup-overlay .fc-cta{
+    font-size: .82rem !important;
+    line-height: 1.3 !important;
+    padding: .82rem .95rem !important;
+    white-space: normal !important;
+  }
+
+  #fc-popup-overlay .fc-close{
+    position: absolute !important;
+    top: .7rem !important;
+    right: .7rem !important;
+    width: 40px !important;
+    height: 40px !important;
+    z-index: 10000001 !important;
+  }
+
+  /* Modal contacto: que no se corte en móvil */
+  .contact-form-modal{
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    padding: 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .cfm-wrap{
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    margin: 10px auto 140px !important;
+  }
+
+  .cfm-header{
+    padding: 1.6rem 1.2rem 1rem !important;
+  }
+
+  .cfm-body{
+    padding: 1.2rem 1.2rem 1.6rem !important;
+  }
+
+  .cfm-title{
+    font-size: 1.25rem !important;
+    padding-right: 2.3rem !important;
+  }
+
+  .cfm-actions{
+    flex-direction: column !important;
+  }
+
+  /* Modal rutas urgentes: que pueda desplazarse */
+  .urgent-modal{
+    padding: 4.5rem 1rem 8.5rem !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .urgent-modal-close{
+    top: .85rem !important;
+    right: .85rem !important;
+    z-index: 11002 !important;
+  }
+
+  .urgent-modal-header .phrase{
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .urgent-chofer-hero{
+    padding: 1.3rem !important;
+    gap: 1rem !important;
+  }
+
+  .urgent-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Cookie banner: que no tape media pantalla ni choque con legal */
+  #fc-cookie-banner{
+    padding: .65rem !important;
+    bottom: 40px !important;
+  }
+
+  .fc-cookie-card{
+    border-radius: 14px !important;
+    padding: .85rem !important;
+    gap: .75rem !important;
+  }
+
+  .fc-cookie-text p{
+    font-size: .78rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .fc-cookie-actions{
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .45rem !important;
+  }
+
+  .fc-cookie-btn{
+    width: 100% !important;
+    padding: .65rem .8rem !important;
+    font-size: .74rem !important;
+  }
+
+  #fc-cookie-panel{
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    padding: .8rem !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .fc-cookie-modal{
+    margin: 1rem auto 5rem !important;
+    max-height: none !important;
+    padding: 1.4rem !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE GLOBAL MÓVIL FLEETCHOFER -->
+
+
+<!-- AJUSTE MÓVIL EXTRA FLEETCHOFER — URGENTES + ALIADOS -->
+<style>
+@media (max-width: 768px){
+
+  /* Rutas urgentes: evita tarjetas/botones de 4,99 y 7,99 aplastados */
+  .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .urgent-card{
+    width:100% !important;
+    min-width:0 !important;
+    padding:1.15rem 1rem !important;
+    gap:.55rem !important;
+    overflow:visible !important;
+  }
+
+  .urgent-card-name{
+    font-size:1rem !important;
+    line-height:1.22 !important;
+    white-space:normal !important;
+    word-break:normal !important;
+  }
+
+  .urgent-card-price{
+    font-size:1.65rem !important;
+    line-height:1.1 !important;
+    flex-wrap:wrap !important;
+    align-items:flex-end !important;
+  }
+
+  .urgent-price-inc{
+    font-size:.62rem !important;
+    white-space:normal !important;
+    line-height:1.2 !important;
+  }
+
+  .urgent-card-desc,
+  .urgent-card-details{
+    font-size:.78rem !important;
+    line-height:1.45 !important;
+    white-space:normal !important;
+  }
+
+  .urgent-profile-tags{
+    gap:.35rem !important;
+  }
+
+  .urgent-profile-tag{
+    font-size:.55rem !important;
+    padding:2px 6px !important;
+    white-space:normal !important;
+  }
+
+  /* Botones inferiores: que no se monten ni desaparezcan detrás */
+  .urgent-fab,
+  .floating-button-custom,
+  .floating-button-doc{
+    white-space:normal !important;
+    text-align:center !important;
+    line-height:1.15 !important;
+    min-height:38px !important;
+  }
+
+  .floating-button-custom{
+    display:flex !important;
+  }
+
+  /* Aliados en ruta: evita cortes en insignias/tarjetas */
+  #alliesPageOverlay,
+  .allies-page-overlay,
+  .allies-overlay{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #alliesPageOverlay .allies-page,
+  #alliesPageOverlay .allies-content,
+  #alliesPageOverlay .allies-modal,
+  #alliesPageOverlay .allies-wrapper,
+  .allies-page-overlay .allies-page,
+  .allies-page-overlay .allies-content,
+  .allies-page-overlay .allies-modal,
+  .allies-page-overlay .allies-wrapper{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+  }
+
+  /* Rejillas de insignias: una columna o dos compactas, sin cortar */
+  #alliesPageOverlay [class*="badge"],
+  #alliesPageOverlay [class*="insignia"],
+  .allies-page-overlay [class*="badge"],
+  .allies-page-overlay [class*="insignia"]{
+    max-width:100% !important;
+    overflow:visible !important;
+    white-space:normal !important;
+  }
+
+  #alliesPageOverlay [class*="grid"],
+  .allies-page-overlay [class*="grid"]{
+    max-width:100% !important;
+  }
+
+  #alliesPageOverlay .badges-grid,
+  #alliesPageOverlay .insignias-grid,
+  #alliesPageOverlay .badge-grid,
+  #alliesPageOverlay .allies-badges-grid,
+  .allies-page-overlay .badges-grid,
+  .allies-page-overlay .insignias-grid,
+  .allies-page-overlay .badge-grid,
+  .allies-page-overlay .allies-badges-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:.75rem !important;
+    width:100% !important;
+    overflow:visible !important;
+  }
+
+  /* Si hay pestañas Chofer/Empresa dentro de aliados, que entren en móvil */
+  #alliesPageOverlay .tabs,
+  #alliesPageOverlay .role-tabs,
+  #alliesPageOverlay .allies-tabs,
+  .allies-page-overlay .tabs,
+  .allies-page-overlay .role-tabs,
+  .allies-page-overlay .allies-tabs{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:.45rem !important;
+    width:100% !important;
+    overflow:visible !important;
+  }
+
+  #alliesPageOverlay .tabs button,
+  #alliesPageOverlay .role-tabs button,
+  #alliesPageOverlay .allies-tabs button,
+  .allies-page-overlay .tabs button,
+  .allies-page-overlay .role-tabs button,
+  .allies-page-overlay .allies-tabs button{
+    flex:1 1 auto !important;
+    min-width:120px !important;
+    white-space:normal !important;
+    font-size:.78rem !important;
+    padding:.65rem .75rem !important;
+  }
+
+  /* Evita carruseles cortados dentro de aliados */
+  #alliesPageOverlay [class*="carousel"],
+  #alliesPageOverlay [class*="slider"],
+  .allies-page-overlay [class*="carousel"],
+  .allies-page-overlay [class*="slider"]{
+    overflow-x:auto !important;
+    overflow-y:visible !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  /* Cruz de cierre siempre visible */
+  #closeAlliesPage,
+  .close-allies,
+  .allies-close{
+    position:fixed !important;
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:10000002 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL EXTRA FLEETCHOFER — URGENTES + ALIADOS -->
+
+
+
+
+
+<!-- AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
+<style>
+@media (max-width: 768px){
+
+  html,
+  body{
+    height:auto !important;
+    max-height:none !important;
+    min-height:100vh !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  .hero{
+    height:auto !important;
+    max-height:none !important;
+    min-height:100vh !important;
+    overflow:visible !important;
+    align-items:flex-start !important;
+    padding-top:4.8rem !important;
+    padding-bottom:190px !important;
+  }
+
+  .hero-content{
+    transform:none !important;
+    gap:1rem !important;
+  }
+
+  .hero-text{
+    padding-bottom:0 !important;
+  }
+
+  .stats-grid{
+    margin-bottom:14px !important;
+  }
+
+  .cta-buttons{
+    margin-top:12px !important;
+    padding-bottom:20px !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
+
+<!-- NOTA INTERNA OCULTA: bloque de instrucción que antes quedaba visible en móvil.
+</body> en TODAS las páginas HTML de la web.
+Añade también en el footer:
+<a href="aviso-legal.html">Aviso Legal</a>
+<a href="cookies.html">Política de Cookies</a>
+<button type="button" data-open-cookie-settings>Configurar cookies</button>
+-->
+
+<style>
+#fc-cookie-banner{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:999999;
+  padding:1rem;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 20%);
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-card{
+  max-width:1120px;
+  margin:0 auto;
+  background:linear-gradient(145deg,rgba(14,0,0,.98),rgba(2,2,2,.98));
+  border:1px solid rgba(255,0,0,.35);
+  border-radius:18px;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  box-shadow:0 0 50px rgba(255,0,0,.22);
+}
+.fc-cookie-text strong{
+  color:#ff0000;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.72rem;
+}
+.fc-cookie-text p{
+  color:rgba(255,255,255,.74);
+  font-size:.85rem;
+  line-height:1.55;
+  margin:.25rem 0;
+}
+.fc-cookie-text a{
+  color:rgba(255,120,80,.95);
+  font-size:.8rem;
+  text-decoration:none;
+}
+.fc-cookie-actions{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.fc-cookie-btn{
+  border-radius:999px;
+  padding:.7rem 1rem;
+  font-family:Inter,Arial,sans-serif;
+  font-size:.78rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+.fc-cookie-btn.main{
+  color:#fff;
+  border:1px solid #ff0000;
+  background:linear-gradient(135deg,#cc0000,#ff0000,#ff4500);
+  box-shadow:0 0 18px rgba(255,0,0,.38);
+}
+.fc-cookie-btn.ghost{
+  color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.035);
+}
+.fc-cookie-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(255,0,0,.28);
+}
+#fc-cookie-panel{
+  position:fixed;
+  inset:0;
+  z-index:1000000;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(12px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-modal{
+  position:relative;
+  width:min(640px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:linear-gradient(150deg,rgba(15,0,0,.98),rgba(4,4,4,.98));
+  border:1px solid rgba(255,0,0,.38);
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 0 70px rgba(255,0,0,.25);
+}
+.fc-cookie-x{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+  font-size:1.3rem;
+}
+.fc-cookie-kicker{
+  display:inline-flex;
+  color:rgba(255,120,80,.9);
+  border:1px solid rgba(255,0,0,.25);
+  background:rgba(255,0,0,.07);
+  padding:.25rem .7rem;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.62rem;
+  font-weight:800;
+  margin-bottom:.8rem;
+}
+.fc-cookie-modal h2{
+  color:#fff;
+  font-size:1.6rem;
+  margin-bottom:.45rem;
+}
+.fc-cookie-muted{
+  color:rgba(255,255,255,.58);
+  font-size:.88rem;
+  line-height:1.6;
+  margin-bottom:1.2rem;
+}
+.fc-cookie-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  color:#fff;
+}
+.fc-cookie-row strong{
+  display:block;
+  font-size:.92rem;
+  color:#fff;
+}
+.fc-cookie-row small{
+  display:block;
+  color:rgba(255,255,255,.5);
+  font-size:.78rem;
+  line-height:1.45;
+  margin-top:.2rem;
+}
+.fc-cookie-row input{
+  width:22px;
+  height:22px;
+  accent-color:#ff0000;
+}
+.fc-cookie-row.locked{
+  opacity:.7;
+}
+.modal-actions{
+  margin-top:1.4rem;
+}
+@media(max-width:760px){
+  .fc-cookie-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .fc-cookie-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+</style>
+
+
+<script>
+(function(){
+  const KEY = "fleetchofer_cookie_consent_v1";
+
+  function getConsent(){
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
+  }
+
+  function saveConsent(consent){
+    localStorage.setItem(KEY, JSON.stringify({
+      necessary: true,
+      preferences: !!consent.preferences,
+      analytics: !!consent.analytics,
+      marketing: !!consent.marketing,
+      savedAt: new Date().toISOString()
+    }));
+    document.dispatchEvent(new CustomEvent("fleetchoferCookieConsentUpdated", {detail: getConsent()}));
+  }
+
+  function showBanner(){
+    const existing = document.getElementById("fc-cookie-banner");
+    if(existing) existing.remove();
+
+    const banner = document.createElement("div");
+    banner.id = "fc-cookie-banner";
+    banner.innerHTML = `
+      <div class="fc-cookie-card">
+        <div class="fc-cookie-text">
+          <strong>Cookies</strong>
+          <p>Usamos cookies propias y de terceros para que la web funcione correctamente y, si lo aceptas, para analizar el uso y mejorar tu experiencia. Puedes aceptar, rechazar o configurar tus preferencias en cualquier momento.</p>
+          <a href="cookies.html">Más información en nuestra Política de Cookies.</a>
+        </div>
+        <div class="fc-cookie-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="reject">Rechazar</button>
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="settings">Configurar</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-cookie="accept">Aceptar todas</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    banner.querySelector('[data-fc-cookie="accept"]').onclick = () => { saveConsent({preferences:true, analytics:true, marketing:true}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="reject"]').onclick = () => { saveConsent({preferences:false, analytics:false, marketing:false}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="settings"]').onclick = () => showPanel(banner);
+  }
+
+  function showPanel(banner){
+    const existing = document.getElementById("fc-cookie-panel");
+    if(existing) existing.remove();
+    const current = getConsent() || {preferences:false,analytics:false,marketing:false};
+    const panel = document.createElement("div");
+    panel.id = "fc-cookie-panel";
+    panel.innerHTML = `
+      <div class="fc-cookie-modal">
+        <button type="button" class="fc-cookie-x" aria-label="Cerrar">×</button>
+        <div class="fc-cookie-kicker">Panel de cookies</div>
+        <h2>Configura tus preferencias</h2>
+        <p class="fc-cookie-muted">Las cookies necesarias están siempre activas porque sin ellas la web se comportaría como un camión sin ruedas: muy conceptual, poco útil.</p>
+
+        <label class="fc-cookie-row locked">
+          <span><strong>Cookies técnicas o necesarias</strong><small>Obligatorias para funcionamiento, seguridad y gestión del consentimiento.</small></span>
+          <input type="checkbox" checked disabled>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Preferencias</strong><small>Recuerdan opciones como idioma o configuración visual.</small></span>
+          <input type="checkbox" id="fc-pref" ${current.preferences ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Análisis o medición</strong><small>Ayudan a saber cómo se usa la web para mejorarla.</small></span>
+          <input type="checkbox" id="fc-analytics" ${current.analytics ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Marketing</strong><small>Permiten medir campañas o mostrar publicidad personalizada.</small></span>
+          <input type="checkbox" id="fc-marketing" ${current.marketing ? "checked" : ""}>
+        </label>
+
+        <div class="fc-cookie-actions modal-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-panel="reject">Rechazar opcionales</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-panel="save">Guardar configuración</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    panel.querySelector(".fc-cookie-x").onclick = () => panel.remove();
+    panel.querySelector('[data-fc-panel="reject"]').onclick = () => {
+      saveConsent({preferences:false, analytics:false, marketing:false});
+      panel.remove();
+      if(banner) banner.remove();
+    };
+    panel.querySelector('[data-fc-panel="save"]').onclick = () => {
+      saveConsent({
+        preferences: panel.querySelector("#fc-pref").checked,
+        analytics: panel.querySelector("#fc-analytics").checked,
+        marketing: panel.querySelector("#fc-marketing").checked
+      });
+      panel.remove();
+      if(banner) banner.remove();
+    };
+  }
+
+  window.FleetChoferCookies = {
+    openSettings: function(){ showPanel(null); },
+    getConsent: getConsent
+  };
+
+  document.addEventListener("click", function(e){
+    const target = e.target.closest("[data-open-cookie-settings]");
+    if(target){
+      e.preventDefault();
+      showPanel(null);
+    }
+  });
+
+  if(!getConsent()){
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded", showBanner);
+    } else {
+      showBanner();
+    }
+  }
+})();
+</script>
+
 </body>
 </html>
