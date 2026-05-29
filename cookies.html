@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Cookies — FleetChofer by Clara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rojo:#ff0000;
+  --negro:#000000;
+  --blanco:#ffffff;
+  --gris:rgba(255,255,255,.68);
+  --borde:rgba(255,0,0,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:#000;
+  color:#fff;
+  line-height:1.75;
+  font-weight:300;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,0,0,.13),transparent 35%),
+    radial-gradient(circle at 80% 90%,rgba(255,0,0,.08),transparent 35%),
+    linear-gradient(rgba(255,0,0,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,0,0,.025) 1px,transparent 1px);
+  background-size:auto,auto,70px 70px,70px 70px;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(0,0,0,.9);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,0,0,.18);
+}
+nav{
+  max-width:1180px;
+  margin:0 auto;
+  padding:1rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  color:#fff;
+  text-decoration:none;
+}
+.brand-mark{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ff0000 0%,#6b0000 42%,#090000 70%);
+  box-shadow:0 0 18px rgba(255,0,0,.7);
+}
+.brand-text{
+  font-size:.68rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--rojo);
+}
+.nav-link{
+  color:rgba(255,255,255,.76);
+  text-decoration:none;
+  font-size:.78rem;
+  border:1px solid rgba(255,0,0,.24);
+  padding:.5rem .8rem;
+  border-radius:8px;
+  background:rgba(255,0,0,.04);
+}
+.nav-link:hover{
+  color:#fff;
+  border-color:rgba(255,0,0,.55);
+  box-shadow:0 0 18px rgba(255,0,0,.28);
+}
+main{
+  position:relative;
+  z-index:1;
+  max-width:980px;
+  margin:0 auto;
+  padding:5rem 2rem 4rem;
+}
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-size:.62rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:rgba(255,130,90,.95);
+  border:1px solid rgba(255,0,0,.25);
+  background:rgba(255,0,0,.07);
+  border-radius:999px;
+  padding:.35rem .8rem;
+  margin-bottom:1rem;
+}
+.eyebrow::before{
+  content:"●";
+  color:var(--rojo);
+  font-size:.52rem;
+  filter:drop-shadow(0 0 8px var(--rojo));
+}
+h1{
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.05;
+  letter-spacing:-.05em;
+  text-transform:uppercase;
+  margin-bottom:1rem;
+}
+h1 span{
+  background:linear-gradient(135deg,#ff4500,#ff0000,#ff6600);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 18px rgba(255,0,0,.35));
+}
+.intro{
+  color:var(--gris);
+  max-width:760px;
+  font-size:1rem;
+  margin-bottom:2.2rem;
+}
+.legal-card{
+  background:linear-gradient(145deg,rgba(15,0,0,.78),rgba(5,5,5,.92));
+  border:1px solid var(--borde);
+  border-radius:18px;
+  padding:2rem;
+  box-shadow:0 0 55px rgba(255,0,0,.12), inset 0 0 30px rgba(255,0,0,.035);
+}
+section{
+  padding:1.4rem 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+section:last-child{border-bottom:0}
+h2{
+  font-size:1.05rem;
+  color:var(--rojo);
+  text-transform:uppercase;
+  letter-spacing:.02em;
+  margin-bottom:.65rem;
+  text-shadow:0 0 16px rgba(255,0,0,.35);
+}
+h3{
+  font-size:.98rem;
+  color:#fff;
+  margin:.8rem 0 .35rem;
+}
+p,li{
+  color:rgba(255,255,255,.75);
+  font-size:.92rem;
+}
+ul{padding-left:1.2rem;margin:.55rem 0}
+strong{color:#fff;font-weight:700}
+footer{
+  position:relative;
+  z-index:1;
+  border-top:1px solid rgba(255,0,0,.18);
+  background:rgba(0,0,0,.92);
+  padding:1.5rem 2rem;
+  text-align:center;
+  color:rgba(255,255,255,.35);
+  font-size:.78rem;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:.8rem;
+}
+.footer-links a,.footer-links button{
+  color:rgba(255,255,255,.55);
+  background:none;
+  border:0;
+  text-decoration:none;
+  cursor:pointer;
+  font:inherit;
+}
+.footer-links a:hover,.footer-links button:hover{color:var(--rojo)}
+@media(max-width:700px){
+  nav{padding:.8rem 1rem}
+  main{padding:3rem 1rem}
+  .legal-card{padding:1.25rem}
+}
+</style>
+
+<style>
+#fc-cookie-banner{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:999999;
+  padding:1rem;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 20%);
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-card{
+  max-width:1120px;
+  margin:0 auto;
+  background:linear-gradient(145deg,rgba(14,0,0,.98),rgba(2,2,2,.98));
+  border:1px solid rgba(255,0,0,.35);
+  border-radius:18px;
+  padding:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  box-shadow:0 0 50px rgba(255,0,0,.22);
+}
+.fc-cookie-text strong{
+  color:#ff0000;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.72rem;
+}
+.fc-cookie-text p{
+  color:rgba(255,255,255,.74);
+  font-size:.85rem;
+  line-height:1.55;
+  margin:.25rem 0;
+}
+.fc-cookie-text a{
+  color:rgba(255,120,80,.95);
+  font-size:.8rem;
+  text-decoration:none;
+}
+.fc-cookie-actions{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.fc-cookie-btn{
+  border-radius:999px;
+  padding:.7rem 1rem;
+  font-family:Inter,Arial,sans-serif;
+  font-size:.78rem;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
+  white-space:nowrap;
+}
+.fc-cookie-btn.main{
+  color:#fff;
+  border:1px solid #ff0000;
+  background:linear-gradient(135deg,#cc0000,#ff0000,#ff4500);
+  box-shadow:0 0 18px rgba(255,0,0,.38);
+}
+.fc-cookie-btn.ghost{
+  color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.035);
+}
+.fc-cookie-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 22px rgba(255,0,0,.28);
+}
+#fc-cookie-panel{
+  position:fixed;
+  inset:0;
+  z-index:1000000;
+  background:rgba(0,0,0,.86);
+  backdrop-filter:blur(12px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  font-family:Inter,Arial,sans-serif;
+}
+.fc-cookie-modal{
+  position:relative;
+  width:min(640px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:linear-gradient(150deg,rgba(15,0,0,.98),rgba(4,4,4,.98));
+  border:1px solid rgba(255,0,0,.38);
+  border-radius:20px;
+  padding:2rem;
+  box-shadow:0 0 70px rgba(255,0,0,.25);
+}
+.fc-cookie-x{
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  background:rgba(255,255,255,.04);
+  cursor:pointer;
+  font-size:1.3rem;
+}
+.fc-cookie-kicker{
+  display:inline-flex;
+  color:rgba(255,120,80,.9);
+  border:1px solid rgba(255,0,0,.25);
+  background:rgba(255,0,0,.07);
+  padding:.25rem .7rem;
+  border-radius:999px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.62rem;
+  font-weight:800;
+  margin-bottom:.8rem;
+}
+.fc-cookie-modal h2{
+  color:#fff;
+  font-size:1.6rem;
+  margin-bottom:.45rem;
+}
+.fc-cookie-muted{
+  color:rgba(255,255,255,.58);
+  font-size:.88rem;
+  line-height:1.6;
+  margin-bottom:1.2rem;
+}
+.fc-cookie-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  color:#fff;
+}
+.fc-cookie-row strong{
+  display:block;
+  font-size:.92rem;
+  color:#fff;
+}
+.fc-cookie-row small{
+  display:block;
+  color:rgba(255,255,255,.5);
+  font-size:.78rem;
+  line-height:1.45;
+  margin-top:.2rem;
+}
+.fc-cookie-row input{
+  width:22px;
+  height:22px;
+  accent-color:#ff0000;
+}
+.fc-cookie-row.locked{
+  opacity:.7;
+}
+.modal-actions{
+  margin-top:1.4rem;
+}
+@media(max-width:760px){
+  .fc-cookie-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .fc-cookie-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
+</style>
+
+</head>
+<body>
+<header>
+<nav>
+<a class="brand" href="index.html"><span class="brand-mark"></span><span class="brand-text">FleetChofer by Clara</span></a>
+<a class="nav-link" href="index.html">Volver a la web</a>
+</nav>
+</header>
+<main>
+<div class="eyebrow">Cookies y preferencias</div>
+<h1>Política de <span>Cookies</span></h1>
+<p class="intro">Información sobre el uso de cookies y tecnologías similares en el Sitio Web.</p>
+<div class="legal-card">
+<section><h2>1. ¿Qué son las cookies?</h2><p>Las cookies y tecnologías similares (por ejemplo, píxeles o almacenamiento local) son archivos o identificadores que se descargan en tu dispositivo al acceder a determinadas páginas web. Permiten, entre otras cosas, almacenar y recuperar información sobre la navegación del Usuario o de su dispositivo y, dependiendo de la información que contengan y de cómo se utilice el dispositivo, pueden utilizarse para reconocer al Usuario.</p></section>
+<section><h2>2. ¿Quién es el responsable?</h2><p>El responsable del Sitio Web es FleetChofer S.L.U., con CIF B26722256, domicilio social en c/ Ramon Argiles nº 42, 2º-2ª, España, y correo de contacto clara@fleetchoferbyclara.com.</p></section>
+<section><h2>3. ¿Qué tipos de cookies utilizamos?</h2><h3>A) Cookies técnicas o necesarias (obligatorias)</h3><p>Son imprescindibles para el funcionamiento del Sitio Web y para prestar servicios solicitados por el Usuario (por ejemplo, mantener la sesión, garantizar la seguridad, gestionar el consentimiento de cookies, equilibrado de carga, etc.). Estas cookies no requieren consentimiento.</p><h3>B) Cookies de preferencias o personalización (opcionales)</h3><p>Permiten recordar información para que el Usuario acceda al servicio con determinadas características (por ejemplo, idioma, región, configuración de visualización). Requieren consentimiento cuando no sean estrictamente necesarias.</p><h3>C) Cookies de análisis o medición (opcionales)</h3><p>Permiten el seguimiento y análisis del comportamiento de los Usuarios en el Sitio Web (por ejemplo, páginas visitadas, tiempo de navegación, eventos), para mejorar el servicio y la experiencia. Requieren consentimiento.</p><h3>D) Cookies de publicidad comportamental o marketing (opcionales)</h3><p>Permiten gestionar de forma eficaz espacios publicitarios o medir la eficacia de campañas, así como mostrar publicidad personalizada en función del perfil de navegación. Requieren consentimiento.</p></section>
+<section><h2>4. Cookies de terceros</h2><p>El Sitio Web puede utilizar cookies de terceros proveedores (por ejemplo, servicios de analítica, marketing o integración técnica). Dichos terceros pueden tratar los datos obtenidos a través de las cookies conforme a sus propias políticas.</p><p>En el panel de configuración de cookies podrás consultar, en su caso, el detalle actualizado de proveedores, finalidad y duración.</p></section>
+<section><h2>5. ¿Cómo puedo aceptar, rechazar o configurar cookies?</h2><p>Al acceder por primera vez al Sitio Web se mostrará un banner de cookies desde el que podrás:</p><ul><li>Aceptar todas las cookies opcionales.</li><li>Rechazar las cookies opcionales.</li><li>Configurar tus preferencias por categorías.</li></ul><p>En cualquier momento podrás modificar tu elección desde el enlace “Configurar cookies” disponible en el pie (footer) del Sitio Web.</p><p><button class="nav-link" data-open-cookie-settings type="button">Configurar cookies</button></p></section>
+<section><h2>6. ¿Cómo desactivar cookies desde el navegador?</h2><p>Además del panel de configuración, puedes bloquear o eliminar cookies desde la configuración de tu navegador. Ten en cuenta que, si desactivas cookies técnicas, el Sitio Web puede no funcionar correctamente.</p></section>
+<section><h2>7. Información adicional</h2><p>Para información sobre el tratamiento de datos personales, consulta la Política de Privacidad del Sitio Web/Plataforma.</p></section>
+</div>
+</main>
+<footer>
+<div class="footer-links"><a href="aviso-legal.html">Aviso Legal</a><a href="cookies.html">Política de Cookies</a><button data-open-cookie-settings>Configurar cookies</button></div>
+© FleetChofer S.L.U.
+</footer>
+
+<script>
+(function(){
+  const KEY = "fleetchofer_cookie_consent_v1";
+
+  function getConsent(){
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch(e){ return null; }
+  }
+
+  function saveConsent(consent){
+    localStorage.setItem(KEY, JSON.stringify({
+      necessary: true,
+      preferences: !!consent.preferences,
+      analytics: !!consent.analytics,
+      marketing: !!consent.marketing,
+      savedAt: new Date().toISOString()
+    }));
+    document.dispatchEvent(new CustomEvent("fleetchoferCookieConsentUpdated", {detail: getConsent()}));
+  }
+
+  function showBanner(){
+    const existing = document.getElementById("fc-cookie-banner");
+    if(existing) existing.remove();
+
+    const banner = document.createElement("div");
+    banner.id = "fc-cookie-banner";
+    banner.innerHTML = `
+      <div class="fc-cookie-card">
+        <div class="fc-cookie-text">
+          <strong>Cookies</strong>
+          <p>Usamos cookies propias y de terceros para que la web funcione correctamente y, si lo aceptas, para analizar el uso y mejorar tu experiencia. Puedes aceptar, rechazar o configurar tus preferencias en cualquier momento.</p>
+          <a href="cookies.html">Más información en nuestra Política de Cookies.</a>
+        </div>
+        <div class="fc-cookie-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="reject">Rechazar</button>
+          <button type="button" class="fc-cookie-btn ghost" data-fc-cookie="settings">Configurar</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-cookie="accept">Aceptar todas</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    banner.querySelector('[data-fc-cookie="accept"]').onclick = () => { saveConsent({preferences:true, analytics:true, marketing:true}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="reject"]').onclick = () => { saveConsent({preferences:false, analytics:false, marketing:false}); banner.remove(); };
+    banner.querySelector('[data-fc-cookie="settings"]').onclick = () => showPanel(banner);
+  }
+
+  function showPanel(banner){
+    const existing = document.getElementById("fc-cookie-panel");
+    if(existing) existing.remove();
+    const current = getConsent() || {preferences:false,analytics:false,marketing:false};
+    const panel = document.createElement("div");
+    panel.id = "fc-cookie-panel";
+    panel.innerHTML = `
+      <div class="fc-cookie-modal">
+        <button type="button" class="fc-cookie-x" aria-label="Cerrar">×</button>
+        <div class="fc-cookie-kicker">Panel de cookies</div>
+        <h2>Configura tus preferencias</h2>
+        <p class="fc-cookie-muted">Las cookies necesarias están siempre activas porque sin ellas la web se comportaría como un camión sin ruedas: muy conceptual, poco útil.</p>
+
+        <label class="fc-cookie-row locked">
+          <span><strong>Cookies técnicas o necesarias</strong><small>Obligatorias para funcionamiento, seguridad y gestión del consentimiento.</small></span>
+          <input type="checkbox" checked disabled>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Preferencias</strong><small>Recuerdan opciones como idioma o configuración visual.</small></span>
+          <input type="checkbox" id="fc-pref" ${current.preferences ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Análisis o medición</strong><small>Ayudan a saber cómo se usa la web para mejorarla.</small></span>
+          <input type="checkbox" id="fc-analytics" ${current.analytics ? "checked" : ""}>
+        </label>
+
+        <label class="fc-cookie-row">
+          <span><strong>Marketing</strong><small>Permiten medir campañas o mostrar publicidad personalizada.</small></span>
+          <input type="checkbox" id="fc-marketing" ${current.marketing ? "checked" : ""}>
+        </label>
+
+        <div class="fc-cookie-actions modal-actions">
+          <button type="button" class="fc-cookie-btn ghost" data-fc-panel="reject">Rechazar opcionales</button>
+          <button type="button" class="fc-cookie-btn main" data-fc-panel="save">Guardar configuración</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    panel.querySelector(".fc-cookie-x").onclick = () => panel.remove();
+    panel.querySelector('[data-fc-panel="reject"]').onclick = () => {
+      saveConsent({preferences:false, analytics:false, marketing:false});
+      panel.remove();
+      if(banner) banner.remove();
+    };
+    panel.querySelector('[data-fc-panel="save"]').onclick = () => {
+      saveConsent({
+        preferences: panel.querySelector("#fc-pref").checked,
+        analytics: panel.querySelector("#fc-analytics").checked,
+        marketing: panel.querySelector("#fc-marketing").checked
+      });
+      panel.remove();
+      if(banner) banner.remove();
+    };
+  }
+
+  window.FleetChoferCookies = {
+    openSettings: function(){ showPanel(null); },
+    getConsent: getConsent
+  };
+
+  document.addEventListener("click", function(e){
+    const target = e.target.closest("[data-open-cookie-settings]");
+    if(target){
+      e.preventDefault();
+      showPanel(null);
+    }
+  });
+
+  if(!getConsent()){
+    if(document.readyState === "loading"){
+      document.addEventListener("DOMContentLoaded", showBanner);
+    } else {
+      showBanner();
+    }
+  }
+})();
+</script>
+
+</body>
+</html>
