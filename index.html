@@ -3508,7 +3508,66 @@ background:none;border:0;cursor:pointer;font:inherit;
 </div>
 
 <!-- FLEETCHOFER — BANNER + PANEL DE COOKIES
-Pega este bloque antes de </body> en TODAS las páginas HTML de la web.
+Pega este bloque antes de 
+<!-- AJUSTE MÓVIL POPUP FLEETCHOFER -->
+<style>
+@media (max-width: 768px){
+  #fc-popup-overlay{
+    align-items:flex-start !important;
+    justify-content:center !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    padding:1rem !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #fc-popup-overlay .fc-card{
+    width:100% !important;
+    max-width:100% !important;
+    max-height:none !important;
+    margin:1rem auto 6rem !important;
+    padding:2.2rem 1.25rem 1.6rem !important;
+    overflow:visible !important;
+    transform:none !important;
+  }
+
+  #fc-popup-overlay .fc-title{
+    font-size:1.15rem !important;
+    line-height:1.25 !important;
+    padding-right:2.2rem !important;
+  }
+
+  #fc-popup-overlay .fc-body{
+    font-size:.84rem !important;
+    line-height:1.65 !important;
+  }
+
+  #fc-popup-overlay .fc-highlight{
+    font-size:.86rem !important;
+    line-height:1.55 !important;
+    padding:.85rem 1rem !important;
+    margin-bottom:1.2rem !important;
+  }
+
+  #fc-popup-overlay .fc-cta{
+    font-size:.82rem !important;
+    line-height:1.35 !important;
+    padding:.85rem 1rem !important;
+    white-space:normal !important;
+  }
+
+  #fc-popup-overlay .fc-close{
+    top:.75rem !important;
+    right:.75rem !important;
+    width:38px !important;
+    height:38px !important;
+    z-index:9999999 !important;
+  }
+}
+</style>
+<!-- FIN AJUSTE MÓVIL POPUP FLEETCHOFER -->
+
+</body> en TODAS las páginas HTML de la web.
 Añade también en el footer:
 <a href="aviso-legal.html">Aviso Legal</a>
 <a href="cookies.html">Política de Cookies</a>
