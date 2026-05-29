@@ -3979,27 +3979,53 @@ Pega este bloque antes de
 <!-- FIN AJUSTE MÓVIL EXTRA FLEETCHOFER — URGENTES + ALIADOS -->
 
 
-<!-- AJUSTE MÓVIL INICIO — AIRE PARA PAGOS Y EMPEZAR AHORA -->
+
+
+
+<!-- AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
 <style>
 @media (max-width: 768px){
 
-  /* Solo móvil: da aire al final del bloque de inicio para que
-     "PAGOS AL DESCARGAR" y "EMPEZAR AHORA" no queden tapados
-     por los botones flotantes inferiores. */
+  html,
+  body{
+    height:auto !important;
+    max-height:none !important;
+    min-height:100vh !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  .hero{
+    height:auto !important;
+    max-height:none !important;
+    min-height:100vh !important;
+    overflow:visible !important;
+    align-items:flex-start !important;
+    padding-top:4.8rem !important;
+    padding-bottom:190px !important;
+  }
+
+  .hero-content{
+    transform:none !important;
+    gap:1rem !important;
+  }
+
   .hero-text{
-    padding-bottom: 92px !important;
+    padding-bottom:0 !important;
   }
 
   .stats-grid{
-    margin-bottom: 10px !important;
+    margin-bottom:14px !important;
   }
 
   .cta-buttons{
-    margin-top: 10px !important;
+    margin-top:12px !important;
+    padding-bottom:20px !important;
   }
 }
 </style>
-<!-- FIN AJUSTE MÓVIL INICIO -->
+<!-- FIN AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
 
 </body> en TODAS las páginas HTML de la web.
 Añade también en el footer:
