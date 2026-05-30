@@ -1688,6 +1688,70 @@ html, body { height:auto !important; max-height:none !important; overflow-x:hidd
 body { overflow-y:auto !important; }
 main { min-height:100vh; }
 
+
+        /* === FC MOBILE FIX RUTA URGENTE - SOLO MODAL === */
+        @media (max-width: 968px) {
+            .urgent-modal {
+                padding: 4.5rem 1rem 2rem !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+            }
+
+            .urgent-modal .urgent-modal-inner,
+            .urgent-modal .urgent-grid,
+            .urgent-modal .urgent-card,
+            .urgent-modal .urgent-chofer-hero,
+            .urgent-modal .urgent-card-solo {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .urgent-modal .urgent-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .urgent-modal .urgent-card,
+            .urgent-modal .urgent-card[style],
+            .urgent-modal .urgent-card[style*="grid-column"] {
+                grid-column: auto !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+            }
+
+            .urgent-modal .urgent-card-price,
+            .urgent-modal .uch-price .price-big,
+            .urgent-modal .urgent-card-solo .solo-price .price-big {
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                line-height: 1.1 !important;
+            }
+
+            .urgent-modal .urgent-price-inc,
+            .urgent-modal .urgent-card-desc,
+            .urgent-modal .urgent-card-details,
+            .urgent-modal .human-support-badge {
+                white-space: normal !important;
+                overflow: visible !important;
+                overflow-wrap: anywhere !important;
+            }
+
+            .urgent-modal .urgent-chofer-hero,
+            .urgent-modal .urgent-card-solo {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 1rem !important;
+            }
+
+            .urgent-modal .uch-price,
+            .urgent-modal .urgent-card-solo .solo-price {
+                text-align: center !important;
+            }
+        }
+        /* === FIN FC MOBILE FIX RUTA URGENTE === */
+
 </style>
 </head>
 <body>
@@ -3250,6 +3314,99 @@ main { min-height:100vh; }
             .aliados-rep-section { padding: 3.5rem 1.5rem; }
             .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
         }
+        /* AJUSTE MÓVIL ALIADOS — REPUTACIÓN E INSIGNIAS: encaje limpio sin tocar diseño */
+        @media (max-width: 640px) {
+            .aliados-rep-section {
+                padding: 3rem 1rem 2.5rem;
+                overflow: hidden;
+            }
+            .aliados-rep-inner {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .aliados-rep-titulo {
+                gap: 0.55rem;
+                margin-bottom: 2rem;
+            }
+            .aliados-rep-titulo span {
+                white-space: normal;
+                text-align: center;
+                font-size: 0.62rem;
+                line-height: 1.45;
+            }
+            .aliados-rep-intro-card {
+                padding: 1.5rem 1.1rem;
+            }
+            .ar-insignias-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 1.8rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            .ar-insignias-col {
+                min-width: 0;
+                width: 100%;
+            }
+            .ar-col-title-row {
+                gap: 0.5rem;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+            }
+            .ar-col-title-row::after {
+                display: none;
+            }
+            .ar-col-title-row span {
+                white-space: normal;
+                max-width: 100%;
+                line-height: 1.45;
+                font-size: 0.58rem;
+            }
+            .ar-col-subtitle {
+                font-size: 0.7rem;
+                line-height: 1.55;
+            }
+            .ar-insignia-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.55rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0.75rem 0;
+            }
+            .ar-ins-badge {
+                min-width: 0;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.35;
+                text-align: left;
+            }
+            .ar-ins-text {
+                flex: 1 1 100%;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .ar-sello-divider,
+            .ar-section-sep {
+                gap: 0.45rem;
+            }
+            .ar-sello-divider span,
+            .ar-section-sep span {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.4;
+            }
+            .ar-logo-center {
+                min-height: 150px;
+            }
+            .ar-logo-center img {
+                width: 145px;
+                height: 145px;
+            }
+        }
+
+        /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
+
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
     &lt;/style&gt;
