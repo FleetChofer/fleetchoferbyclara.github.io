@@ -1431,6 +1431,229 @@ nav {
 }
 </style>
     <link rel="stylesheet" href="scroll-enhancements.css">
+
+<!-- FIX MÓVIL FINAL — SOLO MODAL RUTA URGENTE + ALIADOS, SIN TOCAR BOTONES FLOTANTES -->
+<style id="fc-mobile-fix-notificaciones-aliados-final">
+@media (max-width: 768px){
+
+  /* Modal "Activa tu ruta urgente": arreglo interno, sin tocar el botón flotante */
+  #urgentModal{
+    padding:4.5rem 1rem 9rem !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #urgentModal .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-modal-header{
+    margin-bottom:1.5rem !important;
+  }
+
+  #urgentModal .urgent-modal-header .phrase{
+    font-size:1.35rem !important;
+    line-height:1.15 !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #urgentModal .urgent-modal-header p{
+    font-size:.86rem !important;
+    line-height:1.45 !important;
+  }
+
+  #urgentModal .urgent-chofer-hero{
+    width:100% !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    text-align:center !important;
+    padding:1.25rem !important;
+    gap:1rem !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .uch-body,
+  #urgentModal .uch-price{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    text-align:center !important;
+  }
+
+  #urgentModal .uch-price .price-big{
+    justify-content:center !important;
+    flex-wrap:wrap !important;
+    font-size:2rem !important;
+    line-height:1.1 !important;
+  }
+
+  #urgentModal .uch-cta .btn{
+    max-width:100% !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-section-label{
+    margin:1.4rem 0 .9rem !important;
+    padding:0 !important;
+  }
+
+  #urgentModal .urgent-section-label-inner{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    width:100% !important;
+    white-space:normal !important;
+    line-height:1.35 !important;
+    text-align:center !important;
+  }
+
+  #urgentModal .urgent-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:.85rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-card,
+  #urgentModal .urgent-card.rescate,
+  #urgentModal .urgent-card[style*="grid-column"]{
+    grid-column:1 / -1 !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+    padding:1.15rem 1rem !important;
+    box-sizing:border-box !important;
+  }
+
+  #urgentModal .urgent-card *{
+    min-width:0 !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+  }
+
+  #urgentModal .urgent-card-name{
+    font-size:1rem !important;
+    line-height:1.22 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    overflow-wrap:break-word !important;
+  }
+
+  #urgentModal .urgent-card-price{
+    font-size:1.65rem !important;
+    line-height:1.15 !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:flex-end !important;
+    gap:.35rem !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-price-inc{
+    font-size:.62rem !important;
+    line-height:1.2 !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-card-desc,
+  #urgentModal .urgent-card-details{
+    font-size:.78rem !important;
+    line-height:1.45 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-profile-tags{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:.35rem !important;
+  }
+
+  #urgentModal .urgent-profile-tag{
+    font-size:.55rem !important;
+    padding:2px 6px !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .human-support-badge{
+    display:flex !important;
+    align-items:flex-start !important;
+    width:100% !important;
+    font-size:.78rem !important;
+    line-height:1.45 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-card.rescate > div{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:1rem !important;
+    width:100% !important;
+  }
+
+  #urgentModal .urgent-card.rescate > div > div{
+    width:100% !important;
+    min-width:0 !important;
+    text-align:left !important;
+    flex:1 1 auto !important;
+  }
+
+  #urgentModal .urgent-card.rescate .urgent-card-price{
+    justify-content:flex-start !important;
+  }
+
+  #urgentModal .urgent-card.rescate button.btn{
+    width:100% !important;
+    white-space:normal !important;
+    margin-top:.75rem !important;
+  }
+
+  #urgentRetentionModal{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #urgentRetentionModal .retention-content{
+    width:calc(100% - 1.5rem) !important;
+    max-width:100% !important;
+    max-height:none !important;
+    margin:1rem auto 7rem !important;
+    overflow:visible !important;
+  }
+
+  /* Aliados: solo contenedor exterior del iframe/página */
+  #alliesPageOverlay,
+  .allies-page-overlay,
+  .allies-overlay{
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #alliesPageOverlay .allies-page-frame,
+  .allies-page-overlay .allies-page-frame{
+    width:100% !important;
+    max-width:100% !important;
+    min-height:100vh !important;
+    height:100vh !important;
+    border:0 !important;
+  }
+}
+</style>
+<!-- FIN FIX MÓVIL FINAL — SOLO MODAL RUTA URGENTE + ALIADOS -->
+
 </head>
 <body style="overflow: auto;">
 
@@ -3009,6 +3232,90 @@ nav {
             .aliados-rep-section { padding: 3.5rem 1.5rem; }
             .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
         }
+
+        /* AJUSTE MÓVIL ALIADOS — REPUTACIÓN E INSIGNIAS: encaje limpio sin tocar diseño */
+        @media (max-width: 640px) {
+            .aliados-rep-section {
+                padding: 3rem 1rem 2.5rem;
+                overflow: hidden;
+            }
+            .aliados-rep-inner {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .aliados-rep-titulo {
+                gap: 0.55rem;
+                margin-bottom: 2rem;
+            }
+            .aliados-rep-titulo span {
+                white-space: normal;
+                text-align: center;
+                font-size: 0.62rem;
+                line-height: 1.45;
+            }
+            .aliados-rep-intro-card {
+                padding: 1.5rem 1.1rem;
+            }
+            .ar-insignias-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 1.8rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            .ar-insignias-col {
+                min-width: 0;
+                width: 100%;
+            }
+            .ar-col-title-row {
+                gap: 0.5rem;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+            }
+            .ar-col-title-row::after {
+                display: none;
+            }
+            .ar-col-title-row span {
+                white-space: normal;
+                max-width: 100%;
+                line-height: 1.45;
+                font-size: 0.58rem;
+            }
+            .ar-col-subtitle {
+                font-size: 0.7rem;
+                line-height: 1.55;
+            }
+            .ar-insignia-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.55rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0.75rem 0;
+            }
+            .ar-ins-badge {
+                min-width: 0;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.35;
+                text-align: left;
+            }
+            .ar-ins-text {
+                flex: 1 1 100%;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .ar-sello-divider,
+            .ar-section-sep {
+                gap: 0.45rem;
+            }
+            .ar-sello-divider span,
+            .ar-section-sep span {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.4;
+            }
+        }
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
     &lt;/style&gt;
@@ -4549,6 +4856,8 @@ Pega este bloque antes de
 <!-- FIN AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
 
 <!-- NOTA INTERNA OCULTA: bloque de instrucción que antes quedaba visible en móvil.
+
+
 </body> en TODAS las páginas HTML de la web.
 Añade también en el footer:
 <a href="aviso-legal.html">Aviso Legal</a>
@@ -4861,5 +5170,32 @@ Añade también en el footer:
 })();
 </script>
 
+
+<!-- FIX FINAL MÓVIL ALIADOS — COPIA DEL INDEX, SIN TOCAR BOTONES -->
+<style id="fc-allies-outer-mobile-fix-copy-index">
+@media (max-width: 768px){
+  #alliesPageOverlay.allies-page-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    width:100vw !important;
+    height:100dvh !important;
+    overflow:hidden !important;
+    background:#000 !important;
+  }
+  #alliesPageFrame.allies-page-frame{
+    width:100% !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    border:0 !important;
+    display:block !important;
+  }
+  #closeAlliesPage.allies-page-close{
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:200010 !important;
+  }
+}
+</style>
+<!-- FIN FIX FINAL MÓVIL ALIADOS — COPIA DEL INDEX -->
 </body>
 </html>
