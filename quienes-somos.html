@@ -1118,6 +1118,184 @@ nav {
 }
 
 </style>
+
+
+<!-- PATCH MÓVIL SEGURO — SOLO RUTA URGENTE + ALIADOS EN RUTA -->
+<style id="fc-mobile-fix-urgent-allies-only">
+@media (max-width: 768px){
+  /* Ruta urgente: tarjetas siempre en una columna, sin montarse ni cortar texto */
+  #urgentModal.urgent-modal{
+    padding:4.5rem 1rem 8.5rem !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  #urgentModal .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 auto !important;
+  }
+  #urgentModal .urgent-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:1rem !important;
+    width:100% !important;
+  }
+  #urgentModal .urgent-card{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+    padding:1.15rem 1rem !important;
+  }
+  #urgentModal .urgent-card-name,
+  #urgentModal .urgent-card-desc,
+  #urgentModal .urgent-card-details,
+  #urgentModal .urgent-price-inc,
+  #urgentModal .urgent-profile-tag{
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    word-break:normal !important;
+    overflow-wrap:anywhere !important;
+  }
+  #urgentModal .urgent-card-price{
+    flex-wrap:wrap !important;
+    line-height:1.1 !important;
+  }
+  #urgentModal .urgent-modal-header .phrase{
+    font-size:1.35rem !important;
+    line-height:1.15 !important;
+  }
+  /* Aliados: el overlay y el iframe ocupan toda la pantalla y permiten scroll real */
+  #alliesPageOverlay.allies-page-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    width:100vw !important;
+    height:100dvh !important;
+    overflow:hidden !important;
+    background:#000 !important;
+  }
+  #alliesPageFrame.allies-page-frame{
+    width:100% !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    border:0 !important;
+    display:block !important;
+  }
+  #closeAlliesPage.allies-page-close{
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:200010 !important;
+  }
+}
+</style>
+
+<script id="fc-mobile-fix-urgent-allies-iframe-only">
+(function(){
+  function injectAlliesMobileFix(){
+    var frame = document.getElementById('alliesPageFrame');
+    if(!frame) return;
+    try{
+      var doc = frame.contentDocument || (frame.contentWindow && frame.contentWindow.document);
+      if(!doc || doc.getElementById('fc-allies-mobile-inner-fix')) return;
+      var style = doc.createElement('style');
+      style.id = 'fc-allies-mobile-inner-fix';
+      style.textContent = `
+@media (max-width: 768px){
+  html, body{
+    width:100% !important;
+    max-width:100% !important;
+    min-height:100% !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+  body{ padding-bottom:3rem !important; }
+  .aliados-rep-section{
+    padding:2.2rem 1rem 2.4rem !important;
+    overflow:visible !important;
+  }
+  .aliados-rep-inner,
+  .aliados-rep-intro-card,
+  .ar-insignias-grid,
+  .ar-insignias-col,
+  .ar-sello-card{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+  }
+  .ar-insignias-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:.9rem !important;
+  }
+  .ar-insignia-item{
+    display:flex !important;
+    align-items:flex-start !important;
+    gap:.55rem !important;
+    width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+    white-space:normal !important;
+    padding:.65rem 0 !important;
+  }
+  .ar-ins-badge{
+    flex:0 0 auto !important;
+    min-width:88px !important;
+    max-width:112px !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    line-height:1.15 !important;
+    padding:3px 7px !important;
+    font-size:.54rem !important;
+  }
+  .ar-ins-text,
+  .ar-ins-text strong,
+  .ar-sello-card,
+  .ar-sello-card *{
+    min-width:0 !important;
+    max-width:100% !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+  .aliados-rep-titulo{
+    gap:.5rem !important;
+    margin-bottom:1.6rem !important;
+  }
+  .aliados-rep-titulo span{
+    white-space:normal !important;
+    text-align:center !important;
+    line-height:1.25 !important;
+  }
+  .ar-section-sep span,
+  .ar-sello-divider span{
+    white-space:normal !important;
+    text-align:center !important;
+  }
+}`;
+      (doc.head || doc.documentElement).appendChild(style);
+    }catch(e){}
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var frame = document.getElementById('alliesPageFrame');
+    if(frame){
+      frame.addEventListener('load', injectAlliesMobileFix);
+      setTimeout(injectAlliesMobileFix, 250);
+      setTimeout(injectAlliesMobileFix, 900);
+    }
+    var btn = document.getElementById('openAlliesPage');
+    if(btn){ btn.addEventListener('click', function(){ setTimeout(injectAlliesMobileFix, 120); }); }
+  });
+})();
+</script>
+<!-- FIN PATCH MÓVIL SEGURO — SOLO RUTA URGENTE + ALIADOS EN RUTA -->
+
 </head>
 <body style="overflow: auto;">
 
@@ -2646,6 +2824,82 @@ nav {
             .aliados-rep-section { padding: 3.5rem 1.5rem; }
             .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
         }
+
+
+        /* PATCH MÓVIL INTERNO — ALIADOS EN RUTA / INSIGNIAS */
+        @media (max-width: 768px) {
+            html, body {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 100% !important;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            body { padding-bottom: 3rem !important; }
+            .aliados-rep-section {
+                padding: 2.2rem 1rem 2.4rem !important;
+                overflow: visible !important;
+            }
+            .aliados-rep-inner,
+            .aliados-rep-intro-card,
+            .ar-insignias-grid,
+            .ar-insignias-col,
+            .ar-sello-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+            }
+            .ar-insignias-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                gap: .9rem !important;
+            }
+            .ar-insignia-item {
+                display: flex !important;
+                align-items: flex-start !important;
+                gap: .55rem !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                overflow: visible !important;
+                white-space: normal !important;
+                padding: .65rem 0 !important;
+            }
+            .ar-ins-badge {
+                flex: 0 0 auto !important;
+                min-width: 88px !important;
+                max-width: 112px !important;
+                white-space: normal !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+                line-height: 1.15 !important;
+                padding: 3px 7px !important;
+                font-size: .54rem !important;
+            }
+            .ar-ins-text,
+            .ar-ins-text strong,
+            .ar-sello-card,
+            .ar-sello-card * {
+                min-width: 0 !important;
+                max-width: 100% !important;
+                white-space: normal !important;
+                overflow: visible !important;
+                text-overflow: clip !important;
+                overflow-wrap: anywhere !important;
+                word-break: normal !important;
+            }
+            .aliados-rep-titulo { gap: .5rem !important; margin-bottom: 1.6rem !important; }
+            .aliados-rep-titulo span,
+            .ar-section-sep span,
+            .ar-sello-divider span {
+                white-space: normal !important;
+                text-align: center !important;
+                line-height: 1.25 !important;
+            }
+        }
+        /* FIN PATCH MÓVIL INTERNO — ALIADOS EN RUTA / INSIGNIAS */
+
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
     &lt;/style&gt;
@@ -4159,6 +4413,210 @@ background:none;border:0;cursor:pointer;font:inherit;
 </style>
 <!-- FIN AJUSTE MÓVIL INICIO — SCROLL CONTROLADO -->
 
+
+
+<!-- PATCH FINAL MÓVIL — SOLO INTERIOR RUTA URGENTE, SIN TOCAR BOTONES FLOTANTES -->
+<style id="fc-final-urgent-modal-content-only">
+@media (max-width: 768px){
+  /* Solo dentro del modal de Ruta Urgente */
+  #urgentModal.urgent-modal,
+  .urgent-modal#urgentModal{
+    padding:4.5rem 1rem 9.5rem !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #urgentModal .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin:0 auto !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-modal-header{
+    margin-bottom:1.6rem !important;
+  }
+
+  #urgentModal .urgent-modal-header .phrase{
+    font-size:1.32rem !important;
+    line-height:1.16 !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-section-label{
+    margin:1.4rem 0 .85rem !important;
+  }
+
+  #urgentModal .urgent-section-label-inner{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:center !important;
+    white-space:normal !important;
+    line-height:1.25 !important;
+    max-width:100% !important;
+  }
+
+  /* Clave: en móvil no hay grid. Flex vertical elimina columnas fantasma y solapes. */
+  #urgentModal .urgent-grid{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:1rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-card,
+  #urgentModal .urgent-card.rescate{
+    grid-column:auto !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow:visible !important;
+    padding:1.15rem 1rem !important;
+    margin:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    gap:.58rem !important;
+    transform:none !important;
+  }
+
+  #urgentModal .urgent-card:hover,
+  #urgentModal .urgent-card:active{
+    transform:none !important;
+  }
+
+  /* Rescate llevaba contenido interno en horizontal: en móvil queda vertical */
+  #urgentModal .urgent-card.rescate > div{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap:.9rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  #urgentModal .urgent-card.rescate > div > div{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    text-align:left !important;
+    flex:1 1 auto !important;
+  }
+
+  #urgentModal .urgent-profile-tags{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:.35rem !important;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  #urgentModal .urgent-profile-tag,
+  #urgentModal .urgent-level-badge{
+    max-width:100% !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    line-height:1.18 !important;
+  }
+
+  #urgentModal .urgent-card-name{
+    font-size:1rem !important;
+    line-height:1.22 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  #urgentModal .urgent-card-price,
+  #urgentModal .uch-price .price-big{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:flex-end !important;
+    justify-content:flex-start !important;
+    gap:.35rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    font-size:1.58rem !important;
+    line-height:1.08 !important;
+    text-align:left !important;
+    white-space:normal !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-price-inc,
+  #urgentModal .uch-price .price-big span{
+    display:inline-block !important;
+    flex:0 1 auto !important;
+    max-width:100% !important;
+    font-size:.62rem !important;
+    line-height:1.18 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+  }
+
+  #urgentModal .urgent-card-desc,
+  #urgentModal .urgent-card-details,
+  #urgentModal .human-support-badge,
+  #urgentModal .human-support-badge div,
+  #urgentModal .uch-desc,
+  #urgentModal .uch-details{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+    line-height:1.45 !important;
+  }
+
+  #urgentModal .urgent-chofer-hero{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    text-align:left !important;
+    gap:1rem !important;
+    padding:1.25rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .uch-body,
+  #urgentModal .uch-price{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    text-align:left !important;
+  }
+
+  #urgentModal .uch-cta,
+  #urgentModal .urgent-card.rescate button{
+    text-align:left !important;
+  }
+
+  #urgentModal .btn,
+  #urgentModal button.btn{
+    max-width:100% !important;
+    white-space:normal !important;
+  }
+}
+</style>
+<!-- FIN PATCH FINAL MÓVIL — SOLO INTERIOR RUTA URGENTE, SIN TOCAR BOTONES FLOTANTES -->
 <!-- NOTA INTERNA OCULTA: bloque de instrucción que antes quedaba visible en móvil.
 </body> en TODAS las páginas HTML de la web.
 Añade también en el footer:
