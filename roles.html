@@ -3383,6 +3383,112 @@ nav {
             .aliados-rep-section { padding: 3.5rem 1.5rem; }
             .aliados-rep-intro-card { padding: 1.6rem 1.4rem; }
         }
+
+
+        /* AJUSTE MÓVIL ALIADOS — REPUTACIÓN E INSIGNIAS: encaje limpio sin tocar diseño */
+        @media (max-width: 640px) {
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            .aliados-rep-section {
+                padding: 3rem 1rem 2.5rem;
+                overflow: hidden;
+            }
+            .aliados-rep-inner {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            .aliados-rep-titulo {
+                gap: 0.55rem;
+                margin-bottom: 2rem;
+            }
+            .aliados-rep-titulo span {
+                white-space: normal;
+                text-align: center;
+                font-size: 0.62rem;
+                line-height: 1.45;
+            }
+            .aliados-rep-intro-card {
+                padding: 1.5rem 1.1rem;
+            }
+            .ar-insignias-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 1.8rem;
+                width: 100%;
+                max-width: 100%;
+            }
+            .ar-insignias-col {
+                min-width: 0;
+                width: 100%;
+            }
+            .ar-col-title-row {
+                gap: 0.5rem;
+                align-items: flex-start;
+                margin-bottom: 1rem;
+            }
+            .ar-col-title-row::after {
+                display: none;
+            }
+            .ar-col-title-row span {
+                white-space: normal;
+                max-width: 100%;
+                line-height: 1.45;
+                font-size: 0.58rem;
+            }
+            .ar-col-subtitle {
+                font-size: 0.7rem;
+                line-height: 1.55;
+            }
+            .ar-insignia-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 0.55rem;
+                width: 100%;
+                max-width: 100%;
+                padding: 0.75rem 0;
+            }
+            .ar-ins-badge {
+                min-width: 0;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.35;
+                text-align: left;
+            }
+            .ar-ins-text {
+                flex: 1 1 100%;
+                min-width: 0;
+                max-width: 100%;
+            }
+            .ar-sello-card {
+                padding: 1rem;
+                overflow: visible;
+            }
+            .ar-sello-card-header {
+                align-items: flex-start;
+                flex-wrap: nowrap;
+            }
+            .ar-sello-divider,
+            .ar-section-sep {
+                gap: 0.45rem;
+            }
+            .ar-sello-divider span,
+            .ar-section-sep span {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.4;
+            }
+            .ar-logo-center {
+                min-height: 150px;
+            }
+            .ar-logo-center img {
+                width: 145px;
+                height: 145px;
+            }
+        }
+
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
     &lt;/style&gt;
@@ -5302,6 +5408,217 @@ background:none;border:0;cursor:pointer;font:inherit;
 })();
 </script>
 <!-- FIN FLEETCHOFER — BLOQUE LEGAL/COOKIES COPIADO DEL INDEX BUENO -->
+
+
+
+<!-- PATCH FINAL MÓVIL — SOLO INTERIOR RUTA URGENTE, SIN TOCAR BOTONES FLOTANTES -->
+<style id="fc-urgent-modal-mobile-final-soluciones">
+@media (max-width: 768px){
+  #urgentModal.urgent-modal{
+    padding:4.5rem 1rem 8.5rem !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    -webkit-overflow-scrolling:touch !important;
+  }
+
+  #urgentModal .urgent-modal-inner{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    margin:0 auto !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-modal-close{
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:11002 !important;
+  }
+
+  #urgentModal .urgent-modal-header{
+    margin-bottom:1.6rem !important;
+  }
+
+  #urgentModal .urgent-modal-header .phrase{
+    font-size:1.35rem !important;
+    line-height:1.15 !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-grid{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) !important;
+    gap:.85rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-card,
+  #urgentModal .urgent-card.rescate,
+  #urgentModal .urgent-card.destacar,
+  #urgentModal .urgent-card.prioritario,
+  #urgentModal .urgent-card.urgente24,
+  #urgentModal .urgent-card.express12,
+  #urgentModal .urgent-card-solo{
+    grid-column:1 / -1 !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+    overflow:visible !important;
+    padding:1.15rem 1rem !important;
+    gap:.55rem !important;
+  }
+
+  #urgentModal .urgent-card-solo{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    text-align:left !important;
+  }
+
+  #urgentModal .urgent-card-name,
+  #urgentModal .solo-title,
+  #urgentModal .uch-title{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    font-size:1rem !important;
+    line-height:1.22 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    overflow-wrap:anywhere !important;
+  }
+
+  #urgentModal .urgent-card-price,
+  #urgentModal .solo-price .price-big,
+  #urgentModal .uch-price .price-big{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:flex-end !important;
+    justify-content:flex-start !important;
+    gap:.35rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    font-size:1.58rem !important;
+    line-height:1.08 !important;
+    text-align:left !important;
+    white-space:normal !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-price-inc,
+  #urgentModal .urgent-price-iva,
+  #urgentModal .urgent-price-total,
+  #urgentModal .solo-price .price-iva,
+  #urgentModal .solo-price .price-total,
+  #urgentModal .uch-price .price-iva,
+  #urgentModal .uch-price .price-total,
+  #urgentModal .uch-price .price-big span{
+    display:inline-block !important;
+    flex:0 1 auto !important;
+    max-width:100% !important;
+    font-size:.62rem !important;
+    line-height:1.18 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+  }
+
+  #urgentModal .urgent-card-desc,
+  #urgentModal .urgent-card-details,
+  #urgentModal .human-support-badge,
+  #urgentModal .human-support-badge div,
+  #urgentModal .solo-desc,
+  #urgentModal .uch-desc,
+  #urgentModal .uch-details{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    white-space:normal !important;
+    overflow:visible !important;
+    text-overflow:clip !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+    line-height:1.45 !important;
+  }
+
+  #urgentModal .urgent-profile-tags{
+    gap:.35rem !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .urgent-profile-tag{
+    font-size:.55rem !important;
+    padding:2px 6px !important;
+    white-space:normal !important;
+  }
+
+  #urgentModal .urgent-chofer-hero{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    text-align:left !important;
+    gap:1rem !important;
+    padding:1.25rem !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow:visible !important;
+  }
+
+  #urgentModal .uch-body,
+  #urgentModal .uch-price,
+  #urgentModal .solo-content,
+  #urgentModal .solo-price{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    text-align:left !important;
+  }
+
+  #urgentModal .uch-cta,
+  #urgentModal .urgent-card.rescate button{
+    text-align:left !important;
+  }
+
+  #urgentModal .btn,
+  #urgentModal button.btn{
+    max-width:100% !important;
+    white-space:normal !important;
+  }
+}
+</style>
+<!-- FIN PATCH FINAL MÓVIL — SOLO INTERIOR RUTA URGENTE, SIN TOCAR BOTONES FLOTANTES -->
+
+<!-- FIX FINAL MÓVIL ALIADOS — COPIA DEL INDEX + INSIGNIAS INTERNAS, SIN TOCAR BOTONES -->
+<style id="fc-allies-outer-mobile-fix-copy-index-soluciones">
+@media (max-width: 768px){
+  #alliesPageOverlay.allies-page-overlay{
+    position:fixed !important;
+    inset:0 !important;
+    width:100vw !important;
+    height:100dvh !important;
+    overflow:hidden !important;
+    background:#000 !important;
+  }
+  #alliesPageFrame.allies-page-frame{
+    width:100% !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    border:0 !important;
+    display:block !important;
+  }
+  #closeAlliesPage.allies-page-close{
+    top:.85rem !important;
+    right:.85rem !important;
+    z-index:200010 !important;
+  }
+}
+</style>
+<!-- FIN FIX FINAL MÓVIL ALIADOS — COPIA DEL INDEX -->
 
 </body>
 </html>
