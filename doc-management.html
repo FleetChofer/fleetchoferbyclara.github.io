@@ -877,6 +877,244 @@ nav {
         }
         /* === FIN FC MOBILE FIX RUTA URGENTE === */
 
+
+
+/* ================================================================
+   CIRUGÍA RESPONSIVE MÓVIL — SOLO 3 PUNTOS INDICADOS
+   1) Tarjetas bajo Sello Fuego Blindado
+   2) Nota Sello en mantenimiento chófer
+   3) Tabla mantenimiento empresas completa en móvil
+   ================================================================ */
+@media (max-width: 600px) {
+  .sello-top-section,
+  .modalities-section,
+  .alta-section,
+  .mant-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sello-top-card {
+    padding: 1.35rem 1rem;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .sello-top-title {
+    font-size: 1.18rem;
+    line-height: 1.28;
+  }
+
+  .sello-top-desc,
+  .sello-top-warning {
+    font-size: 0.82rem;
+    line-height: 1.62;
+  }
+
+  .sello-feature-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .sello-feature-card {
+    width: 100%;
+    min-width: 0;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .sello-feature-title,
+  .sello-feature-text {
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .chofer-sello-note {
+    align-items: flex-start;
+    gap: 0.55rem;
+    line-height: 1.55;
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .chofer-sello-note span {
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .chofer-sello-note strong {
+    display: inline;
+  }
+
+  .mant-table-wrap {
+    overflow: visible;
+    border-radius: 14px;
+    background: transparent;
+    border: 0;
+  }
+
+  .mant-table,
+  .mant-table thead,
+  .mant-table tbody,
+  .mant-table tr,
+  .mant-table th,
+  .mant-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .mant-table thead {
+    display: none;
+  }
+
+  .mant-table tbody tr {
+    margin-bottom: 1rem;
+    background: rgba(10,10,10,0.72);
+    border: 1px solid rgba(255,0,0,0.2);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .mant-table tbody tr:hover {
+    background: rgba(10,10,10,0.72);
+  }
+
+  .mant-table td,
+  .mant-table td:not(:first-child) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: right;
+    padding: 0.85rem 0.95rem;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mant-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .mant-table td::before {
+    content: attr(data-label);
+    flex: 0 0 42%;
+    text-align: left;
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.42);
+    line-height: 1.35;
+  }
+
+  .mant-table .vol {
+    background: rgba(255,0,0,0.07);
+    color: #fff;
+  }
+
+  .mant-table .best-col {
+    background: rgba(255,0,0,0.07);
+  }
+
+  .mant-table .saving {
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  .mant-table .pactado td[colspan] {
+    display: block;
+    text-align: left !important;
+  }
+
+  .mant-table .pactado td[colspan]::before {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+}
+
+
+/* ================================================================
+   CIRUGÍA MÓVIL — Sello Fuego Blindado
+   Solo corrige los 3 cuadrados: Validación Humana, Radar de Caducidades
+   y Cero Preocupaciones. No toca tabla, botones ni estructura global.
+   ================================================================ */
+@media (max-width: 768px) {
+  .sello-mobile-feature-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .sello-mobile-feature-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    padding: 1.05rem 1rem !important;
+    display: grid !important;
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: 0.95rem !important;
+    row-gap: 0.18rem !important;
+    align-items: center !important;
+    text-align: left !important;
+    overflow: visible !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:first-child {
+    grid-row: 1 / span 2 !important;
+    grid-column: 1 !important;
+    margin: 0 !important;
+    font-size: 1.8rem !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:nth-child(2) {
+    grid-column: 2 !important;
+    margin: 0 0 0.25rem 0 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.25 !important;
+    text-align: left !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:nth-child(3) {
+    grid-column: 2 !important;
+    margin: 0 !important;
+    font-size: 0.84rem !important;
+    line-height: 1.55 !important;
+    text-align: left !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sello-mobile-feature-grid > div {
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    padding: 0.95rem 0.85rem !important;
+    column-gap: 0.75rem !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:first-child {
+    font-size: 1.55rem !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:nth-child(2) {
+    font-size: 0.92rem !important;
+  }
+
+  .sello-mobile-feature-grid > div > div:nth-child(3) {
+    font-size: 0.8rem !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -943,7 +1181,7 @@ nav {
     </div>
     <div style="padding:2.5rem 3rem;">
         <p style="font-size:0.98rem;line-height:1.9;color:rgba(255,255,255,0.82);font-weight:300;margin-bottom:2rem;">Este sello no es un adorno. Es el escudo diario de tu operativa. Al contratar el mantenimiento con Gestión Acompañada, tu flota lo recibe automáticamente y lo muestra en cada perfil de conductor y vehículo. Nadie perderá tiempo revisando tus papeles: el sello es tu garantía de profesionalidad.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;">
+        <div class="sello-mobile-feature-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;">
             <div style="padding:1.8rem 1.6rem;border:1px solid rgba(255,0,0,0.38);border-radius:10px;background:linear-gradient(135deg,rgba(30,0,0,0.85),rgba(8,0,0,0.95));text-align:center;transition:all 0.3s ease;box-shadow:inset 0 0 20px rgba(255,0,0,0.03);">
                 <div style="font-size:1.6rem;margin-bottom:1rem;filter:drop-shadow(0 0 10px rgba(255,0,0,0.35));">♡</div>
                 <div style="font-size:0.95rem;font-weight:800;color:#ff0000;margin-bottom:0.8rem;letter-spacing:-0.01em;text-shadow:0 0 12px rgba(255,0,0,0.35);">Validación Humana</div>
@@ -1163,29 +1401,29 @@ nav {
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="vol">1 – 5 perfiles</td>
-                            <td class="price-main">49€/mes</td>
-                            <td>141€<span class="saving">47€/mes · ahorras 2€</span></td>
-                            <td>270€<span class="saving">45€/mes · ahorras 4€</span></td>
-                            <td class="best-col annual-price">539€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
+                            <td class="vol" data-label="Volumen de perfiles">1 – 5 perfiles</td>
+                            <td class="price-main" data-label="Mensual">49€/mes</td>
+                            <td data-label="Trimestral">141€<span class="saving">47€/mes · ahorras 2€</span></td>
+                            <td data-label="Semestral">270€<span class="saving">45€/mes · ahorras 4€</span></td>
+                            <td class="best-col annual-price" data-label="Anual 🔥">539€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
                         </tr>
                         <tr>
-                            <td class="vol">6 – 20 perfiles</td>
-                            <td class="price-main">39€/mes</td>
-                            <td>111€<span class="saving">37€/mes · ahorras 2€</span></td>
-                            <td>210€<span class="saving">35€/mes · ahorras 4€</span></td>
-                            <td class="best-col annual-price">429€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
+                            <td class="vol" data-label="Volumen de perfiles">6 – 20 perfiles</td>
+                            <td class="price-main" data-label="Mensual">39€/mes</td>
+                            <td data-label="Trimestral">111€<span class="saving">37€/mes · ahorras 2€</span></td>
+                            <td data-label="Semestral">210€<span class="saving">35€/mes · ahorras 4€</span></td>
+                            <td class="best-col annual-price" data-label="Anual 🔥">429€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
                         </tr>
                         <tr>
-                            <td class="vol">21 – 50 perfiles</td>
-                            <td class="price-main">29€/mes</td>
-                            <td>84€<span class="saving">28€/mes · ahorras 1€</span></td>
-                            <td>156€<span class="saving">26€/mes · ahorras 3€</span></td>
-                            <td class="best-col annual-price">319€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
+                            <td class="vol" data-label="Volumen de perfiles">21 – 50 perfiles</td>
+                            <td class="price-main" data-label="Mensual">29€/mes</td>
+                            <td data-label="Trimestral">84€<span class="saving">28€/mes · ahorras 1€</span></td>
+                            <td data-label="Semestral">156€<span class="saving">26€/mes · ahorras 3€</span></td>
+                            <td class="best-col annual-price" data-label="Anual 🔥">319€<span class="saving" style="color:rgba(255,100,60,0.8);">Mes 12 GRATIS</span></td>
                         </tr>
                         <tr class="pactado">
-                            <td>+50 perfiles</td>
-                            <td colspan="4" style="text-align:center;">Precio negociado según volumen — contacta para tu propuesta personalizada</td>
+                            <td data-label="Volumen de perfiles">+50 perfiles</td>
+                            <td colspan="4" data-label="Precio" style="text-align:center;">Precio negociado según volumen — contacta para tu propuesta personalizada</td>
                         </tr>
                     </tbody>
                 </table>
@@ -4468,6 +4706,23 @@ Añade también en el footer:
     }
   }
 })();
+</script>
+<div id="fleetchofer-popup-loader"></div>
+
+<script>
+fetch('fleetchofer-popup.html')
+  .then(response => response.text())
+  .then(html => {
+    const loader = document.getElementById('fleetchofer-popup-loader');
+    loader.innerHTML = html;
+
+    loader.querySelectorAll('script').forEach(oldScript => {
+      const newScript = document.createElement('script');
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
 </script>
 <div id="fleetchofer-popup-loader"></div>
 
