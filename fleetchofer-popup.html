@@ -4,7 +4,7 @@
   ║   Copia y pega este bloque completo en cualquier HTML    ║
   ╚══════════════════════════════════════════════════════════╝
 -->
-
+ 
 <style>
   #fc-popup-root *,
   #fc-popup-root *::before,
@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
   }
-
+ 
   #fc-popup-root {
     position: fixed;
     top: 50%;
@@ -29,9 +29,9 @@
     touch-action: none;
     will-change: transform;
   }
-
+ 
   #fc-popup-root:active { cursor: grabbing; }
-
+ 
   #fc-popup-root::before {
     content: '';
     position: absolute;
@@ -46,7 +46,7 @@
     animation: fc-glow-pulse 3s ease-in-out infinite;
     pointer-events: none;
   }
-
+ 
   #fc-card {
     position: relative;
     background: #0a0a0a;
@@ -60,7 +60,7 @@
       inset 0 1px 0 rgba(255,255,255,0.05);
     animation: fc-breathe 4s ease-in-out infinite;
   }
-
+ 
   #fc-card::before {
     content: '';
     position: absolute;
@@ -70,7 +70,7 @@
     z-index: 2;
     animation: fc-scan 3s linear infinite;
   }
-
+ 
   #fc-card::after {
     content: '';
     position: absolute;
@@ -82,13 +82,13 @@
     z-index: 0;
     pointer-events: none;
   }
-
+ 
   #fc-inner {
     position: relative;
     z-index: 1;
     padding: 13px 15px 14px;
   }
-
+ 
   /* CABECERA */
   #fc-header {
     display: flex;
@@ -96,13 +96,13 @@
     justify-content: space-between;
     margin-bottom: 9px;
   }
-
+ 
   #fc-logo-badge {
     display: flex;
     align-items: center;
     gap: 6px;
   }
-
+ 
   #fc-logo-dot {
     width: 7px; height: 7px;
     border-radius: 50%;
@@ -111,7 +111,7 @@
     animation: fc-dot-blink 2s ease-in-out infinite;
     flex-shrink: 0;
   }
-
+ 
   #fc-logo-text {
     font-size: 8px;
     font-weight: 700;
@@ -119,7 +119,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.3);
   }
-
+ 
   #fc-drag-hint {
     font-size: 8px;
     color: rgba(255,255,255,0.15);
@@ -129,13 +129,13 @@
     align-items: center;
     gap: 3px;
   }
-
+ 
   /* HÉROE */
   #fc-hero {
     text-align: center;
     margin-bottom: 8px;
   }
-
+ 
   #fc-amount {
     font-size: 54px;
     font-weight: 900;
@@ -149,7 +149,7 @@
     animation: fc-neon-flicker 5s ease-in-out infinite;
     display: block;
   }
-
+ 
   #fc-amount-label {
     font-size: 9px;
     font-weight: 700;
@@ -159,7 +159,7 @@
     margin-top: 2px;
     display: block;
   }
-
+ 
   /* TÍTULO */
   #fc-flags {
     text-align: center;
@@ -169,7 +169,7 @@
     letter-spacing: 3px;
     margin-bottom: 2px;
   }
-
+ 
   #fc-tagline {
     text-align: center;
     font-size: 11px;
@@ -179,7 +179,7 @@
     text-transform: uppercase;
     line-height: 1.3;
   }
-
+ 
   #fc-subdesc {
     text-align: center;
     font-size: 9px;
@@ -188,13 +188,13 @@
     line-height: 1.5;
     letter-spacing: 0.3px;
   }
-
+ 
   .fc-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(220,30,30,0.45), transparent);
     margin: 8px 0;
   }
-
+ 
   /* ── PODIO ── */
   #fc-podium {
     display: flex;
@@ -203,40 +203,40 @@
     gap: 4px;
     margin-bottom: 8px;
   }
-
+ 
   .fc-podium-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
   }
-
+ 
   /* Medalla + texto encima del bloque */
   .fc-podium-medal {
     font-size: 16px;
     line-height: 1;
     margin-bottom: 4px;
   }
-
+ 
   .fc-podium-prize {
     text-align: center;
     margin-bottom: 4px;
     padding: 0 2px;
   }
-
+ 
   .fc-podium-prize-main {
     font-size: 10px;
     font-weight: 700;
     color: #fff;
     line-height: 1.3;
   }
-
+ 
   .fc-podium-prize-sub {
     font-size: 8px;
     color: rgba(255,255,255,0.4);
     line-height: 1.3;
   }
-
+ 
   /* El bloque de podio (la "tarima") */
   .fc-podium-block {
     width: 100%;
@@ -245,14 +245,14 @@
     align-items: center;
     justify-content: center;
   }
-
+ 
   .fc-podium-block-label {
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1px;
     padding: 4px 2px;
   }
-
+ 
   /* 1º — más alto, amarillo */
   .fc-podium-col--1 .fc-podium-prize-main {
     color: #ffe900;
@@ -264,21 +264,21 @@
     box-shadow: 0 0 12px rgba(255,220,0,0.25);
   }
   .fc-podium-col--1 .fc-podium-block-label { color: #ffe900; }
-
+ 
   /* 2º — medio, plata */
   .fc-podium-col--2 .fc-podium-block {
     height: 28px;
     background: linear-gradient(180deg, #6a6a6a, #3a3a3a);
   }
   .fc-podium-col--2 .fc-podium-block-label { color: #c0c0c0; }
-
+ 
   /* 3º — más bajo, bronce */
   .fc-podium-col--3 .fc-podium-block {
     height: 18px;
     background: linear-gradient(180deg, #7a4a1a, #4a2a0a);
   }
   .fc-podium-col--3 .fc-podium-block-label { color: #cd7f32; }
-
+ 
   /* MOTIVADOR */
   #fc-motivator {
     background: rgba(220,30,30,0.08);
@@ -290,7 +290,7 @@
     position: relative;
     overflow: hidden;
   }
-
+ 
   #fc-motivator::before {
     content: '';
     position: absolute;
@@ -299,7 +299,7 @@
     background: linear-gradient(90deg, transparent, rgba(220,30,30,0.06), transparent);
     animation: fc-shimmer 3s linear infinite;
   }
-
+ 
   #fc-motivator-text {
     font-size: 9px;
     font-weight: 800;
@@ -310,12 +310,12 @@
     z-index: 1;
     line-height: 1.5;
   }
-
+ 
   #fc-motivator-text span {
     color: #ffe900;
     text-shadow: 0 0 8px rgba(255,233,0,0.45);
   }
-
+ 
   /* PERIODO */
   #fc-period {
     text-align: center;
@@ -324,11 +324,11 @@
     letter-spacing: 0.5px;
     margin-bottom: 9px;
   }
-
+ 
   #fc-period strong {
     color: rgba(255,255,255,0.5);
   }
-
+ 
   /* BOTÓN */
   #fc-cta-btn {
     display: block;
@@ -357,7 +357,7 @@
     animation: fc-btn-glow 3s ease-in-out infinite;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-
+ 
   #fc-cta-btn::before {
     content: '';
     position: absolute;
@@ -366,7 +366,7 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
     transition: left 0.4s ease;
   }
-
+ 
   #fc-cta-btn:hover::before { left: 100%; }
   #fc-cta-btn:hover {
     transform: translateY(-1px);
@@ -378,15 +378,15 @@
     background-position: right center;
   }
   #fc-cta-btn:active { transform: scale(0.99); }
-
+ 
   #fc-cta-btn span { position: relative; z-index: 1; }
-
+ 
   /* FOOTER ENLACE */
   #fc-footer {
     margin-top: 8px;
     text-align: center;
   }
-
+ 
   #fc-footer a {
     font-size: 8px;
     color: rgba(255,255,255,0.2);
@@ -396,12 +396,12 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: color 0.2s, border-color 0.2s;
   }
-
+ 
   #fc-footer a:hover {
     color: rgba(255,255,255,0.5);
     border-bottom-color: rgba(255,255,255,0.3);
   }
-
+ 
   /* ANIMACIONES */
   @keyframes fc-breathe {
     0%,100% {
@@ -447,21 +447,21 @@
     from { opacity: 0; transform: translate(-50%,-50%) scale(0.88); }
     to   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
   }
-
+ 
   #fc-popup-root {
     animation: fc-entry 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
   }
-
+ 
   @media (max-width: 340px) {
     #fc-popup-root { width: calc(100vw - 16px); }
     #fc-amount { font-size: 44px; }
   }
 </style>
-
+ 
 <div id="fc-popup-root" role="dialog" aria-label="Sorteo FleetChofer 500€">
   <div id="fc-card">
     <div id="fc-inner">
-
+ 
       <div id="fc-header">
         <div id="fc-logo-badge">
           <div id="fc-logo-dot"></div>
@@ -477,26 +477,26 @@
           mover
         </div>
       </div>
-
+ 
       <div id="fc-hero">
         <span id="fc-amount">500€</span>
         <span id="fc-amount-label">premio mayor · en gasolina</span>
       </div>
-
+ 
       <div class="fc-divider"></div>
-
+ 
       <div id="fc-flags">🏁 ¡EL REY DE LA EMISORA! 🏁</div>
       <div id="fc-tagline">¿Quieres ganar?</div>
       <div id="fc-subdesc">
         Publica quedadas · Comparte historias · Solicita rutas<br>
         Sé el más activo y llévate el premio
       </div>
-
+ 
       <div class="fc-divider"></div>
-
+ 
       <!-- PODIO -->
       <div id="fc-podium">
-
+ 
         <!-- 2º — izquierda -->
         <div class="fc-podium-col fc-podium-col--2">
           <div class="fc-podium-medal">🥈</div>
@@ -508,7 +508,7 @@
             <span class="fc-podium-block-label">2º</span>
           </div>
         </div>
-
+ 
         <!-- 1º — centro, más alto -->
         <div class="fc-podium-col fc-podium-col--1">
           <div class="fc-podium-medal">🥇</div>
@@ -520,7 +520,7 @@
             <span class="fc-podium-block-label">1º</span>
           </div>
         </div>
-
+ 
         <!-- 3º — derecha -->
         <div class="fc-podium-col fc-podium-col--3">
           <div class="fc-podium-medal">🥉</div>
@@ -532,41 +532,41 @@
             <span class="fc-podium-block-label">3º</span>
           </div>
         </div>
-
+ 
       </div>
-
+ 
       <div id="fc-motivator">
         <div id="fc-motivator-text">
           Cuanto más participes · <span>más opciones de ganar</span>
         </div>
       </div>
-
+ 
       <div id="fc-period">
         🗓 Del <strong>1 jun</strong> al <strong>1 oct 2026</strong>
       </div>
-
+ 
       <button id="fc-cta-btn" onclick="fcHandleCTA()" type="button">
         <span>👉 QUIERO PARTICIPAR</span>
       </button>
-
+ 
       <div id="fc-footer">
         <a href="#" onclick="fcOpenTerms(event)">FleetChofer by Clara · Sorteo Oficial · Bases y condiciones</a>
       </div>
-
+ 
     </div>
   </div>
 </div>
-
+ 
 <script>
 (function() {
   var el = document.getElementById('fc-popup-root');
   if (!el) return;
-
+ 
   var isDragging = false;
   var startX, startY, startLeft, startTop;
-
+ 
   function clamp(v, min, max) { return Math.min(Math.max(v, min), max); }
-
+ 
   function setPos(left, top) {
     var ml = window.innerWidth  - el.offsetWidth  - 6;
     var mt = window.innerHeight - el.offsetHeight - 6;
@@ -574,7 +574,7 @@
     el.style.left = clamp(left, 6, ml) + 'px';
     el.style.top  = clamp(top,  6, mt) + 'px';
   }
-
+ 
   function dragStart(cx, cy) {
     isDragging = true;
     startX = cx; startY = cy;
@@ -590,36 +590,36 @@
     }
     el.style.transition = 'none';
   }
-
+ 
   function dragMove(cx, cy) {
     if (!isDragging) return;
     setPos(startLeft + (cx - startX), startTop + (cy - startY));
   }
-
+ 
   function dragEnd() { isDragging = false; el.style.transition = ''; }
-
+ 
   function isBtn(t) { return t && (t.id === 'fc-cta-btn' || (t.closest && t.closest('#fc-cta-btn')) || t.closest && t.closest('#fc-footer')); }
-
+ 
   el.addEventListener('mousedown',  function(e) { if (!isBtn(e.target)) { e.preventDefault(); dragStart(e.clientX, e.clientY); } });
   document.addEventListener('mousemove', function(e) { dragMove(e.clientX, e.clientY); });
   document.addEventListener('mouseup', dragEnd);
-
+ 
   el.addEventListener('touchstart', function(e) { if (!isBtn(e.target)) dragStart(e.touches[0].clientX, e.touches[0].clientY); }, {passive:true});
   el.addEventListener('touchmove',  function(e) { if (isDragging) { e.preventDefault(); dragMove(e.touches[0].clientX, e.touches[0].clientY); } }, {passive:false});
   el.addEventListener('touchend', dragEnd);
   el.addEventListener('touchcancel', dragEnd);
-
+ 
   window.addEventListener('resize', function() {
     if (el.style.left) setPos(parseFloat(el.style.left), parseFloat(el.style.top));
   });
 })();
-
+ 
 function fcHandleCTA() {
   var url = 'https://developer.fleetchoferbyclara.com/register';
   try { window.open(url, '_blank', 'noopener,noreferrer'); }
   catch(e) { window.location.href = url; }
 }
-
+ 
 function fcOpenTerms(e) {
   e.preventDefault();
   var w = window.open('', '_blank', 'noopener,noreferrer');
@@ -691,3 +691,4 @@ function fcOpenTerms(e) {
   w.document.close();
 }
 </script>
+ 
