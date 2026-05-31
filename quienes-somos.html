@@ -1117,6 +1117,14 @@ nav {
     text-shadow: none !important;
 }
 
+
+/* ===== CIRUGÍA MÓVIL EQUIPO: CLARA PRIMERO SOLO EN MÓVIL ===== */
+@media (max-width: 968px) {
+  #quienes-somos .team-grid .team-member:nth-child(1) { order: 2; }
+  #quienes-somos .team-grid .team-member:nth-child(2) { order: 1; }
+  #quienes-somos .team-grid .team-member:nth-child(3) { order: 3; }
+}
+
 </style>
 
 
@@ -4930,6 +4938,23 @@ Añade también en el footer:
 })();
 </script>
 
+<div id="fleetchofer-popup-loader"></div>
+
+<script>
+fetch('fleetchofer-popup.html')
+  .then(response => response.text())
+  .then(html => {
+    const loader = document.getElementById('fleetchofer-popup-loader');
+    loader.innerHTML = html;
+
+    loader.querySelectorAll('script').forEach(oldScript => {
+      const newScript = document.createElement('script');
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
 <div id="fleetchofer-popup-loader"></div>
 
 <script>
