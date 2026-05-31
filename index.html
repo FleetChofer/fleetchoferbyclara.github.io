@@ -4448,6 +4448,14 @@ Pega este bloque antes de
 })();
 </script>
 
+<div id="fleetchofer-popup-loader"></div>
 
+<script>
+fetch('fleetchofer-popup.html')
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById('fleetchofer-popup-loader').innerHTML = html;
+  });
+</script>
 </body>
 </html>
