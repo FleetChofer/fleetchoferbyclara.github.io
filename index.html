@@ -4454,7 +4454,17 @@ Pega este bloque antes de
 fetch('fleetchofer-popup.html')
   .then(response => response.text())
   .then(html => {
-    document.getElementById('fleetchofer-popup-loader').innerHTML = html;
+    const loader = document.getElementById('fleetchofer-popup-loader');
+    loader.innerHTML = html;
+
+    loader.querySelectorAll('script').forEach(oldScript => {
+      const newScript = document.createElement('script');
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
   });
 </script>
 </body>
