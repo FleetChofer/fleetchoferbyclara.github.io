@@ -4,7 +4,7 @@
   ║   Copia y pega este bloque completo en cualquier HTML    ║
   ╚══════════════════════════════════════════════════════════╝
 -->
- 
+
 <style>
   #fc-popup-root *,
   #fc-popup-root *::before,
@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
   }
- 
+
   #fc-popup-root {
     position: fixed;
     top: 50%;
@@ -29,9 +29,9 @@
     touch-action: none;
     will-change: transform;
   }
- 
+
   #fc-popup-root:active { cursor: grabbing; }
- 
+
   #fc-popup-root::before {
     content: '';
     position: absolute;
@@ -46,7 +46,7 @@
     animation: fc-glow-pulse 3s ease-in-out infinite;
     pointer-events: none;
   }
- 
+
   #fc-card {
     position: relative;
     background: #0a0a0a;
@@ -60,7 +60,7 @@
       inset 0 1px 0 rgba(255,255,255,0.05);
     animation: fc-breathe 4s ease-in-out infinite;
   }
- 
+
   #fc-card::before {
     content: '';
     position: absolute;
@@ -70,7 +70,7 @@
     z-index: 2;
     animation: fc-scan 3s linear infinite;
   }
- 
+
   #fc-card::after {
     content: '';
     position: absolute;
@@ -82,13 +82,13 @@
     z-index: 0;
     pointer-events: none;
   }
- 
+
   #fc-inner {
     position: relative;
     z-index: 1;
     padding: 13px 15px 14px;
   }
- 
+
   /* CABECERA */
   #fc-header {
     display: flex;
@@ -96,13 +96,13 @@
     justify-content: space-between;
     margin-bottom: 9px;
   }
- 
+
   #fc-logo-badge {
     display: flex;
     align-items: center;
     gap: 6px;
   }
- 
+
   #fc-logo-dot {
     width: 7px; height: 7px;
     border-radius: 50%;
@@ -111,7 +111,7 @@
     animation: fc-dot-blink 2s ease-in-out infinite;
     flex-shrink: 0;
   }
- 
+
   #fc-logo-text {
     font-size: 8px;
     font-weight: 700;
@@ -119,7 +119,7 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.3);
   }
- 
+
   #fc-drag-hint {
     font-size: 8px;
     color: rgba(255,255,255,0.15);
@@ -129,13 +129,13 @@
     align-items: center;
     gap: 3px;
   }
- 
+
   /* HÉROE */
   #fc-hero {
     text-align: center;
     margin-bottom: 8px;
   }
- 
+
   #fc-amount {
     font-size: 54px;
     font-weight: 900;
@@ -149,7 +149,7 @@
     animation: fc-neon-flicker 5s ease-in-out infinite;
     display: block;
   }
- 
+
   #fc-amount-label {
     font-size: 9px;
     font-weight: 700;
@@ -159,7 +159,7 @@
     margin-top: 2px;
     display: block;
   }
- 
+
   /* TÍTULO */
   #fc-flags {
     text-align: center;
@@ -169,7 +169,7 @@
     letter-spacing: 3px;
     margin-bottom: 2px;
   }
- 
+
   #fc-tagline {
     text-align: center;
     font-size: 11px;
@@ -179,7 +179,7 @@
     text-transform: uppercase;
     line-height: 1.3;
   }
- 
+
   #fc-subdesc {
     text-align: center;
     font-size: 9px;
@@ -188,13 +188,13 @@
     line-height: 1.5;
     letter-spacing: 0.3px;
   }
- 
+
   .fc-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(220,30,30,0.45), transparent);
     margin: 8px 0;
   }
- 
+
   /* ── PODIO ── */
   #fc-podium {
     display: flex;
@@ -203,40 +203,40 @@
     gap: 4px;
     margin-bottom: 8px;
   }
- 
+
   .fc-podium-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
   }
- 
+
   /* Medalla + texto encima del bloque */
   .fc-podium-medal {
     font-size: 16px;
     line-height: 1;
     margin-bottom: 4px;
   }
- 
+
   .fc-podium-prize {
     text-align: center;
     margin-bottom: 4px;
     padding: 0 2px;
   }
- 
+
   .fc-podium-prize-main {
     font-size: 10px;
     font-weight: 700;
     color: #fff;
     line-height: 1.3;
   }
- 
+
   .fc-podium-prize-sub {
     font-size: 8px;
     color: rgba(255,255,255,0.4);
     line-height: 1.3;
   }
- 
+
   /* El bloque de podio (la "tarima") */
   .fc-podium-block {
     width: 100%;
@@ -245,14 +245,14 @@
     align-items: center;
     justify-content: center;
   }
- 
+
   .fc-podium-block-label {
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1px;
     padding: 4px 2px;
   }
- 
+
   /* 1º — más alto, amarillo */
   .fc-podium-col--1 .fc-podium-prize-main {
     color: #ffe900;
@@ -264,21 +264,21 @@
     box-shadow: 0 0 12px rgba(255,220,0,0.25);
   }
   .fc-podium-col--1 .fc-podium-block-label { color: #ffe900; }
- 
+
   /* 2º — medio, plata */
   .fc-podium-col--2 .fc-podium-block {
     height: 28px;
     background: linear-gradient(180deg, #6a6a6a, #3a3a3a);
   }
   .fc-podium-col--2 .fc-podium-block-label { color: #c0c0c0; }
- 
+
   /* 3º — más bajo, bronce */
   .fc-podium-col--3 .fc-podium-block {
     height: 18px;
     background: linear-gradient(180deg, #7a4a1a, #4a2a0a);
   }
   .fc-podium-col--3 .fc-podium-block-label { color: #cd7f32; }
- 
+
   /* MOTIVADOR */
   #fc-motivator {
     background: rgba(220,30,30,0.08);
@@ -290,7 +290,7 @@
     position: relative;
     overflow: hidden;
   }
- 
+
   #fc-motivator::before {
     content: '';
     position: absolute;
@@ -299,7 +299,7 @@
     background: linear-gradient(90deg, transparent, rgba(220,30,30,0.06), transparent);
     animation: fc-shimmer 3s linear infinite;
   }
- 
+
   #fc-motivator-text {
     font-size: 9px;
     font-weight: 800;
@@ -310,12 +310,12 @@
     z-index: 1;
     line-height: 1.5;
   }
- 
+
   #fc-motivator-text span {
     color: #ffe900;
     text-shadow: 0 0 8px rgba(255,233,0,0.45);
   }
- 
+
   /* PERIODO */
   #fc-period {
     text-align: center;
@@ -324,11 +324,11 @@
     letter-spacing: 0.5px;
     margin-bottom: 9px;
   }
- 
+
   #fc-period strong {
     color: rgba(255,255,255,0.5);
   }
- 
+
   /* BOTÓN */
   #fc-cta-btn {
     display: block;
@@ -357,7 +357,7 @@
     animation: fc-btn-glow 3s ease-in-out infinite;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
- 
+
   #fc-cta-btn::before {
     content: '';
     position: absolute;
@@ -366,7 +366,7 @@
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
     transition: left 0.4s ease;
   }
- 
+
   #fc-cta-btn:hover::before { left: 100%; }
   #fc-cta-btn:hover {
     transform: translateY(-1px);
@@ -378,15 +378,15 @@
     background-position: right center;
   }
   #fc-cta-btn:active { transform: scale(0.99); }
- 
+
   #fc-cta-btn span { position: relative; z-index: 1; }
- 
+
   /* FOOTER ENLACE */
   #fc-footer {
     margin-top: 8px;
     text-align: center;
   }
- 
+
   #fc-footer a {
     font-size: 8px;
     color: rgba(255,255,255,0.2);
@@ -396,12 +396,12 @@
     border-bottom: 1px solid rgba(255,255,255,0.1);
     transition: color 0.2s, border-color 0.2s;
   }
- 
+
   #fc-footer a:hover {
     color: rgba(255,255,255,0.5);
     border-bottom-color: rgba(255,255,255,0.3);
   }
- 
+
   /* ANIMACIONES */
   @keyframes fc-breathe {
     0%,100% {
@@ -447,21 +447,21 @@
     from { opacity: 0; transform: translate(-50%,-50%) scale(0.88); }
     to   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
   }
- 
+
   #fc-popup-root {
     animation: fc-entry 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards;
   }
- 
+
   @media (max-width: 340px) {
     #fc-popup-root { width: calc(100vw - 16px); }
     #fc-amount { font-size: 44px; }
   }
 </style>
- 
+
 <div id="fc-popup-root" role="dialog" aria-label="Sorteo FleetChofer 500€">
   <div id="fc-card">
     <div id="fc-inner">
- 
+
       <div id="fc-header">
         <div id="fc-logo-badge">
           <div id="fc-logo-dot"></div>
@@ -477,26 +477,26 @@
           mover
         </div>
       </div>
- 
+
       <div id="fc-hero">
         <span id="fc-amount">500€</span>
         <span id="fc-amount-label">premio mayor · en gasolina</span>
       </div>
- 
+
       <div class="fc-divider"></div>
- 
+
       <div id="fc-flags">🏁 ¡EL REY DE LA EMISORA! 🏁</div>
       <div id="fc-tagline">¿Quieres ganar?</div>
       <div id="fc-subdesc">
         Publica quedadas · Comparte historias · Solicita rutas<br>
         Sé el más activo y llévate el premio
       </div>
- 
+
       <div class="fc-divider"></div>
- 
+
       <!-- PODIO -->
       <div id="fc-podium">
- 
+
         <!-- 2º — izquierda -->
         <div class="fc-podium-col fc-podium-col--2">
           <div class="fc-podium-medal">🥈</div>
@@ -508,7 +508,7 @@
             <span class="fc-podium-block-label">2º</span>
           </div>
         </div>
- 
+
         <!-- 1º — centro, más alto -->
         <div class="fc-podium-col fc-podium-col--1">
           <div class="fc-podium-medal">🥇</div>
@@ -520,7 +520,7 @@
             <span class="fc-podium-block-label">1º</span>
           </div>
         </div>
- 
+
         <!-- 3º — derecha -->
         <div class="fc-podium-col fc-podium-col--3">
           <div class="fc-podium-medal">🥉</div>
@@ -532,163 +532,308 @@
             <span class="fc-podium-block-label">3º</span>
           </div>
         </div>
- 
+
       </div>
- 
+
       <div id="fc-motivator">
         <div id="fc-motivator-text">
           Cuanto más participes · <span>más opciones de ganar</span>
         </div>
       </div>
- 
+
       <div id="fc-period">
         🗓 Del <strong>1 jun</strong> al <strong>1 oct 2026</strong>
       </div>
- 
+
       <button id="fc-cta-btn" onclick="fcHandleCTA()" type="button">
         <span>👉 QUIERO PARTICIPAR</span>
       </button>
- 
+
       <div id="fc-footer">
         <a href="#" onclick="fcOpenTerms(event)">FleetChofer by Clara · Sorteo Oficial · Bases y condiciones</a>
       </div>
- 
+
     </div>
   </div>
 </div>
- 
+
 <script>
 (function() {
   var el = document.getElementById('fc-popup-root');
   if (!el) return;
- 
-  var isDragging = false;
-  var startX, startY, startLeft, startTop;
- 
-  function clamp(v, min, max) { return Math.min(Math.max(v, min), max); }
- 
-  function setPos(left, top) {
-    var ml = window.innerWidth  - el.offsetWidth  - 6;
-    var mt = window.innerHeight - el.offsetHeight - 6;
-    el.style.transform = 'none';
-    el.style.left = clamp(left, 6, ml) + 'px';
-    el.style.top  = clamp(top,  6, mt) + 'px';
+
+  var dragging = false;
+  var offsetX = 0;
+  var offsetY = 0;
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
   }
- 
-  function dragStart(cx, cy) {
-    isDragging = true;
-    startX = cx; startY = cy;
-    if (el.style.left) {
-      startLeft = parseFloat(el.style.left);
-      startTop  = parseFloat(el.style.top);
-    } else {
-      startLeft = (window.innerWidth  - el.offsetWidth)  / 2;
-      startTop  = (window.innerHeight - el.offsetHeight) / 2;
-      el.style.transform = 'none';
-      el.style.left = startLeft + 'px';
-      el.style.top  = startTop  + 'px';
-    }
+
+  function moveTo(x, y) {
+    var maxX = Math.max(8, window.innerWidth - el.offsetWidth - 8);
+    var maxY = Math.max(8, window.innerHeight - el.offsetHeight - 8);
+    el.style.transform = 'none';
+    el.style.left = clamp(x, 8, maxX) + 'px';
+    el.style.top = clamp(y, 8, maxY) + 'px';
+  }
+
+  function startDrag(clientX, clientY) {
+    var rect = el.getBoundingClientRect();
+    dragging = true;
+    offsetX = clientX - rect.left;
+    offsetY = clientY - rect.top;
     el.style.transition = 'none';
   }
- 
-  function dragMove(cx, cy) {
-    if (!isDragging) return;
-    setPos(startLeft + (cx - startX), startTop + (cy - startY));
+
+  function doDrag(clientX, clientY) {
+    if (!dragging) return;
+    moveTo(clientX - offsetX, clientY - offsetY);
   }
- 
-  function dragEnd() { isDragging = false; el.style.transition = ''; }
- 
-  function isBtn(t) { return t && (t.id === 'fc-cta-btn' || (t.closest && t.closest('#fc-cta-btn')) || t.closest && t.closest('#fc-footer')); }
- 
-  el.addEventListener('mousedown',  function(e) { if (!isBtn(e.target)) { e.preventDefault(); dragStart(e.clientX, e.clientY); } });
-  document.addEventListener('mousemove', function(e) { dragMove(e.clientX, e.clientY); });
-  document.addEventListener('mouseup', dragEnd);
- 
-  el.addEventListener('touchstart', function(e) { if (!isBtn(e.target)) dragStart(e.touches[0].clientX, e.touches[0].clientY); }, {passive:true});
-  el.addEventListener('touchmove',  function(e) { if (isDragging) { e.preventDefault(); dragMove(e.touches[0].clientX, e.touches[0].clientY); } }, {passive:false});
-  el.addEventListener('touchend', dragEnd);
-  el.addEventListener('touchcancel', dragEnd);
- 
+
+  function stopDrag() {
+    dragging = false;
+    el.style.transition = '';
+  }
+
+  function isInteractive(target) {
+    return target && target.closest && (
+      target.closest('#fc-cta-btn') ||
+      target.closest('#fc-footer')
+    );
+  }
+
+  el.addEventListener('mousedown', function(e) {
+    if (isInteractive(e.target)) return;
+    e.preventDefault();
+    startDrag(e.clientX, e.clientY);
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    doDrag(e.clientX, e.clientY);
+  });
+
+  document.addEventListener('mouseup', stopDrag);
+
+  el.addEventListener('touchstart', function(e) {
+    if (isInteractive(e.target)) return;
+    if (!e.touches || !e.touches[0]) return;
+    var t = e.touches[0];
+    startDrag(t.clientX, t.clientY);
+  }, { passive: true });
+
+  document.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    if (!e.touches || !e.touches[0]) return;
+    var t = e.touches[0];
+    doDrag(t.clientX, t.clientY);
+  }, { passive: false });
+
+  document.addEventListener('touchend', stopDrag);
+  document.addEventListener('touchcancel', stopDrag);
+
   window.addEventListener('resize', function() {
-    if (el.style.left) setPos(parseFloat(el.style.left), parseFloat(el.style.top));
+    var rect = el.getBoundingClientRect();
+    moveTo(rect.left, rect.top);
   });
 })();
- 
-function fcHandleCTA() {
+
+window.fcHandleCTA = function() {
   var url = 'https://developer.fleetchoferbyclara.com/register';
   try { window.open(url, '_blank', 'noopener,noreferrer'); }
   catch(e) { window.location.href = url; }
-}
- 
-function fcOpenTerms(e) {
-  e.preventDefault();
-  var w = window.open('', '_blank', 'noopener,noreferrer');
-  if (!w) return;
-  var html = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bases Legales \u2013 FleetChofer by Clara \u00b7 Sorteo 2026<\/title><style>'
-    + '*{box-sizing:border-box;margin:0;padding:0}'
-    + 'body{background:#0a0a0a;color:#e0e0e0;font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.8;padding:40px 20px}'
-    + 'main{max-width:760px;margin:0 auto}'
-    + 'header{border-bottom:1px solid #cc1a1a;padding-bottom:20px;margin-bottom:32px}'
-    + 'h1{font-size:20px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}'
-    + 'header p{font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;text-transform:uppercase}'
-    + 'h2{font-size:12px;font-weight:700;color:#cc1a1a;letter-spacing:1.5px;text-transform:uppercase;margin:28px 0 8px;padding-left:10px;border-left:3px solid #cc1a1a}'
-    + 'p{margin-bottom:10px;color:#ccc}'
-    + 'ol,ul{padding-left:22px;margin-bottom:10px;color:#ccc}'
-    + 'li{margin-bottom:5px}'
-    + 'strong{color:#fff;font-weight:600}'
-    + 'a{color:#cc1a1a}'
-    + 'footer{margin-top:48px;padding-top:16px;border-top:1px solid rgba(220,30,30,0.2);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px;text-align:center}'
-    + '<\/style><\/head><body><main>'
-    + '<header><h1>Bases Legales del Sorteo<\/h1><p>FleetChofer by Clara &nbsp;\u00b7&nbsp; Sorteo Comercial 2026<\/p><\/header>'
-    + '<h2>1. Entidad organizadora<\/h2>'
-    + '<p><strong>FleetChofer, S.L.U.<\/strong>, NIF B26722256, C\/ Ram\u00f3n Argil\u00e9s n\u00ba 42, 2\u00ba\u20132\u00aa, C.P. 25005, Lleida.<br>Contacto: <a href="mailto:clara@fleetchoferbyclara.com">clara@fleetchoferbyclara.com<\/a><\/p>'
-    + '<h2>2. Objeto y marco jur\u00eddico<\/h2>'
-    + '<p>Sorteo promocional gratuito por acumulaci\u00f3n de participaciones. Cada punto obtenido equivale a una (1) participaci\u00f3n en el sorteo. Se rige por la Ley 22\/2010 del C\u00f3digo de consumo de Catalu\u00f1a (art.\u00a0211-13), la LO 3\/2018 de Protecci\u00f3n de Datos y el Reglamento (UE) 2016\/679.<\/p>'
-    + '<h2>3. Requisitos de participaci\u00f3n<\/h2>'
-    + '<p>Personas f\u00edsicas mayores de 18 a\u00f1os, con residencia legal en Espa\u00f1a y cuenta v\u00e1lida en la plataforma FleetChofer. Quedan excluidos menores, empleados de FleetChofer y sus familiares hasta segundo grado, y cuentas falsas, duplicadas o automatizadas.<\/p>'
-    + '<h2>4. Car\u00e1cter gratuito<\/h2>'
-    + '<p>La participaci\u00f3n es completamente gratuita. No se exige pago, apuesta ni contrataci\u00f3n adicional.<\/p>'
-    + '<h2>5. Duraci\u00f3n<\/h2>'
-    + '<p>Del <strong>1 de junio de 2026 (00:00\u00a0h)<\/strong> al <strong>30 de septiembre de 2026 (23:59\u00a0h)<\/strong>.<br>Sorteo: <strong>1 de octubre de 2026<\/strong>.<\/p>'
-    + '<h2>6. Sistema de puntos<\/h2>'
-    + '<p><strong>1 punto:<\/strong> acceso diario (l\u00edmite 1\/d\u00eda), publicaci\u00f3n en la emisora (\u201cbreco\u201d), partida en minijuegos diarios.<\/p>'
-    + '<p><strong>2 puntos:<\/strong> publicar\/organizar una quedada sectorial, solicitar una ruta en FleetChofer.<\/p>'
-    + '<p><strong>3 puntos:<\/strong> subir foto o rese\u00f1a de una quedada celebrada (l\u00edmite 1 foto\u00a0+\u00a01 rese\u00f1a por quedada), historia o an\u00e9cdota log\u00edstica semanal (l\u00edmite 1\/semana).<\/p>'
-    + '<p>Los puntos son personales, intransferibles y sin valor econ\u00f3mico. Sujetos a validaci\u00f3n t\u00e9cnica y moderaci\u00f3n.<\/p>'
-    + '<h2>7. Validez y c\u00f3mputo<\/h2>'
-    + '<p>Solo generan puntos las acciones aut\u00e9nticas, manuales y correctamente registradas. No computan acciones duplicadas, simuladas, automatizadas o retiradas por moderaci\u00f3n. Prevalecen los registros internos de FleetChofer en caso de discrepancia.<\/p>'
-    + '<h2>8. Seguridad reforzada \u2013 perfil de ch\u00f3fer<\/h2>'
-    + '<p>Las cuentas de ch\u00f3fer\/conductor est\u00e1n sujetas a control reforzado de autenticidad. Deben mantener identidad real y verificable, datos actualizados y cumplir las habilitaciones legales aplicables. Est\u00e1 prohibido compartir cuenta, falsear actividad o usar automatismos. FleetChofer podr\u00e1 requerir verificaciones adicionales a finalistas.<\/p>'
-    + '<h2>9. Prohibici\u00f3n de fraude y abuso<\/h2>'
-    + '<p>Causan expulsi\u00f3n inmediata: \u201cbrecos\u201d masivos o spam, contenidos falsos, bots o scripts, m\u00faltiples cuentas y suplantaci\u00f3n de identidad. FleetChofer auditar\u00e1 la trazabilidad t\u00e9cnica de los finalistas antes de adjudicar ning\u00fan premio.<\/p>'
-    + '<h2>10. Premios<\/h2>'
-    + '<ol><li><strong>1er Premio:<\/strong> 500\u00a0\u20ac en met\u00e1lico (ayuda gasolina) + 1 Ruta Urgente.<\/li>'
-    + '<li><strong>2\u00ba Premio:<\/strong> 200\u00a0\u20ac en met\u00e1lico (ayuda gasolina) + 1 Ruta Urgente.<\/li>'
-    + '<li><strong>3er Premio:<\/strong> 2 Rutas Urgentes.<\/li><\/ol>'
-    + '<p>Los importes se abonan por transferencia bancaria. La Ruta Urgente es personal, intransferible, no canjeable por dinero y debe disfrutarse en 6 meses desde la aceptaci\u00f3n.<\/p>'
-    + '<h2>11. Sorteo y selecci\u00f3n de ganadores<\/h2>'
-    + '<p>Sorteo aleatorio y verificable el 1 de octubre de 2026. Cada punto equivale a 1 participaci\u00f3n. Se designar\u00e1n 3 ganadores y 3 suplentes por premio. Una misma persona no puede ganar m\u00e1s de un premio.<\/p>'
-    + '<h2>12. Comunicaci\u00f3n y entrega del premio<\/h2>'
-    + '<p>FleetChofer contactar\u00e1 a los ganadores por correo, tel\u00e9fono o notificaci\u00f3n interna. El ganador dispone de <strong>5 d\u00edas naturales<\/strong> para aceptar y aportar documentaci\u00f3n. La entrega se realiza en un plazo m\u00e1ximo de <strong>1 mes<\/strong> desde la confirmaci\u00f3n definitiva (art.\u00a0211-13 Ley 22\/2010).<\/p>'
-    + '<h2>13. Fiscalidad<\/h2>'
-    + '<p>Los premios est\u00e1n sujetos a la normativa tributaria espa\u00f1ola. FleetChofer practicar\u00e1 las retenciones legalmente procedentes. El ganador deber\u00e1 colaborar en el cumplimiento de las obligaciones fiscales.<\/p>'
-    + '<h2>14. Publicidad del resultado<\/h2>'
-    + '<p>FleetChofer podr\u00e1 publicar el resultado en sus canales oficiales con datos m\u00ednimos (nombre de pila e iniciales o alias), salvo exigencia legal distinta.<\/p>'
-    + '<h2>15. Contenidos generados por usuarios<\/h2>'
-    + '<p>Los participantes garantizan que sus publicaciones son originales, l\u00edcitas y no lesionan derechos de terceros. FleetChofer puede retirar contenidos contrarios a las bases, con p\u00e9rdida autom\u00e1tica de los puntos asociados.<\/p>'
-    + '<h2>16. Protecci\u00f3n de datos<\/h2>'
-    + '<p><strong>Responsable:<\/strong> FleetChofer, S.L.U. &ndash; <a href="mailto:clara@fleetchoferbyclara.com">clara@fleetchoferbyclara.com<\/a>.<br>'
-    + 'Finalidades: gestionar la participaci\u00f3n, prevenir fraude, realizar el sorteo, entregar premios y cumplir obligaciones legales. Base jur\u00eddica: ejecuci\u00f3n de la relaci\u00f3n promocional, cumplimiento legal e inter\u00e9s leg\u00edtimo. Los interesados pueden ejercer sus derechos de acceso, rectificaci\u00f3n, supresi\u00f3n, oposici\u00f3n, limitaci\u00f3n y portabilidad en la direcci\u00f3n indicada.<\/p>'
-    + '<h2>17\u201318. Responsabilidad y modificaciones<\/h2>'
-    + '<p>FleetChofer no responde de interrupciones t\u00e9cnicas ajenas a su control razonable. Podr\u00e1 modificar, suspender o cancelar la promoci\u00f3n por causa justificada, comunic\u00e1ndolo en sus canales oficiales. Las modificaciones no tendr\u00e1n efecto retroactivo en perjuicio de derechos consolidados.<\/p>'
-    + '<h2>19. Aceptaci\u00f3n de las bases<\/h2>'
-    + '<p>La participaci\u00f3n implica la aceptaci\u00f3n \u00edntegra de las presentes bases y de las decisiones interpretativas razonables de FleetChofer.<\/p>'
-    + '<h2>20. Legislaci\u00f3n y jurisdicci\u00f3n<\/h2>'
-    + '<p>Legislaci\u00f3n espa\u00f1ola. Competencia: juzgados y tribunales aplicables conforme a la normativa imperativa de consumidores y usuarios.<\/p>'
-    + '<footer>FleetChofer by Clara &nbsp;\u00b7&nbsp; Sorteo Comercial 2026 &nbsp;\u00b7&nbsp; Bases Legales<\/footer>'
-    + '<\/main><\/body><\/html>';
-  w.document.write(html);
-  w.document.close();
-}
+};
+
+window.fcOpenTerms = function(e) {
+  if (e) e.preventDefault();
+
+  var existing = document.getElementById('fc-terms-modal');
+  if (existing) {
+    existing.style.display = 'flex';
+    return;
+  }
+
+  var modal = document.createElement('div');
+  modal.id = 'fc-terms-modal';
+  modal.innerHTML = `
+    <style>
+      #fc-terms-modal, #fc-terms-modal * { box-sizing:border-box; }
+      #fc-terms-modal {
+        position:fixed;
+        inset:0;
+        z-index:2147483647;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:22px;
+        background:rgba(0,0,0,0.88);
+        backdrop-filter:blur(12px);
+        -webkit-backdrop-filter:blur(12px);
+        font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;
+      }
+      #fc-terms-box {
+        width:min(860px, 96vw);
+        max-height:88vh;
+        overflow:auto;
+        background:#0a0a0a;
+        color:#e0e0e0;
+        border:1px solid rgba(204,26,26,0.8);
+        border-radius:14px;
+        box-shadow:0 0 40px rgba(204,26,26,0.35), 0 30px 90px rgba(0,0,0,0.85);
+        padding:34px 30px;
+        position:relative;
+      }
+      #fc-terms-close {
+        position:sticky;
+        top:0;
+        float:right;
+        width:36px;
+        height:36px;
+        border-radius:50%;
+        border:1px solid rgba(204,26,26,0.7);
+        background:#120000;
+        color:#fff;
+        cursor:pointer;
+        font-size:18px;
+        z-index:3;
+      }
+      #fc-terms-box h1 {
+        font-size:22px;
+        font-weight:900;
+        color:#fff;
+        letter-spacing:1px;
+        text-transform:uppercase;
+        margin:0 0 6px;
+        padding-right:48px;
+      }
+      #fc-terms-box .fc-terms-sub {
+        font-size:11px;
+        color:rgba(255,255,255,0.42);
+        letter-spacing:1.5px;
+        text-transform:uppercase;
+        margin-bottom:28px;
+        border-bottom:1px solid rgba(204,26,26,0.35);
+        padding-bottom:18px;
+      }
+      #fc-terms-box h2 {
+        font-size:13px;
+        font-weight:800;
+        color:#cc1a1a;
+        letter-spacing:1.3px;
+        text-transform:uppercase;
+        margin:26px 0 8px;
+        padding-left:10px;
+        border-left:3px solid #cc1a1a;
+      }
+      #fc-terms-box p, #fc-terms-box li {
+        font-size:14px;
+        line-height:1.8;
+        color:#ccc;
+        margin-bottom:10px;
+      }
+      #fc-terms-box ol, #fc-terms-box ul { padding-left:22px; margin-bottom:10px; }
+      #fc-terms-box strong { color:#fff; font-weight:700; }
+      #fc-terms-box a { color:#ff4a4a; }
+      #fc-terms-box footer {
+        margin-top:38px;
+        padding-top:16px;
+        border-top:1px solid rgba(204,26,26,0.25);
+        font-size:10px;
+        color:rgba(255,255,255,0.28);
+        letter-spacing:1px;
+        text-align:center;
+      }
+      @media (max-width:560px){
+        #fc-terms-modal { padding:10px; }
+        #fc-terms-box { max-height:92vh; padding:26px 18px; }
+        #fc-terms-box h1 { font-size:18px; }
+        #fc-terms-box p, #fc-terms-box li { font-size:13px; }
+      }
+    </style>
+    <div id="fc-terms-box" role="dialog" aria-label="Bases legales del sorteo FleetChofer">
+      <button id="fc-terms-close" type="button" aria-label="Cerrar bases legales">×</button>
+      <h1>Bases Legales del Sorteo</h1>
+      <div class="fc-terms-sub">FleetChofer by Clara · Sorteo Comercial 2026</div>
+
+      <h2>1. Entidad organizadora</h2>
+      <p><strong>FleetChofer, S.L.U.</strong>, NIF B26722256, C/ Ramón Argilés nº 42, 2º-2ª, C.P. 25005, Lleida.<br>Contacto: <a href="mailto:clara@fleetchoferbyclara.com">clara@fleetchoferbyclara.com</a></p>
+
+      <h2>2. Objeto y marco jurídico</h2>
+      <p>Sorteo promocional gratuito por acumulación de participaciones. Cada punto obtenido equivale a una (1) participación en el sorteo. Se rige por la Ley 22/2010 del Código de consumo de Cataluña (art. 211-13), la LO 3/2018 de Protección de Datos y el Reglamento (UE) 2016/679.</p>
+
+      <h2>3. Requisitos de participación</h2>
+      <p>Personas físicas mayores de 18 años, con residencia legal en España y cuenta válida en la plataforma FleetChofer. Quedan excluidos menores, empleados de FleetChofer y sus familiares hasta segundo grado, y cuentas falsas, duplicadas o automatizadas.</p>
+
+      <h2>4. Carácter gratuito</h2>
+      <p>La participación es completamente gratuita. No se exige pago, apuesta ni contratación adicional.</p>
+
+      <h2>5. Duración</h2>
+      <p>Del <strong>1 de junio de 2026 (00:00 h)</strong> al <strong>30 de septiembre de 2026 (23:59 h)</strong>.<br>Sorteo: <strong>1 de octubre de 2026</strong>.</p>
+
+      <h2>6. Sistema de puntos</h2>
+      <p><strong>1 punto:</strong> acceso diario (límite 1/día), publicación en la emisora (“breco”), partida en minijuegos diarios.</p>
+      <p><strong>2 puntos:</strong> publicar/organizar una quedada sectorial, solicitar una ruta en FleetChofer.</p>
+      <p><strong>3 puntos:</strong> subir foto o reseña de una quedada celebrada (límite 1 foto + 1 reseña por quedada), historia o anécdota logística semanal (límite 1/semana).</p>
+      <p>Los puntos son personales, intransferibles y sin valor económico. Sujetos a validación técnica y moderación.</p>
+
+      <h2>7. Validez y cómputo</h2>
+      <p>Solo generan puntos las acciones auténticas, manuales y correctamente registradas. No computan acciones duplicadas, simuladas, automatizadas o retiradas por moderación. Prevalecen los registros internos de FleetChofer en caso de discrepancia.</p>
+
+      <h2>8. Seguridad reforzada - perfil de chófer</h2>
+      <p>Las cuentas de chófer/conductor están sujetas a control reforzado de autenticidad. Deben mantener identidad real y verificable, datos actualizados y cumplir las habilitaciones legales aplicables. Está prohibido compartir cuenta, falsear actividad o usar automatismos. FleetChofer podrá requerir verificaciones adicionales a finalistas.</p>
+
+      <h2>9. Prohibición de fraude y abuso</h2>
+      <p>Causan expulsión inmediata: “brecos” masivos o spam, contenidos falsos, bots o scripts, múltiples cuentas y suplantación de identidad. FleetChofer auditará la trazabilidad técnica de los finalistas antes de adjudicar ningún premio.</p>
+
+      <h2>10. Premios</h2>
+      <ol>
+        <li><strong>1er Premio:</strong> 500 € en metálico (ayuda gasolina) + 1 Ruta Urgente.</li>
+        <li><strong>2º Premio:</strong> 200 € en metálico (ayuda gasolina) + 1 Ruta Urgente.</li>
+        <li><strong>3er Premio:</strong> 2 Rutas Urgentes.</li>
+      </ol>
+      <p>Los importes se abonan por transferencia bancaria. La Ruta Urgente es personal, intransferible, no canjeable por dinero y debe disfrutarse en 6 meses desde la aceptación.</p>
+
+      <h2>11. Sorteo y selección de ganadores</h2>
+      <p>Sorteo aleatorio y verificable el 1 de octubre de 2026. Cada punto equivale a 1 participación. Se designarán 3 ganadores y 3 suplentes por premio. Una misma persona no puede ganar más de un premio.</p>
+
+      <h2>12. Comunicación y entrega del premio</h2>
+      <p>FleetChofer contactará a los ganadores por correo, teléfono o notificación interna. El ganador dispone de <strong>5 días naturales</strong> para aceptar y aportar documentación. La entrega se realiza en un plazo máximo de <strong>1 mes</strong> desde la confirmación definitiva (art. 211-13 Ley 22/2010).</p>
+
+      <h2>13. Fiscalidad</h2>
+      <p>Los premios están sujetos a la normativa tributaria española. FleetChofer practicará las retenciones legalmente procedentes. El ganador deberá colaborar en el cumplimiento de las obligaciones fiscales.</p>
+
+      <h2>14. Publicidad del resultado</h2>
+      <p>FleetChofer podrá publicar el resultado en sus canales oficiales con datos mínimos (nombre de pila e iniciales o alias), salvo exigencia legal distinta.</p>
+
+      <h2>15. Contenidos generados por usuarios</h2>
+      <p>Los participantes garantizan que sus publicaciones son originales, lícitas y no lesionan derechos de terceros. FleetChofer puede retirar contenidos contrarios a las bases, con pérdida automática de los puntos asociados.</p>
+
+      <h2>16. Protección de datos</h2>
+      <p><strong>Responsable:</strong> FleetChofer, S.L.U. - <a href="mailto:clara@fleetchoferbyclara.com">clara@fleetchoferbyclara.com</a>.<br>Finalidades: gestionar la participación, prevenir fraude, realizar el sorteo, entregar premios y cumplir obligaciones legales. Base jurídica: ejecución de la relación promocional, cumplimiento legal e interés legítimo. Los interesados pueden ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad en la dirección indicada.</p>
+
+      <h2>17-18. Responsabilidad y modificaciones</h2>
+      <p>FleetChofer no responde de interrupciones técnicas ajenas a su control razonable. Podrá modificar, suspender o cancelar la promoción por causa justificada, comunicándolo en sus canales oficiales. Las modificaciones no tendrán efecto retroactivo en perjuicio de derechos consolidados.</p>
+
+      <h2>19. Aceptación de las bases</h2>
+      <p>La participación implica la aceptación íntegra de las presentes bases y de las decisiones interpretativas razonables de FleetChofer.</p>
+
+      <h2>20. Legislación y jurisdicción</h2>
+      <p>Legislación española. Competencia: juzgados y tribunales aplicables conforme a la normativa imperativa de consumidores y usuarios.</p>
+
+      <footer>FleetChofer by Clara · Sorteo Comercial 2026 · Bases Legales</footer>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  function closeTerms() {
+    modal.style.display = 'none';
+  }
+
+  modal.querySelector('#fc-terms-close').addEventListener('click', closeTerms);
+  modal.addEventListener('click', function(ev) {
+    if (ev.target === modal) closeTerms();
+  });
+};
 </script>
- 
