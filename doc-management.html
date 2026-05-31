@@ -4469,6 +4469,23 @@ Añade también en el footer:
   }
 })();
 </script>
+<div id="fleetchofer-popup-loader"></div>
+
+<script>
+fetch('fleetchofer-popup.html')
+  .then(response => response.text())
+  .then(html => {
+    const loader = document.getElementById('fleetchofer-popup-loader');
+    loader.innerHTML = html;
+
+    loader.querySelectorAll('script').forEach(oldScript => {
+      const newScript = document.createElement('script');
+      newScript.textContent = oldScript.textContent;
+      document.body.appendChild(newScript);
+      oldScript.remove();
+    });
+  });
+</script>
 
 </body>
 </html>
