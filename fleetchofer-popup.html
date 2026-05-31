@@ -456,10 +456,161 @@
     #fc-popup-root { width: calc(100vw - 16px); }
     #fc-amount { font-size: 44px; }
   }
+
+/* =========================================================
+   FLEETCHOFER SORTEO — VERSIÓN BOTÓN PEQUEÑO MOVIBLE
+   - El botón pequeño se mueve.
+   - El popup grande NO se mueve.
+   - El popup grande se abre al pulsar el botón.
+   ========================================================= */
+
+#fc-launcher {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2147483646;
+  min-width: 112px;
+  height: 46px;
+  padding: 0 15px;
+  border: 1.5px solid rgba(255,233,0,0.95);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,233,0,0.24), transparent 36%),
+    linear-gradient(135deg, #090909 0%, #180000 55%, #090909 100%);
+  color: #ffe900;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  box-shadow:
+    0 0 0 1px rgba(255,233,0,0.18),
+    0 0 18px rgba(255,233,0,0.72),
+    0 0 34px rgba(255,180,0,0.36),
+    0 10px 28px rgba(0,0,0,0.75);
+  text-shadow:
+    0 0 7px #ffe900,
+    0 0 18px rgba(255,233,0,0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  animation: fc-launcher-pulse 2.8s ease-in-out infinite;
+}
+
+#fc-launcher:active { cursor: grabbing; }
+
+#fc-launcher::after {
+  content: '';
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -8px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,233,0,0.42), transparent 72%);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+@keyframes fc-launcher-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255,233,0,0.18),
+      0 0 18px rgba(255,233,0,0.72),
+      0 0 34px rgba(255,180,0,0.36),
+      0 10px 28px rgba(0,0,0,0.75);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255,233,0,0.32),
+      0 0 28px rgba(255,233,0,0.96),
+      0 0 48px rgba(255,180,0,0.48),
+      0 10px 28px rgba(0,0,0,0.75);
+  }
+}
+
+/* El popup grande queda oculto hasta pulsar el botón */
+#fc-popup-root {
+  display: none;
+  cursor: default;
+  touch-action: auto;
+  user-select: auto;
+  -webkit-user-select: auto;
+  animation: none !important;
+}
+
+#fc-popup-root.fc-popup-visible {
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Quitamos la indicación de mover dentro del popup grande */
+#fc-drag-hint {
+  display: none !important;
+}
+
+/* Botón para volver a dejar el popup guardado dentro del botón pequeño */
+#fc-popup-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.68);
+  font-size: 17px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+#fc-popup-close:hover {
+  color: #ffe900;
+  border-color: rgba(255,233,0,0.65);
+  box-shadow: 0 0 12px rgba(255,233,0,0.35);
+}
+
+/* El popup conserva la animación visual, pero ya no se arrastra */
+#fc-card {
+  cursor: default;
+}
+
+@media (max-width: 480px) {
+  #fc-launcher {
+    left: 12px;
+    bottom: 14px;
+    height: 42px;
+    min-width: 104px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  #fc-popup-root.fc-popup-visible {
+    width: 290px;
+    max-width: calc(100vw - 16px);
+  }
+}
+
 </style>
+
+<button id="fc-launcher" type="button" aria-label="Abrir sorteo FleetChofer">¡Gana 500€!</button>
 
 <div id="fc-popup-root" role="dialog" aria-label="Sorteo FleetChofer 500€">
   <div id="fc-card">
+    <button id="fc-popup-close" type="button" aria-label="Cerrar sorteo">×</button>
     <div id="fc-inner">
 
       <div id="fc-header">
@@ -559,52 +710,70 @@
 
 <script>
 (function() {
-  var el = document.getElementById('fc-popup-root');
-  if (!el) return;
+  var launcher = document.getElementById('fc-launcher');
+  var popup = document.getElementById('fc-popup-root');
+  var closeBtn = document.getElementById('fc-popup-close');
+
+  if (!launcher || !popup) return;
 
   var dragging = false;
+  var moved = false;
   var offsetX = 0;
   var offsetY = 0;
+  var startClientX = 0;
+  var startClientY = 0;
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
   }
 
-  function moveTo(x, y) {
-    var maxX = Math.max(8, window.innerWidth - el.offsetWidth - 8);
-    var maxY = Math.max(8, window.innerHeight - el.offsetHeight - 8);
-    el.style.transform = 'none';
-    el.style.left = clamp(x, 8, maxX) + 'px';
-    el.style.top = clamp(y, 8, maxY) + 'px';
+  function moveLauncherTo(x, y) {
+    var maxX = Math.max(8, window.innerWidth - launcher.offsetWidth - 8);
+    var maxY = Math.max(8, window.innerHeight - launcher.offsetHeight - 8);
+    launcher.style.left = clamp(x, 8, maxX) + 'px';
+    launcher.style.top = clamp(y, 8, maxY) + 'px';
+    launcher.style.right = 'auto';
+    launcher.style.bottom = 'auto';
+  }
+
+  function openPopup() {
+    popup.classList.add('fc-popup-visible');
+    popup.style.left = '50%';
+    popup.style.top = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+  }
+
+  function closePopup() {
+    popup.classList.remove('fc-popup-visible');
   }
 
   function startDrag(clientX, clientY) {
-    var rect = el.getBoundingClientRect();
+    var rect = launcher.getBoundingClientRect();
     dragging = true;
+    moved = false;
+    startClientX = clientX;
+    startClientY = clientY;
     offsetX = clientX - rect.left;
     offsetY = clientY - rect.top;
-    el.style.transition = 'none';
+    launcher.style.transition = 'none';
   }
 
   function doDrag(clientX, clientY) {
     if (!dragging) return;
-    moveTo(clientX - offsetX, clientY - offsetY);
+    if (Math.abs(clientX - startClientX) > 4 || Math.abs(clientY - startClientY) > 4) {
+      moved = true;
+    }
+    moveLauncherTo(clientX - offsetX, clientY - offsetY);
   }
 
   function stopDrag() {
+    if (!dragging) return;
     dragging = false;
-    el.style.transition = '';
+    launcher.style.transition = '';
+    if (!moved) openPopup();
   }
 
-  function isInteractive(target) {
-    return target && target.closest && (
-      target.closest('#fc-cta-btn') ||
-      target.closest('#fc-footer')
-    );
-  }
-
-  el.addEventListener('mousedown', function(e) {
-    if (isInteractive(e.target)) return;
+  launcher.addEventListener('mousedown', function(e) {
     e.preventDefault();
     startDrag(e.clientX, e.clientY);
   });
@@ -615,8 +784,7 @@
 
   document.addEventListener('mouseup', stopDrag);
 
-  el.addEventListener('touchstart', function(e) {
-    if (isInteractive(e.target)) return;
+  launcher.addEventListener('touchstart', function(e) {
     if (!e.touches || !e.touches[0]) return;
     var t = e.touches[0];
     startDrag(t.clientX, t.clientY);
@@ -633,9 +801,17 @@
   document.addEventListener('touchend', stopDrag);
   document.addEventListener('touchcancel', stopDrag);
 
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closePopup();
+    });
+  }
+
   window.addEventListener('resize', function() {
-    var rect = el.getBoundingClientRect();
-    moveTo(rect.left, rect.top);
+    var rect = launcher.getBoundingClientRect();
+    moveLauncherTo(rect.left, rect.top);
   });
 })();
 
