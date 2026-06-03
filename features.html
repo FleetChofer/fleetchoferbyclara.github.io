@@ -1510,6 +1510,90 @@
   border-color: rgba(255,0,0,0.8);
 }
 
+
+
+        /* ===== DESPLEGABLE REPUTACIÓN: INSIGNIAS Y TRIPLE VALIDACIÓN ===== */
+        .fc-rep-accordion {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+        .fc-rep-accordion-toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: linear-gradient(135deg, rgba(10,10,10,0.92), rgba(25,0,0,0.62));
+            border: 1px solid rgba(255,0,0,0.28);
+            border-radius: 10px;
+            color: rgba(255,255,255,0.9);
+            padding: 0.95rem 1.2rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 18px rgba(255,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+        }
+        .fc-rep-accordion-toggle:hover {
+            border-color: rgba(255,0,0,0.5);
+            box-shadow: 0 0 26px rgba(255,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.07);
+            color: #fff;
+        }
+        .fc-rep-chevron {
+            color: var(--rojo);
+            font-size: 1rem;
+            line-height: 1;
+            transition: transform 0.25s ease;
+            flex-shrink: 0;
+        }
+        .fc-rep-accordion.open .fc-rep-chevron {
+            transform: rotate(180deg);
+        }
+        .fc-rep-accordion-content {
+            display: none;
+            padding-top: 1.3rem;
+        }
+        .fc-rep-accordion.open .fc-rep-accordion-content {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .fc-rep-accordion-toggle {
+                align-items: center;
+                padding: 0.9rem 1rem;
+                font-size: 0.72rem;
+                line-height: 1.45;
+                text-align: left;
+            }
+            .fc-rep-accordion-content > div[style*="grid-template-columns:repeat(2,1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            .fc-rep-accordion-content div[style*="white-space:nowrap"] {
+                white-space: normal !important;
+                text-align: center !important;
+                line-height: 1.4 !important;
+            }
+            .fc-rep-accordion-content .insignia-item {
+                align-items: flex-start !important;
+                gap: 0.55rem !important;
+            }
+            .fc-rep-accordion-content .ins-badge {
+                min-width: 96px !important;
+                white-space: normal !important;
+                line-height: 1.25 !important;
+            }
+            .fc-rep-accordion-content .insignias-logo-center {
+                min-height: 135px !important;
+                margin-top: 0.8rem !important;
+            }
+            .fc-rep-accordion-content .insignias-logo-center img {
+                width: 135px !important;
+                height: 135px !important;
+            }
+        }
 </style>
 </head>
 <body>
@@ -1720,6 +1804,13 @@
             </div>
         </div>
 
+        <!-- ── DESPLEGABLE: INSIGNIAS Y TRIPLE VALIDACIÓN ── -->
+        <div class="fc-rep-accordion" id="fcRepAccordion">
+            <button class="fc-rep-accordion-toggle" type="button" aria-expanded="false" aria-controls="fcRepAccordionContent">
+                <span>Insignias y sistema de la triple validación</span>
+                <span class="fc-rep-chevron" aria-hidden="true">⌄</span>
+            </button>
+            <div class="fc-rep-accordion-content" id="fcRepAccordionContent">
         <!-- ── TÍTULO BLOQUE CHÓFERES ── -->
         <div style="display:flex; align-items:center; gap:1rem; margin:1.6rem 0 1.4rem;">
             <div style="flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(255,0,0,0.35));"></div>
@@ -1871,6 +1962,9 @@
                 Si crees que una insignia no refleja la realidad, abre una reclamación. FleetChofer investiga, habla con ambas partes y, si la insignia es incorrecta, la retira. Tu reputación siempre será un reflejo fiel y justo de tu trabajo.
             </p>
         </div>
+            </div>
+        </div>
+        <!-- ── FIN DESPLEGABLE: INSIGNIAS Y TRIPLE VALIDACIÓN ── -->
     </div>
 </section>
 
@@ -5661,5 +5755,18 @@ fetch('fleetchofer-popup.html')
   });
 </script>
     
+
+<script>
+(function(){
+  var accordion = document.getElementById('fcRepAccordion');
+  if (!accordion) return;
+  var btn = accordion.querySelector('.fc-rep-accordion-toggle');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    var open = accordion.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
 </body>
 </html>
