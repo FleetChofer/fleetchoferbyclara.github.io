@@ -2828,6 +2828,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
             border: 1px solid rgba(255,0,0,0.4); border-radius: 50px;
             overflow: visible; position: relative;
             background: rgba(0,0,0,0.65);
+            flex-wrap: wrap; justify-content: center;
         }
         .billing-tab {
             padding: 0.65rem 1.45rem;
@@ -3292,6 +3293,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
         /* ─── RESPONSIVE ─── */
         @media (max-width: 900px) {
             .intro-inner { grid-template-columns: 1fr; gap: 3rem; }
+            
             .pricing-grid { grid-template-columns: 1fr; }
             .premium-grid { grid-template-columns: 1fr; }
             .alianzas-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -3301,12 +3303,26 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
             .hero { padding: 7rem 1.5rem 5rem; }
             .intro, .planes-section, .premium-section,
             .alianzas-section, .transmisiones-section, .cta-final { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .hero-btns { flex-wrap: wrap; }
+            .billing-toggle-wrapper { padding: 0 0.5rem 1.4rem; }
         }
         @media (max-width: 600px) {
             .billing-tab { padding: 0.55rem 0.9rem; font-size: 0.78rem; }
             .billing-tab.annual-tab { padding-top: 1rem; }
             .intro-right { gap: 0.8rem; }
             .hero h1 { font-size: 2.5rem; }
+            .intro, .planes-section, .premium-section,
+            .alianzas-section, .transmisiones-section, .cta-final { padding-left: 1rem; padding-right: 1rem; }
+            .alianzas-card { padding: 1.8rem 1.2rem; }
+            .premium-card { padding: 2rem 1.4rem; }
+            .pricing-card { padding: 1.8rem 1.4rem; }
+            .pricing-card.recommended::after { display: none; }
+            .hero-btns { flex-direction: column; align-items: center; }
+            .hero-btns .btn { width: 100%; max-width: 320px; text-align: center; }
+            .cta-btns { flex-direction: column; align-items: center; }
+            .cta-btns .btn { width: 100%; max-width: 320px; text-align: center; }
+            .billing-toggle-wrapper { padding: 0 0.5rem 1.4rem; }
+            .billing-tabs { border-radius: 12px; }
         }
         /* ═══════════════════════════════════════════════════
            REPUTACIÓN E INSIGNIAS DE ALIADOS
@@ -3603,6 +3619,524 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
 
         /* ═══ FIN CSS REPUTACIÓN E INSIGNIAS ALIADOS ═══ */
 
+
+        /* ═══════════════════════════════════════════════════
+           ACORDEÓN — INSIGNIAS DE ALIADOS EN FRECUENCIA
+           ═══════════════════════════════════════════════════ */
+        .ar-acordeon-wrap {
+            max-width: 1100px;
+            margin: 0 auto 0;
+            padding: 0 2.5rem;
+        }
+        .ar-acordeon-trigger {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.4rem 2rem;
+            background: rgba(10,0,0,0.7);
+            border: 1px solid rgba(255,0,0,0.25);
+            border-radius: 14px;
+            cursor: pointer;
+            font-family: &#x27;Inter&#x27;, sans-serif;
+            color: #fff;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .ar-acordeon-trigger::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(255,0,0,0.04), transparent 70%);
+            pointer-events: none;
+        }
+        .ar-acordeon-trigger:hover {
+            border-color: rgba(255,0,0,0.5);
+            background: rgba(15,0,0,0.85);
+            box-shadow: 0 8px 30px rgba(255,0,0,0.12);
+        }
+        .ar-acordeon-icon-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .ar-acordeon-title-text {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+        .ar-acordeon-arrow {
+            font-size: 1.35rem;
+            color: rgba(255,0,0,0.75);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            flex-shrink: 0;
+            line-height: 1;
+        }
+        .ar-acordeon-trigger[aria-expanded=&quot;true&quot;] .ar-acordeon-arrow {
+            transform: rotate(180deg);
+        }
+        .ar-acordeon-trigger[aria-expanded=&quot;true&quot;] {
+            border-color: rgba(255,0,0,0.4);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+        }
+        .ar-acordeon-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            border: 1px solid transparent;
+            border-top: none;
+            border-radius: 0 0 14px 14px;
+        }
+        .ar-acordeon-content.open {
+            max-height: 4000px;
+            border-color: rgba(255,0,0,0.25);
+            border-top-color: transparent;
+        }
+        .ar-acordeon-content .aliados-rep-section {
+            border-radius: 0 0 14px 14px;
+        }
+        @media (max-width: 900px) {
+            .ar-acordeon-wrap { padding: 0 1.5rem; }
+        }
+        @media (max-width: 640px) {
+            .ar-acordeon-trigger { padding: 1.1rem 1.2rem; }
+            .ar-acordeon-title-text { font-size: 0.88rem; }
+        }
+        /* ═══ FIN ACORDEÓN ═══ */
+
+        /* ═══════════════════════════════════════════════════
+           IMPULSO VISIBILIDAD — FRANJA BAJO PRECIOS
+           ═══════════════════════════════════════════════════ */
+        .visibilidad-strip {
+            max-width: 1100px;
+            margin: 3rem auto 0;
+            padding: 1.05rem 1.25rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255,0,0,0.34);
+            background: linear-gradient(135deg, rgba(12,0,0,0.92), rgba(45,0,0,0.58), rgba(12,0,0,0.92));
+            box-shadow: 0 0 28px rgba(255,0,0,0.16), inset 0 0 22px rgba(255,0,0,0.035);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .visibilidad-strip::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.045), transparent);
+            transform: translateX(-120%);
+            animation: visibilidadSweep 5.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes visibilidadSweep {
+            0%, 62% { transform: translateX(-120%); opacity: 0; }
+            70% { opacity: 1; }
+            86% { transform: translateX(120%); opacity: 0; }
+            100% { transform: translateX(120%); opacity: 0; }
+        }
+        .visibilidad-copy {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.22rem;
+            min-width: 0;
+        }
+        .visibilidad-title {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            line-height: 1.35;
+        }
+        .visibilidad-title span {
+            color: #ff0000;
+            text-shadow: 0 0 14px rgba(255,0,0,0.55);
+        }
+        .visibilidad-sub {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.62);
+            line-height: 1.55;
+            margin-top: 0.75rem;
+        }
+        .visibilidad-sub strong {
+            color: rgba(255,255,255,0.9);
+            font-weight: 700;
+        }
+        .visibilidad-btn {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.72rem 1.25rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff2200, #ff0000, #ff6600);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 0 18px rgba(255,0,0,0.42);
+            transition: all 0.25s ease;
+            white-space: nowrap;
+        }
+        .visibilidad-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 28px rgba(255,0,0,0.65), 0 0 44px rgba(255,80,0,0.22);
+        }
+        @media (max-width: 720px) {
+            .visibilidad-strip {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                padding: 1rem;
+                margin-top: 1.5rem;
+            }
+            .visibilidad-btn {
+                width: 100%;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════
+           RETOS EN RUTA — SECCIÓN
+           ═══════════════════════════════════════════════════ */
+        .retos-section {
+            padding: 1.25rem 2.5rem 3.5rem;
+            background: rgba(3,0,0,0.5);
+        }
+        .retos-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .retos-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: rgba(255,80,0,0.85);
+            border: 1px solid rgba(255,80,0,0.3);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            background: rgba(255,50,0,0.07);
+            margin-bottom: 1.8rem;
+        }
+        .retos-eyebrow-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: #ff4400;
+            box-shadow: 0 0 8px rgba(255,68,0,0.9);
+            animation: pulse-dot 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        .retos-card {
+            background: rgba(8,0,0,0.85);
+            border: 1px solid rgba(255,0,0,0.25);
+            border-radius: 20px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .retos-card::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff4400, #ff0000, #ff4400, transparent);
+            animation: retos-line 3s ease-in-out infinite;
+        }
+        @keyframes retos-line {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; box-shadow: 0 0 16px rgba(255,50,0,0.9); }
+        }
+        .retos-card::after {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 280px; height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,50,0,0.07), transparent 70%);
+            pointer-events: none;
+        }
+        .retos-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .retos-title-block {}
+        .retos-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
+            background: linear-gradient(135deg, #ff6600, #ff2200, #ff5500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 18px rgba(255,50,0,0.35));
+        }
+        .retos-tagline {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.72);
+            line-height: 1.65;
+            max-width: 560px;
+        }
+        .retos-extra-tag {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,180,0,0.9);
+            border: 1px solid rgba(255,180,0,0.35);
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            background: rgba(255,150,0,0.08);
+            box-shadow: 0 0 18px rgba(255,130,0,0.15);
+            white-space: nowrap;
+            animation: retosTagGlow 3s ease-in-out infinite;
+        }
+        @keyframes retosTagGlow {
+            0%, 100% { box-shadow: 0 0 12px rgba(255,130,0,0.12); }
+            50% { box-shadow: 0 0 22px rgba(255,130,0,0.3); }
+        }
+        .retos-desc-block {
+            margin-bottom: 2.5rem;
+        }
+        .retos-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+            font-weight: 300;
+            border-left: 2px solid rgba(255,50,0,0.4);
+            padding-left: 1.2rem;
+        }
+        .retos-desc strong {
+            color: rgba(255,255,255,0.85);
+            font-weight: 600;
+        }
+        .retos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+            margin-bottom: 2.5rem;
+        }
+        .retos-incluye {}
+        .retos-incluye-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255,80,0,0.7);
+            margin-bottom: 1rem;
+        }
+        .retos-incluye-list {
+            list-style: none;
+            padding: 0; margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+        .retos-incluye-list li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.75);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.25s ease;
+        }
+        .retos-incluye-list li:hover {
+            background: rgba(255,50,0,0.06);
+            border-color: rgba(255,50,0,0.18);
+            color: rgba(255,255,255,0.9);
+        }
+        .retos-precio-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .retos-precio-wrap {
+            background: rgba(255,0,0,0.06);
+            border: 1px solid rgba(255,0,0,0.2);
+            border-radius: 16px;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .retos-precio-wrap::before {
+            content: &#x27;&#x27;;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,50,0,0.5), transparent);
+        }
+        .retos-precio-antes {
+            margin-bottom: 0.6rem;
+        }
+        .retos-precio-tachado {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: line-through;
+            text-decoration-color: rgba(255,50,0,0.6);
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        .retos-precio-actual {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+        .retos-precio-numero {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            color: #fff;
+            text-shadow: 0 0 40px rgba(255,50,0,0.5), 0 0 80px rgba(255,0,0,0.2);
+            animation: retos-precio-glow 3s ease-in-out infinite;
+        }
+        @keyframes retos-precio-glow {
+            0%, 100% { text-shadow: 0 0 30px rgba(255,50,0,0.4), 0 0 60px rgba(255,0,0,0.15); }
+            50% { text-shadow: 0 0 50px rgba(255,50,0,0.65), 0 0 90px rgba(255,0,0,0.3); }
+        }
+        .retos-precio-iva {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.45);
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+        }
+        .retos-descuento-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, rgba(255,100,0,0.2), rgba(255,30,0,0.15));
+            border: 1px solid rgba(255,80,0,0.45);
+            color: #ff7a00;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+            box-shadow: 0 0 20px rgba(255,80,0,0.2);
+            animation: descuentoGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes descuentoGlow {
+            0%, 100% { box-shadow: 0 0 14px rgba(255,80,0,0.18); }
+            50% { box-shadow: 0 0 28px rgba(255,80,0,0.38); }
+        }
+        .retos-descuento-llama {
+            font-size: 0.85rem;
+            animation: llamaFloat 1.4s ease-in-out infinite alternate;
+        }
+        @keyframes llamaFloat {
+            from { transform: translateY(0); }
+            to { transform: translateY(-2px); }
+        }
+        .retos-promo-texto {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.35);
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .retos-cta-btn {
+            width: 100%;
+            text-align: center;
+            font-size: 0.88rem;
+            letter-spacing: 0.06em;
+        }
+        .retos-frase {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            background: rgba(255,0,0,0.05);
+            border: 1px solid rgba(255,0,0,0.15);
+            border-left: 3px solid rgba(255,50,0,0.6);
+            border-radius: 0 12px 12px 0;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .retos-frase-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .retos-frase p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            font-style: italic;
+            font-weight: 300;
+        }
+        .retos-frase p strong {
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            font-style: normal;
+        }
+        .retos-nota {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.3);
+            padding: 0.75rem 1rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        @media (max-width: 900px) {
+            .retos-section { padding: 3rem 1.5rem; }
+            .retos-card { padding: 2rem 1.5rem; }
+            .retos-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .retos-header { flex-direction: column; }
+            .retos-extra-tag { align-self: flex-start; }
+        }
+        /* ═══ FIN RETOS EN RUTA ═══ */
+
+
+        @media (max-width: 480px) {
+            .retos-precio-numero { font-size: 3.2rem; }
+            .retos-card { padding: 1.6rem 1rem; }
+            .retos-frase { padding: 1rem; }
+            .trans-card { padding: 1.6rem 1.2rem; }
+            .ar-acordeon-trigger { padding: 1rem; }
+            .ar-acordeon-title-text { font-size: 0.82rem; }
+            .hero-sub { font-size: 0.95rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .cta-final h2 { font-size: 1.8rem; }
+        }
+
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -3636,8 +4170,8 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
             Cuando alguien necesita ayuda, queremos que &lt;span class=&quot;hero-sub-highlight&quot;&gt;te encuentren a ti&lt;/span&gt;.
         &lt;/p&gt;
         &lt;div class=&quot;hero-btns&quot;&gt;
-            &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;QUIERO SER UN ALIADO&lt;/a&gt;
-            &lt;a href=&quot;#planes&quot; class=&quot;btn btn-secondary&quot;&gt;VER PLANES&lt;/a&gt;
+            &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;QUIERO SER UN ALIADO&lt;/a&gt;
+            &lt;button type=&quot;button&quot; id=&quot;scrollToPlanesBtn&quot; class=&quot;btn btn-secondary&quot;&gt;VER PLANES&lt;/button&gt;
         &lt;/div&gt;
 
         &lt;div class=&quot;hero-message&quot;&gt;
@@ -3663,17 +4197,27 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                 cuando un compañero o una empresa necesite parar, reparar, comer, descansar o resolver un problema en ruta,
                 queremos que encuentre un &lt;strong style=&quot;color:rgba(255,255,255,0.75);font-weight:500;&quot;&gt;aliado real dentro de la comunidad.&lt;/strong&gt;
             &lt;/p&gt;
+            &lt;p class=&quot;intro-body&quot; style=&quot;margin-top:1.2rem; border-left:2px solid rgba(255,0,0,0.3); padding-left:1.2rem;&quot;&gt;
+                No es un usuario que busca camiones ni un conductor que busca carga.&lt;br&gt;&lt;br&gt;
+                Un Aliado es cualquier negocio estratégico ubicado en la carretera o que ofrece servicios esenciales para el transportista y las flotas.&lt;br&gt;&lt;br&gt;
+                El objetivo es que, cuando un chófer esté en plena ruta y necesite parar, reparar o comer, encuentre a un profesional de confianza de nuestra red en lugar de buscar a ciegas en Google.
+            &lt;/p&gt;
         &lt;/div&gt;
         &lt;div class=&quot;intro-right&quot;&gt;
             &lt;div class=&quot;intro-pill reveal reveal-delay-1&quot;&gt;
-                &lt;div class=&quot;intro-pill-icon&quot;&gt;🛠️&lt;/div&gt;
-                &lt;div class=&quot;intro-pill-title&quot;&gt;Presencia real, no publicidad&lt;/div&gt;
-                &lt;div class=&quot;intro-pill-text&quot;&gt;Tu negocio forma parte del ecosistema operativo. Apareces cuando te necesitan, no cuando nadie te busca.&lt;/div&gt;
+                &lt;div class=&quot;intro-pill-icon&quot;&gt;📍&lt;/div&gt;
+                &lt;div class=&quot;intro-pill-title&quot;&gt;Perfil visible en ruta&lt;/div&gt;
+                &lt;div class=&quot;intro-pill-text&quot;&gt;Al convertirte en Aliado en Ruta, obtienes un perfil propio dentro de FleetChofer para que chóferes y empresas puedan encontrarte cuando busquen dónde parar, reparar, comer o resolver cualquier necesidad durante la ruta.&lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;intro-pill reveal reveal-delay-2&quot;&gt;
                 &lt;div class=&quot;intro-pill-icon&quot;&gt;📻&lt;/div&gt;
                 &lt;div class=&quot;intro-pill-title&quot;&gt;Integrado en La Emisora&lt;/div&gt;
                 &lt;div class=&quot;intro-pill-text&quot;&gt;El Canal 24 de FleetChofer. Donde chóferes y empresas hablan, comparten y se ayudan cada día en carretera.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;intro-pill reveal reveal-delay-3&quot;&gt;
+                &lt;div class=&quot;intro-pill-icon&quot;&gt;🛠️&lt;/div&gt;
+                &lt;div class=&quot;intro-pill-title&quot;&gt;Presencia real, no publicidad&lt;/div&gt;
+                &lt;div class=&quot;intro-pill-text&quot;&gt;Tu negocio forma parte del ecosistema operativo. Apareces cuando te necesitan, no cuando nadie te busca.&lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;intro-pill reveal reveal-delay-3&quot;&gt;
                 &lt;div class=&quot;intro-pill-icon&quot;&gt;🤝&lt;/div&gt;
@@ -3687,7 +4231,18 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
 &lt;!-- ══════════════════════════════════════════
      REPUTACIÓN E INSIGNIAS DE LOS ALIADOS
 ══════════════════════════════════════════ --&gt;
-&lt;section class=&quot;aliados-rep-section&quot;&gt;
+&lt;!-- ══════════════════════════════════════════
+     INSIGNIAS DE ALIADOS EN FRECUENCIA — DESPLEGABLE
+══════════════════════════════════════════ --&gt;
+&lt;div class=&quot;ar-acordeon-wrap reveal&quot;&gt;
+    &lt;button class=&quot;ar-acordeon-trigger&quot; id=&quot;arAcordeonBtn&quot; onclick=&quot;toggleArAcordeon()&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;arAcordeonContent&quot;&gt;
+        &lt;span class=&quot;ar-acordeon-icon-wrap&quot;&gt;
+            &lt;span class=&quot;ar-acordeon-title-text&quot;&gt;Insignias de Aliados en Frecuencia&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&quot;ar-acordeon-arrow&quot; id=&quot;arAcordeonArrow&quot;&gt;▾&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;ar-acordeon-content&quot; id=&quot;arAcordeonContent&quot; aria-hidden=&quot;true&quot;&gt;
+        &lt;section class=&quot;aliados-rep-section&quot;&gt;
     &lt;div class=&quot;aliados-rep-inner&quot;&gt;
 
         &lt;!-- Título --&gt;
@@ -3821,6 +4376,10 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
 
     &lt;/div&gt;
 &lt;/section&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
 
 &lt;!-- ══════════════════════════════════════════
      PLANES EMISORA
@@ -3877,7 +4436,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                     &lt;li&gt;2 transmisiones semanales en La Emisora&lt;/li&gt;
                     &lt;li&gt;Indexación básica en el motor de búsqueda&lt;/li&gt;
                 &lt;/ul&gt;
-                &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Empezar como Aliado&lt;/a&gt;
+                &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Empezar como Aliado&lt;/a&gt;
             &lt;/div&gt;
 
             &lt;!-- PLAN 3 --&gt;
@@ -3906,7 +4465,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                     &lt;strong&gt;Cuando un chófer pregunte&lt;/strong&gt; por un taller, un parking, una gasolinera o una recomendación útil,
                     tú puedes estar ahí para ayudar.
                 &lt;/div&gt;
-                &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Activar Canal Prioritario&lt;/a&gt;
+                &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Activar Canal Prioritario&lt;/a&gt;
             &lt;/div&gt;
 
             &lt;!-- PLAN 2 --&gt;
@@ -3930,9 +4489,133 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                     &lt;li&gt;Hasta 20 comentarios al mes&lt;/li&gt;
                     &lt;li&gt;Participación activa dentro de la comunidad&lt;/li&gt;
                 &lt;/ul&gt;
-                &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Activar Frecuencia Activa&lt;/a&gt;
+                &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot; style=&quot;text-align:center;margin-top:auto;&quot;&gt;Activar Frecuencia Activa&lt;/a&gt;
             &lt;/div&gt;
 
+        &lt;/div&gt;
+
+        &lt;div class=&quot;visibilidad-strip reveal&quot;&gt;
+            &lt;div class=&quot;visibilidad-copy&quot;&gt;
+                &lt;div class=&quot;visibilidad-title&quot;&gt;TU EXPERIENCIA YA TIENE VALOR. &lt;span&gt;HAGAMOS QUE TAMBIÉN TENGA VISIBILIDAD.&lt;/span&gt;&lt;/div&gt;
+                &lt;div class=&quot;visibilidad-sub&quot;&gt;¿No tienes tiempo para estar pendiente de la Emisora?&lt;br&gt;&lt;br&gt;Nosotros te ayudamos a destacar tu perfil, mantenerte activo y visible en la Emisora para que más personas descubran quién eres y todo lo que les puedes aportar.&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;visibilidad-btn&quot;&gt;Hablamos&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- ══════════════════════════════════════════
+     RETOS EN RUTA — SERVICIO ADICIONAL PARA ALIADOS EN FRECUENCIA
+══════════════════════════════════════════ --&gt;
+&lt;section class=&quot;retos-section reveal&quot;&gt;
+    &lt;div class=&quot;retos-inner&quot;&gt;
+
+        &lt;div class=&quot;retos-eyebrow&quot;&gt;
+            &lt;span class=&quot;retos-eyebrow-dot&quot;&gt;&lt;/span&gt;
+            Servicio adicional · Solo para Aliados en Frecuencia
+        &lt;/div&gt;
+
+        &lt;div class=&quot;retos-card&quot;&gt;
+
+            &lt;div class=&quot;retos-header&quot;&gt;
+                &lt;div class=&quot;retos-title-block&quot;&gt;
+                    &lt;h2 class=&quot;retos-title&quot;&gt;🔥 RETOS EN RUTA&lt;/h2&gt;
+                    &lt;p class=&quot;retos-tagline&quot;&gt;Convierte tu negocio en una parada obligatoria para la comunidad FleetChofer.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;retos-extra-tag&quot;&gt;EXTRA CONTRATABLE CUANDO QUIERAS&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;retos-desc-block&quot;&gt;
+                &lt;p class=&quot;retos-desc&quot;&gt;
+                    Los Retos en Ruta generan participación real, visibilidad y experiencias memorables.&lt;br&gt;
+                    &lt;strong&gt;Tú eliges el premio. Nosotros diseñamos el reto, lo publicamos y lo movemos dentro de la comunidad.&lt;/strong&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;retos-grid&quot;&gt;
+                &lt;div class=&quot;retos-incluye&quot;&gt;
+                    &lt;div class=&quot;retos-incluye-label&quot;&gt;Incluye:&lt;/div&gt;
+                    &lt;ul class=&quot;retos-incluye-list&quot;&gt;
+                        &lt;li&gt;✅ Diseño del reto&lt;/li&gt;
+                        &lt;li&gt;✅ Texto para La Emisora&lt;/li&gt;
+                        &lt;li&gt;✅ Creatividad visual&lt;/li&gt;
+                        &lt;li&gt;✅ Publicación destacada&lt;/li&gt;
+                        &lt;li&gt;✅ Seguimiento&lt;/li&gt;
+                        &lt;li&gt;✅ Publicación del ganador&lt;/li&gt;
+                        &lt;li&gt;✅ Visibilidad adicional&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;retos-precio-col&quot;&gt;
+                    &lt;div class=&quot;retos-precio-wrap&quot;&gt;
+                        &lt;div class=&quot;retos-precio-antes&quot;&gt;
+                            &lt;span class=&quot;retos-precio-tachado&quot;&gt;49 € + IVA&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;retos-precio-actual&quot;&gt;
+                            &lt;span class=&quot;retos-precio-numero&quot;&gt;29€&lt;/span&gt;
+                            &lt;span class=&quot;retos-precio-iva&quot;&gt;+ IVA&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;retos-descuento-badge&quot;&gt;
+                            &lt;span class=&quot;retos-descuento-llama&quot;&gt;🔥&lt;/span&gt;
+                            PRECIO LANZAMIENTO · 41% DTO
+                        &lt;/div&gt;
+                        &lt;p class=&quot;retos-promo-texto&quot;&gt;Promoción válida durante los dos primeros meses de lanzamiento.&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary retos-cta-btn&quot;&gt;CONTRATAR RETO EN RUTA&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;retos-frase&quot;&gt;
+                &lt;span class=&quot;retos-frase-icon&quot;&gt;💬&lt;/span&gt;
+                &lt;p&gt;Porque la mejor publicidad no es la que se ve. &lt;strong&gt;Es la que hace participar.&lt;/strong&gt;&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;retos-nota&quot;&gt;
+                &lt;span&gt;⚠️&lt;/span&gt;
+                &lt;span&gt;El premio será aportado por el Aliado participante.&lt;/span&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- ══════════════════════════════════════════
+     TRANSMISIONES PATROCINADAS
+══════════════════════════════════════════ --&gt;
+&lt;section class=&quot;transmisiones-section&quot;&gt;
+    &lt;div class=&quot;transmisiones-inner&quot;&gt;
+        &lt;div class=&quot;section-header reveal&quot;&gt;
+            &lt;h2&gt;📢 TRANSMISIONES&lt;br&gt;&lt;span class=&quot;red&quot;&gt;PATROCINADAS&lt;/span&gt;&lt;/h2&gt;
+            &lt;p&gt;Aparecen integradas como publicaciones normales dentro de La Emisora. Con una etiqueta elegante &quot;Aliado Destacado&quot;. No parecen anuncios — parecen parte natural de la comunidad.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;trans-grid&quot;&gt;
+            &lt;div class=&quot;trans-card reveal reveal-delay-1&quot;&gt;
+                &lt;div class=&quot;trans-icon&quot;&gt;📡&lt;/div&gt;
+                &lt;h3&gt;Transmisión Puntual&lt;/h3&gt;
+                &lt;div class=&quot;trans-price&quot;&gt;150€&lt;/div&gt;
+                &lt;div class=&quot;trans-price-label&quot;&gt;+ IVA por transmisión&lt;/div&gt;
+                &lt;p class=&quot;trans-desc&quot;&gt;Una presencia concreta y potente dentro del canal. Ideal para anuncios de servicio, promociones de temporada o comunicados clave.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;trans-card reveal reveal-delay-2&quot; style=&quot;border-color:rgba(255,0,0,0.3);box-shadow:0 10px 40px rgba(255,0,0,0.1);&quot;&gt;
+                &lt;div class=&quot;trans-icon&quot;&gt;📦&lt;/div&gt;
+                &lt;h3&gt;Pack de 3&lt;/h3&gt;
+                &lt;div class=&quot;trans-price&quot; style=&quot;color:rgba(255,100,0,0.9);&quot;&gt;400€&lt;/div&gt;
+                &lt;div class=&quot;trans-price-label&quot;&gt;+ IVA · Ahorro operativo&lt;/div&gt;
+                &lt;p class=&quot;trans-desc&quot;&gt;Tres transmisiones estratégicas para construir presencia sostenida. Más impacto, más reconocimiento dentro de la comunidad.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;trans-card reveal reveal-delay-3&quot;&gt;
+                &lt;div class=&quot;trans-icon&quot;&gt;♾️&lt;/div&gt;
+                &lt;h3&gt;En Planes Premium&lt;/h3&gt;
+                &lt;div class=&quot;trans-price&quot; style=&quot;font-size:1.6rem;margin-bottom:0.5rem;&quot;&gt;Incluidas&lt;/div&gt;
+                &lt;div class=&quot;trans-price-label&quot;&gt;En acuerdos estratégicos&lt;/div&gt;
+                &lt;p class=&quot;trans-desc&quot;&gt;Dentro de los acuerdos de Alianza Estratégica o Destacado Superior, las transmisiones patrocinadas quedan integradas en el plan.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;trans-notice reveal&quot;&gt;
+            &lt;div class=&quot;trans-notice-label&quot;&gt;⚖️ Calidad sobre saturación&lt;/div&gt;
+            &lt;p&gt;&lt;strong&gt;Máximo 1 o 2 transmisiones patrocinadas al día.&lt;/strong&gt;&lt;br&gt;
+            Porque aquí creemos que la presencia real vale más que el ruido. Menos es más. Siempre.&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
@@ -4042,7 +4725,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                     Campañas estratégicas diseñadas junto al equipo FleetChofer.
                     Tu presencia no parece publicidad — parece parte fundamental del canal.
                 &lt;/p&gt;
-                &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot; style=&quot;margin-top:auto;text-align:center;&quot;&gt;SER ALIADO DESTACADO&lt;/a&gt;
+                &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot; style=&quot;margin-top:auto;text-align:center;&quot;&gt;SER ALIADO DESTACADO&lt;/a&gt;
             &lt;/div&gt;
 
         &lt;/div&gt;
@@ -4069,7 +4752,7 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
                         dentro del flujo operativo natural: documentación, incidencias, gestión de flota, rutas.
                     &lt;/p&gt;
                     &lt;span class=&quot;precio-personalizado&quot;&gt;✦ Propuesta personalizada&lt;/span&gt;
-                    &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;CREAR UNA ALIANZA&lt;/a&gt;
+                    &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;CREAR UNA ALIANZA&lt;/a&gt;
                 &lt;/div&gt;
                 &lt;div class=&quot;alianzas-right&quot;&gt;
                     &lt;div class=&quot;alianzas-examples&quot;&gt;
@@ -4121,48 +4804,6 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
 &lt;/section&gt;
 
 &lt;!-- ══════════════════════════════════════════
-     TRANSMISIONES PATROCINADAS
-══════════════════════════════════════════ --&gt;
-&lt;section class=&quot;transmisiones-section&quot;&gt;
-    &lt;div class=&quot;transmisiones-inner&quot;&gt;
-        &lt;div class=&quot;section-header reveal&quot;&gt;
-            &lt;h2&gt;📢 TRANSMISIONES&lt;br&gt;&lt;span class=&quot;red&quot;&gt;PATROCINADAS NATIVAS&lt;/span&gt;&lt;/h2&gt;
-            &lt;p&gt;Aparecen integradas como publicaciones normales dentro de La Emisora. Con una etiqueta elegante &quot;Aliado Destacado&quot;. No parecen anuncios — parecen parte natural de la comunidad.&lt;/p&gt;
-        &lt;/div&gt;
-
-        &lt;div class=&quot;trans-grid&quot;&gt;
-            &lt;div class=&quot;trans-card reveal reveal-delay-1&quot;&gt;
-                &lt;div class=&quot;trans-icon&quot;&gt;📡&lt;/div&gt;
-                &lt;h3&gt;Transmisión Puntual&lt;/h3&gt;
-                &lt;div class=&quot;trans-price&quot;&gt;150€&lt;/div&gt;
-                &lt;div class=&quot;trans-price-label&quot;&gt;+ IVA por transmisión&lt;/div&gt;
-                &lt;p class=&quot;trans-desc&quot;&gt;Una presencia concreta y potente dentro del canal. Ideal para anuncios de servicio, promociones de temporada o comunicados clave.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;trans-card reveal reveal-delay-2&quot; style=&quot;border-color:rgba(255,0,0,0.3);box-shadow:0 10px 40px rgba(255,0,0,0.1);&quot;&gt;
-                &lt;div class=&quot;trans-icon&quot;&gt;📦&lt;/div&gt;
-                &lt;h3&gt;Pack de 3&lt;/h3&gt;
-                &lt;div class=&quot;trans-price&quot; style=&quot;color:rgba(255,100,0,0.9);&quot;&gt;400€&lt;/div&gt;
-                &lt;div class=&quot;trans-price-label&quot;&gt;+ IVA · Ahorro operativo&lt;/div&gt;
-                &lt;p class=&quot;trans-desc&quot;&gt;Tres transmisiones estratégicas para construir presencia sostenida. Más impacto, más reconocimiento dentro de la comunidad.&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;trans-card reveal reveal-delay-3&quot;&gt;
-                &lt;div class=&quot;trans-icon&quot;&gt;♾️&lt;/div&gt;
-                &lt;h3&gt;En Planes Premium&lt;/h3&gt;
-                &lt;div class=&quot;trans-price&quot; style=&quot;font-size:1.6rem;margin-bottom:0.5rem;&quot;&gt;Incluidas&lt;/div&gt;
-                &lt;div class=&quot;trans-price-label&quot;&gt;En acuerdos estratégicos&lt;/div&gt;
-                &lt;p class=&quot;trans-desc&quot;&gt;Dentro de los acuerdos de Alianza Estratégica o Destacado Superior, las transmisiones patrocinadas quedan integradas en el plan.&lt;/p&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class=&quot;trans-notice reveal&quot;&gt;
-            &lt;div class=&quot;trans-notice-label&quot;&gt;⚖️ Calidad sobre saturación&lt;/div&gt;
-            &lt;p&gt;&lt;strong&gt;Máximo 1 o 2 transmisiones patrocinadas al día.&lt;/strong&gt;&lt;br&gt;
-            Porque aquí creemos que la presencia real vale más que el ruido. Menos es más. Siempre.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
-
-&lt;!-- ══════════════════════════════════════════
      CTA FINAL
 ══════════════════════════════════════════ --&gt;
 &lt;section class=&quot;cta-final&quot;&gt;
@@ -4175,8 +4816,8 @@ Y cuando necesites delegar la parte documental para <span class="red"><strong>mo
             Tú puedes ser la respuesta.
         &lt;/p&gt;
         &lt;div class=&quot;cta-btns&quot;&gt;
-            &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;QUIERO SER UN ALIADO&lt;/a&gt;
-            &lt;a href=&quot;https://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot;&gt;SOLICITAR PROPUESTA PERSONALIZADA&lt;/a&gt;
+            &lt;a href=&quot;https://developer.fleetchoferbyclara.com/registro-aliado&quot; target=&quot;_blank&quot; class=&quot;btn btn-primary&quot;&gt;QUIERO SER UN ALIADO&lt;/a&gt;
+            &lt;a href=&quot;https:://wa.me/34679362474&quot; target=&quot;_blank&quot; class=&quot;btn btn-secondary&quot;&gt;SOLICITAR PROPUESTA PERSONALIZADA&lt;/a&gt;
         &lt;/div&gt;
         &lt;div class=&quot;cta-line&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -4302,6 +4943,36 @@ function updatePrices(mode) {
     }, { threshold: 0.12 });
     els.forEach(el =&gt; obs.observe(el));
 })();
+
+// ─── ACORDEÓN INSIGNIAS ───
+function toggleArAcordeon() {
+    var btn = document.getElementById(&#x27;arAcordeonBtn&#x27;);
+    var content = document.getElementById(&#x27;arAcordeonContent&#x27;);
+    var isOpen = btn.getAttribute(&#x27;aria-expanded&#x27;) === &#x27;true&#x27;;
+    if (isOpen) {
+        btn.setAttribute(&#x27;aria-expanded&#x27;, &#x27;false&#x27;);
+        content.setAttribute(&#x27;aria-hidden&#x27;, &#x27;true&#x27;);
+        content.classList.remove(&#x27;open&#x27;);
+    } else {
+        btn.setAttribute(&#x27;aria-expanded&#x27;, &#x27;true&#x27;);
+        content.setAttribute(&#x27;aria-hidden&#x27;, &#x27;false&#x27;);
+        content.classList.add(&#x27;open&#x27;);
+    }
+}
+// ─── SCROLL A PLANES ───
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, function () {
+    const scrollBtn = document.getElementById(&#x27;scrollToPlanesBtn&#x27;);
+    const planes = document.getElementById(&#x27;planes&#x27;);
+
+    if (scrollBtn &amp;&amp; planes) {
+        scrollBtn.addEventListener(&#x27;click&#x27;, function () {
+            planes.scrollIntoView({
+                behavior: &#x27;smooth&#x27;,
+                block: &#x27;start&#x27;
+            });
+        });
+    }
+});
 &lt;/script&gt;
 
 &lt;!-- Actualizado: hero final Aliados en Ruta --&gt;
